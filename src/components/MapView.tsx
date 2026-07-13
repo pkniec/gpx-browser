@@ -105,7 +105,15 @@ export default function MapView({ track }: Props) {
 
       const bounds = new maplibregl.LngLatBounds();
       for (const c of track.coords) bounds.extend(c);
-      map.fitBounds(bounds, { padding: 60, duration: 500 });
+      // Panel boczny zasłania lewą (desktop) lub dolną (mobile, bottom sheet) część mapy —
+      // trzeba to uwzględnić w paddingu, inaczej fitBounds "chowa" kawałek trasy pod panelem.
+      const isMobile = window.innerWidth <= 640;
+      map.fitBounds(bounds, {
+        padding: isMobile
+          ? { top: 40, bottom: window.innerHeight * 0.55 + 20, left: 24, right: 24 }
+          : { top: 60, bottom: 60, left: 420, right: 60 },
+        duration: 500,
+      });
     };
 
     if (readyRef.current) apply();
