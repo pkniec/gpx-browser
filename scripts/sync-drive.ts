@@ -1,7 +1,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { loadEnvFile } from "./env";
-import { createDriveClient, downloadFileBuffer, downloadFileText, walkDriveTree } from "./drive-client";
+import { createDriveClient, downloadFileBuffer, walkDriveTree } from "./drive-client";
 import { parseGpx } from "./gpx-parse";
 import { analyzeSurface } from "./brouter";
 import type { Category, DataIndex, RouteMeta, RouteTrack } from "../src/types";
@@ -22,6 +22,7 @@ if (!API_KEY || !ROOT_FOLDER_ID) {
 const OUT_DIR = path.resolve(process.cwd(), "public/data");
 const TRACKS_DIR = path.join(OUT_DIR, "tracks");
 const GPX_DIR = path.join(OUT_DIR, "gpx");
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function slugify(name: string): string {
   const base = name
@@ -77,8 +78,8 @@ async function main() {
   for (const [i, file] of gpxFiles.entries()) {
     process.stdout.write(`[${i + 1}/${gpxFiles.length}] ${file.name} … `);
     try {
-      const xml = await downloadFileText(drive, file.id);
-      const parsed = parseGpx(xml);
+      const gpxBuffer = await downloadFileBuffer(drive, file.id);
+      const parsed = parseGpx(gpxBuffer.toString("utf-8"));
       if (parsed.coords.length < 2) {
         console.log("pominięto (brak punktów trasy)");
         continue;
@@ -95,8 +96,6 @@ async function main() {
 
       const track: RouteTrack = { id, coords: parsed.coords, waypoints: parsed.waypoints };
       writeFileSync(path.join(TRACKS_DIR, `${id}.json`), JSON.stringify(track));
-
-      const gpxBuffer = await downloadFileBuffer(drive, file.id);
       writeFileSync(path.join(GPX_DIR, `${id}.gpx`), gpxBuffer);
 
       routes.push({
@@ -119,6 +118,7 @@ async function main() {
     } catch (err) {
       console.log(`BŁĄD: ${err instanceof Error ? err.message : String(err)}`);
     }
+    await sleep(250); // odstęp między plikami — klucz API (bez OAuth) ma niski limit zapytań
   }
 
   const index: DataIndex = {

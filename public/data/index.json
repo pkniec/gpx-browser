@@ -1,14 +1,19 @@
 {
-  "generatedAt": "2026-07-13T13:30:00.000Z",
+  "generatedAt": "2026-07-13T13:13:54.149066Z",
   "categories": [
     {
-      "id": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
-      "name": "GraveLove Środy",
+      "id": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
+      "name": "GraveLove Opole Camp 2026",
       "parentId": null
     },
     {
-      "id": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
-      "name": "GraveLove Ustawy (czyli dłuższe ustawki)",
+      "id": "1SEyAMBsBTIWYk7T_9R9iEzd3IbVBiC_U",
+      "name": "GraveLove Bory 2025",
+      "parentId": null
+    },
+    {
+      "id": "1UdmNkJT_nDOxG4E9XoA-DKV17tZRpgEg",
+      "name": "GraveLove Opole Camp 2025",
       "parentId": null
     },
     {
@@ -17,19 +22,95 @@
       "parentId": null
     },
     {
+      "id": "1CPjShBpcQUS5enY6itI4B5Y3nYddc1LR",
+      "name": "Propozycje ustawkowe",
+      "parentId": "1-PhHqt02HXdK74t0PQScacZSZv4idF7N"
+    },
+    {
       "id": "1FDidnHW-pgHL8MsK5a2Nw9d5J0r9MVfk",
       "name": "Mieszane",
+      "parentId": "1-PhHqt02HXdK74t0PQScacZSZv4idF7N"
+    },
+    {
+      "id": "1bFCLLoZr-k4_FmT6jkfyJOgtz-Rju1AW",
+      "name": "Szosowe",
       "parentId": "1-PhHqt02HXdK74t0PQScacZSZv4idF7N"
     },
     {
       "id": "1HB4ZJ4Bnt3hXCSBBpVvQVmri9wLFzpd7",
       "name": "GraveLove",
       "parentId": "1-PhHqt02HXdK74t0PQScacZSZv4idF7N"
+    },
+    {
+      "id": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "name": "GraveLove Ustawy (czyli dłuższe ustawki)",
+      "parentId": null
+    },
+    {
+      "id": "1YDD47YpoczEZX-GuAnYhv63K3zH_UoXO",
+      "name": "Ultra Ustawki",
+      "parentId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5"
+    },
+    {
+      "id": "1UGPmUncKybfzSg3_mouZDj1uHcn7E9sC",
+      "name": "Ustawka #12 - CampFire Ride",
+      "parentId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5"
+    },
+    {
+      "id": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "name": "GraveLove Środy",
+      "parentId": null
     }
   ],
   "routes": [
     {
-      "id": "112-opowiesci-z-mchu-i-paproci",
+      "id": "2026-03-11-gravelova-sroda-095-w-samo-po-udnie",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #095 - W samo południe",
+      "date": "2026-03-11",
+      "distanceKm": 40.9,
+      "ascentM": 85,
+      "descentM": 85,
+      "durationMin": 137.89758333333333,
+      "start": [
+        17.875612,
+        50.695914
+      ],
+      "bbox": [
+        17.733334,
+        50.664434,
+        17.894163,
+        50.751477
+      ],
+      "surface": null,
+      "gpxFile": "2026-03-11-gravelova-sroda-095-w-samo-po-udnie.gpx",
+      "gpxOriginalName": "2026/03/11 - GraveLova Środa #095 - W samo południe.gpx"
+    },
+    {
+      "id": "ustawka-17-objazd-trasy-gravelove-bory-60-km",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #17 - Objazd trasy GraveLove Bory 60 km",
+      "date": null,
+      "distanceKm": 61.7,
+      "ascentM": 266,
+      "descentM": 265,
+      "durationMin": 251.22791666666666,
+      "start": [
+        17.603724,
+        50.615675
+      ],
+      "bbox": [
+        17.570179,
+        50.496437,
+        17.802511,
+        50.615675
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-17-objazd-trasy-gravelove-bory-60-km.gpx",
+      "gpxOriginalName": "Ustawka #17 - Objazd trasy GraveLove Bory 60 km.gpx"
+    },
+    {
+      "id": "2026-07-08-gravelova-sroda-112-opowiesci-z-mchu-i-paproci",
       "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
       "title": "GraveLova Środa #112 - Opowieści z mchu i paproci",
       "date": "2026-07-08",
@@ -48,11 +129,11 @@
         50.75682998634875
       ],
       "surface": null,
-      "gpxFile": "112-opowiesci-z-mchu-i-paproci.gpx",
+      "gpxFile": "2026-07-08-gravelova-sroda-112-opowiesci-z-mchu-i-paproci.gpx",
       "gpxOriginalName": "2026/07/08 - GraveLova Środa #112 - Opowieści z mchu i paproci.gpx"
     },
     {
-      "id": "101-mocna-kawa-wcale-nie-jest-taka-zla",
+      "id": "2026-04-22-gravelova-sroda-101-x-hard-beans-mocna-kawa-wcale-nie-jest-taka-z-a",
       "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
       "title": "GraveLova Środa #101 x Hard Beans - Mocna kawa wcale nie jest taka zła",
       "date": "2026-04-22",
@@ -71,11 +152,11 @@
         50.664892
       ],
       "surface": null,
-      "gpxFile": "101-mocna-kawa-wcale-nie-jest-taka-zla.gpx",
+      "gpxFile": "2026-04-22-gravelova-sroda-101-x-hard-beans-mocna-kawa-wcale-nie-jest-taka-z-a.gpx",
       "gpxOriginalName": "2026/04/22 - GraveLova Środa #101 x Hard Beans - Mocna kawa wcale nie jest taka zła.gpx"
     },
     {
-      "id": "096-czarnobyl",
+      "id": "2026-03-18-gravelova-sroda-096-czarnobyl",
       "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
       "title": "GraveLova Środa #096 - Czarnobyl",
       "date": "2026-03-18",
@@ -94,34 +175,11 @@
         50.815322
       ],
       "surface": null,
-      "gpxFile": "096-czarnobyl.gpx",
+      "gpxFile": "2026-03-18-gravelova-sroda-096-czarnobyl.gpx",
       "gpxOriginalName": "2026/03/18 - GraveLova Środa #096 - Czarnobyl.gpx"
     },
     {
-      "id": "095-w-samo-poludnie",
-      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
-      "title": "GraveLova Środa #095 - W samo południe",
-      "date": "2026-03-11",
-      "distanceKm": 40.9,
-      "ascentM": 85,
-      "descentM": 85,
-      "durationMin": null,
-      "start": [
-        17.875612,
-        50.695914
-      ],
-      "bbox": [
-        17.733334,
-        50.664434,
-        17.894163,
-        50.751477
-      ],
-      "surface": null,
-      "gpxFile": "095-w-samo-poludnie.gpx",
-      "gpxOriginalName": "2026/03/11 - GraveLova Środa #095 - W samo południe.gpx"
-    },
-    {
-      "id": "094-demon-z-jeziora",
+      "id": "2026-03-04-gravelova-sroda-094-demon-z-jeziora",
       "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
       "title": "GraveLova Środa #094 - Demon z jeziora",
       "date": "2026-03-04",
@@ -140,11 +198,11 @@
         50.756003
       ],
       "surface": null,
-      "gpxFile": "094-demon-z-jeziora.gpx",
+      "gpxFile": "2026-03-04-gravelova-sroda-094-demon-z-jeziora.gpx",
       "gpxOriginalName": "2026/03/04 - GraveLova Środa #094 - Demon z jeziora.gpx"
     },
     {
-      "id": "082-marsz-pingwinow",
+      "id": "2025-11-26-gravelova-sroda-082-marsz-pingwinow",
       "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
       "title": "GraveLova Środa #082 - Marsz Pingwinów",
       "date": "2025-11-26",
@@ -163,11 +221,11 @@
         50.755295
       ],
       "surface": null,
-      "gpxFile": "082-marsz-pingwinow.gpx",
+      "gpxFile": "2025-11-26-gravelova-sroda-082-marsz-pingwinow.gpx",
       "gpxOriginalName": "2025/11/26 - GraveLova Środa #082 - Marsz Pingwinów.gpx"
     },
     {
-      "id": "061-labedzi-spiew",
+      "id": "2025-07-02-gravelova-sroda-061-abedzi-spiew",
       "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
       "title": "GraveLova Środa #061 - Łabędzi Śpiew",
       "date": "2025-07-02",
@@ -186,36 +244,13 @@
         50.74371000000001
       ],
       "surface": null,
-      "gpxFile": "061-labedzi-spiew.gpx",
+      "gpxFile": "2025-07-02-gravelova-sroda-061-abedzi-spiew.gpx",
       "gpxOriginalName": "2025/07/02 - GraveLova Środa #061 - Łabędzi Śpiew.gpx"
     },
     {
-      "id": "017-objazd-trasy-gravelove-bory",
-      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
-      "title": "Ustawka #17 - Objazd trasy GraveLove Bory 60 km",
-      "date": null,
-      "distanceKm": 61.7,
-      "ascentM": 266,
-      "descentM": 265,
-      "durationMin": null,
-      "start": [
-        17.603724,
-        50.615675
-      ],
-      "bbox": [
-        17.603724,
-        50.615675,
-        17.9,
-        50.7
-      ],
-      "surface": null,
-      "gpxFile": "017-objazd-trasy-gravelove-bory.gpx",
-      "gpxOriginalName": "Ustawka #17 - Objazd trasy GraveLove Bory 60 km.gpx"
-    },
-    {
-      "id": "2024-suchym-borem",
+      "id": "2024-gravelova-sroda-3-suchym-borem",
       "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
-      "title": "GraveLova Środa - Suchym Borem",
+      "title": "GraveLova Sroda 3 - Suchym Borem",
       "date": null,
       "distanceKm": 39.2,
       "ascentM": 88,
@@ -232,13 +267,13 @@
         50.711934
       ],
       "surface": null,
-      "gpxFile": "2024-suchym-borem.gpx",
+      "gpxFile": "2024-gravelova-sroda-3-suchym-borem.gpx",
       "gpxOriginalName": "2024 - GraveLova Sroda_3 - Suchym Borem.gpx"
     },
     {
-      "id": "2024-z-grzancem",
+      "id": "2024-gravelova-sroda-z-grzancem",
       "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
-      "title": "GraveLova Środa z grzańcem",
+      "title": "GraveLova Sroda z grzańcem",
       "date": null,
       "distanceKm": 38.9,
       "ascentM": 82,
@@ -255,11 +290,11 @@
         50.698119
       ],
       "surface": null,
-      "gpxFile": "2024-z-grzancem.gpx",
+      "gpxFile": "2024-gravelova-sroda-z-grzancem.gpx",
       "gpxOriginalName": "2024 - GraveLova Sroda z grzańcem.gpx"
     },
     {
-      "id": "023-szychta-na-szutrolandii",
+      "id": "ustawka-23-szychta-na-szutrolandii",
       "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
       "title": "Ustawka #23 - Szychta na Szutrolandii",
       "date": null,
@@ -278,11 +313,11 @@
         50.6567
       ],
       "surface": null,
-      "gpxFile": "023-szychta-na-szutrolandii.gpx",
+      "gpxFile": "ustawka-23-szychta-na-szutrolandii.gpx",
       "gpxOriginalName": "Ustawka #23 - Szychta na Szutrolandii.gpx"
     },
     {
-      "id": "021-toszek-kebab-ride",
+      "id": "ustawka-021-toszek-kebab-ride",
       "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
       "title": "Ustawka #021 - Toszek Kebab Ride",
       "date": null,
@@ -301,11 +336,11 @@
         50.659568
       ],
       "surface": null,
-      "gpxFile": "021-toszek-kebab-ride.gpx",
+      "gpxFile": "ustawka-021-toszek-kebab-ride.gpx",
       "gpxOriginalName": "Ustawka #021 - Toszek Kebab Ride.gpx"
     },
     {
-      "id": "020-anka-w-nowy-rok",
+      "id": "ustawka-20-anka-w-nowy-rok-4-urodziny-gravelove-opole",
       "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
       "title": "Ustawka #20 - Anka w Nowy Rok (4 urodziny GraveLove Opole)",
       "date": null,
@@ -324,13 +359,13 @@
         50.686871
       ],
       "surface": null,
-      "gpxFile": "020-anka-w-nowy-rok.gpx",
+      "gpxFile": "ustawka-20-anka-w-nowy-rok-4-urodziny-gravelove-opole.gpx",
       "gpxOriginalName": "Ustawka #20 - Anka w Nowy Rok (4 urodziny GraveLove Opole).gpx"
     },
     {
-      "id": "szlakiem-kolejowym-wiekszyce-polska-cerekiew",
+      "id": "szlakiem-kolejowym-wi-kszyce-polska-cerekiew-powiat-k-dzierzy-sko-kozielski",
       "categoryId": "1FDidnHW-pgHL8MsK5a2Nw9d5J0r9MVfk",
-      "title": "SZLAKIEM KOLEJOWYM WIĘKSZYCE-POLSKA CEREKIEW — Powiat kędzierzyńsko-kozielski",
+      "title": "SZLAKIEM KOLEJOWYM WI KSZYCE POLSKA CEREKIEW Powiat k dzierzy sko kozielski",
       "date": null,
       "distanceKm": 112.0,
       "ascentM": 646,
@@ -347,8 +382,2515 @@
         50.338807
       ],
       "surface": null,
-      "gpxFile": "szlakiem-kolejowym-wiekszyce-polska-cerekiew.gpx",
+      "gpxFile": "szlakiem-kolejowym-wi-kszyce-polska-cerekiew-powiat-k-dzierzy-sko-kozielski.gpx",
       "gpxOriginalName": "SZLAKIEM_KOLEJOWYM_WI_KSZYCE_POLSKA_CEREKIEW___Powiat_k_dzierzy_sko_kozielski.gpx"
+    },
+    {
+      "id": "camp-nd-droga-wiecznosci-d-uga",
+      "categoryId": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
+      "title": "CAMP ND - Droga Wieczności DŁUGA",
+      "date": null,
+      "distanceKm": 99.1,
+      "ascentM": 1729,
+      "descentM": 1751,
+      "durationMin": 261.28423333333336,
+      "start": [
+        16.581602,
+        50.214232
+      ],
+      "bbox": [
+        16.386256,
+        50.207274,
+        16.597786,
+        50.391456
+      ],
+      "surface": null,
+      "gpxFile": "camp-nd-droga-wiecznosci-d-uga.gpx",
+      "gpxOriginalName": "CAMP ND - Droga Wieczności DŁUGA.gpx"
+    },
+    {
+      "id": "camp-nd-droga-wiecznosci-krotka",
+      "categoryId": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
+      "title": "CAMP ND - Droga wieczności KRÓTKA",
+      "date": null,
+      "distanceKm": 83.0,
+      "ascentM": 1286,
+      "descentM": 1306,
+      "durationMin": 215.30131666666665,
+      "start": [
+        16.581602,
+        50.214232
+      ],
+      "bbox": [
+        16.39235,
+        50.207274,
+        16.597786,
+        50.391456
+      ],
+      "surface": null,
+      "gpxFile": "camp-nd-droga-wiecznosci-krotka.gpx",
+      "gpxOriginalName": "CAMP ND - Droga wieczności KRÓTKA.gpx"
+    },
+    {
+      "id": "camp-sb-kraliky-d-uga",
+      "categoryId": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
+      "title": "CAMP SB - Kraliky DŁUGA",
+      "date": null,
+      "distanceKm": 125.7,
+      "ascentM": 2856,
+      "descentM": 2847,
+      "durationMin": 372.25626666666665,
+      "start": [
+        16.581744,
+        50.214151
+      ],
+      "bbox": [
+        16.578735,
+        50.113218,
+        16.879082,
+        50.230904
+      ],
+      "surface": null,
+      "gpxFile": "camp-sb-kraliky-d-uga.gpx",
+      "gpxOriginalName": "CAMP SB - Kraliky DŁUGA.gpx"
+    },
+    {
+      "id": "camp-sb-kraliky-srednia",
+      "categoryId": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
+      "title": "CAMP SB - Kraliky ŚREDNIA",
+      "date": null,
+      "distanceKm": 108.9,
+      "ascentM": 2248,
+      "descentM": 2237,
+      "durationMin": 309.30305000000004,
+      "start": [
+        16.581744,
+        50.214151
+      ],
+      "bbox": [
+        16.578735,
+        50.113218,
+        16.879082,
+        50.229967
+      ],
+      "surface": null,
+      "gpxFile": "camp-sb-kraliky-srednia.gpx",
+      "gpxOriginalName": "CAMP SB - Kraliky ŚREDNIA.gpx"
+    },
+    {
+      "id": "camp-sb-kraliky-krotka",
+      "categoryId": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
+      "title": "CAMP SB - Kraliky KRÓTKA",
+      "date": null,
+      "distanceKm": 82.2,
+      "ascentM": 1792,
+      "descentM": 1778,
+      "durationMin": 229.03046666666665,
+      "start": [
+        16.581744,
+        50.214151
+      ],
+      "bbox": [
+        16.578735,
+        50.113218,
+        16.860527,
+        50.214151
+      ],
+      "surface": null,
+      "gpxFile": "camp-sb-kraliky-krotka.gpx",
+      "gpxOriginalName": "CAMP SB - Kraliky KRÓTKA.gpx"
+    },
+    {
+      "id": "camp-pt-bunkry-d-uga",
+      "categoryId": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
+      "title": "CAMP PT - Bunkry DŁUGA",
+      "date": null,
+      "distanceKm": 97.8,
+      "ascentM": 1966,
+      "descentM": 1994,
+      "durationMin": 275.0936333333333,
+      "start": [
+        16.581744,
+        50.214151
+      ],
+      "bbox": [
+        16.454266,
+        50.038662,
+        16.69395,
+        50.268557
+      ],
+      "surface": null,
+      "gpxFile": "camp-pt-bunkry-d-uga.gpx",
+      "gpxOriginalName": "CAMP PT - Bunkry DŁUGA.gpx"
+    },
+    {
+      "id": "camp-pt-bunkry-srednia",
+      "categoryId": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
+      "title": "CAMP PT - Bunkry ŚREDNIA",
+      "date": null,
+      "distanceKm": 86.3,
+      "ascentM": 1808,
+      "descentM": 1832,
+      "durationMin": 251.19466666666668,
+      "start": [
+        16.581744,
+        50.214151
+      ],
+      "bbox": [
+        16.491039,
+        50.038662,
+        16.69395,
+        50.229472
+      ],
+      "surface": null,
+      "gpxFile": "camp-pt-bunkry-srednia.gpx",
+      "gpxOriginalName": "CAMP PT - Bunkry ŚREDNIA.gpx"
+    },
+    {
+      "id": "camp-pt-bunkry-krotka",
+      "categoryId": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
+      "title": "CAMP PT - Bunkry KRÓTKA",
+      "date": null,
+      "distanceKm": 77.2,
+      "ascentM": 1590,
+      "descentM": 1611,
+      "durationMin": 224.58710000000002,
+      "start": [
+        16.581744,
+        50.214151
+      ],
+      "bbox": [
+        16.532906,
+        50.038662,
+        16.69395,
+        50.219805
+      ],
+      "surface": null,
+      "gpxFile": "camp-pt-bunkry-krotka.gpx",
+      "gpxOriginalName": "CAMP PT - Bunkry KRÓTKA.gpx"
+    },
+    {
+      "id": "camp-cz-gruby-pstrag",
+      "categoryId": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
+      "title": "CAMP CZ - GRUBY PSTRĄG",
+      "date": null,
+      "distanceKm": 73.6,
+      "ascentM": 1393,
+      "descentM": 1361,
+      "durationMin": 367.56153333333333,
+      "start": [
+        16.582053,
+        50.214025
+      ],
+      "bbox": [
+        16.505582,
+        50.118543,
+        16.667771,
+        50.277358
+      ],
+      "surface": null,
+      "gpxFile": "camp-cz-gruby-pstrag.gpx",
+      "gpxOriginalName": "CAMP CZ - GRUBY PSTRĄG.gpx"
+    },
+    {
+      "id": "camp-sr-piec-wiez",
+      "categoryId": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
+      "title": "CAMP ŚR - Pięć wież",
+      "date": null,
+      "distanceKm": 100.0,
+      "ascentM": 1916,
+      "descentM": 1916,
+      "durationMin": 409.10603333333336,
+      "start": [
+        16.581757,
+        50.214145
+      ],
+      "bbox": [
+        16.354197,
+        50.113219,
+        16.636032,
+        50.35448
+      ],
+      "surface": null,
+      "gpxFile": "camp-sr-piec-wiez.gpx",
+      "gpxOriginalName": "CAMP ŚR - Pięć wież.gpx"
+    },
+    {
+      "id": "gravelove-bory-120-km",
+      "categoryId": "1SEyAMBsBTIWYk7T_9R9iEzd3IbVBiC_U",
+      "title": "GraveLove Bory 120 km",
+      "date": null,
+      "distanceKm": 121.1,
+      "ascentM": 444,
+      "descentM": 443,
+      "durationMin": 599.59915,
+      "start": [
+        17.603724,
+        50.615675
+      ],
+      "bbox": [
+        17.570179,
+        50.468124,
+        17.916466,
+        50.615675
+      ],
+      "surface": null,
+      "gpxFile": "gravelove-bory-120-km.gpx",
+      "gpxOriginalName": "GraveLove Bory 120 km.gpx"
+    },
+    {
+      "id": "gravelove-bory-60-km",
+      "categoryId": "1SEyAMBsBTIWYk7T_9R9iEzd3IbVBiC_U",
+      "title": "GraveLove Bory 60 km",
+      "date": null,
+      "distanceKm": 61.7,
+      "ascentM": 266,
+      "descentM": 265,
+      "durationMin": 251.22791666666666,
+      "start": [
+        17.603724,
+        50.615675
+      ],
+      "bbox": [
+        17.570179,
+        50.496437,
+        17.802511,
+        50.615675
+      ],
+      "surface": null,
+      "gpxFile": "gravelove-bory-60-km.gpx",
+      "gpxOriginalName": "GraveLove Bory 60 km.gpx"
+    },
+    {
+      "id": "camp-sb-dwie-wie-e",
+      "categoryId": "1UdmNkJT_nDOxG4E9XoA-DKV17tZRpgEg",
+      "title": "CAMP SB Dwie wie e",
+      "date": null,
+      "distanceKm": 50.8,
+      "ascentM": 936,
+      "descentM": 964,
+      "durationMin": 209.85421666666667,
+      "start": [
+        16.581757,
+        50.214145
+      ],
+      "bbox": [
+        16.47758,
+        50.136549,
+        16.637689,
+        50.256198
+      ],
+      "surface": null,
+      "gpxFile": "camp-sb-dwie-wie-e.gpx",
+      "gpxOriginalName": "CAMP_SB___Dwie_wie_e.gpx"
+    },
+    {
+      "id": "propozycja-ustawkowa-1",
+      "categoryId": "1CPjShBpcQUS5enY6itI4B5Y3nYddc1LR",
+      "title": "propozycja ustawkowa 1",
+      "date": null,
+      "distanceKm": 47.5,
+      "ascentM": 145,
+      "descentM": 145,
+      "durationMin": null,
+      "start": [
+        17.947424,
+        50.682502
+      ],
+      "bbox": [
+        17.941485,
+        50.590072,
+        18.13739,
+        50.686879
+      ],
+      "surface": null,
+      "gpxFile": "propozycja-ustawkowa-1.gpx",
+      "gpxOriginalName": "propozycja ustawkowa 1.gpx"
+    },
+    {
+      "id": "propozycja-ustawkowa-2",
+      "categoryId": "1CPjShBpcQUS5enY6itI4B5Y3nYddc1LR",
+      "title": "propozycja ustawkowa 2",
+      "date": null,
+      "distanceKm": 46.2,
+      "ascentM": 161,
+      "descentM": 161,
+      "durationMin": null,
+      "start": [
+        17.947424,
+        50.682502
+      ],
+      "bbox": [
+        17.941485,
+        50.590072,
+        18.13739,
+        50.686879
+      ],
+      "surface": null,
+      "gpxFile": "propozycja-ustawkowa-2.gpx",
+      "gpxOriginalName": "propozycja ustawkowa 2.gpx"
+    },
+    {
+      "id": "propozycja-ustawkowa-3",
+      "categoryId": "1CPjShBpcQUS5enY6itI4B5Y3nYddc1LR",
+      "title": "propozycja ustawkowa 3",
+      "date": null,
+      "distanceKm": 44.0,
+      "ascentM": 114,
+      "descentM": 114,
+      "durationMin": null,
+      "start": [
+        17.947424,
+        50.682502
+      ],
+      "bbox": [
+        17.908507,
+        50.678529,
+        18.010143,
+        50.789291
+      ],
+      "surface": null,
+      "gpxFile": "propozycja-ustawkowa-3.gpx",
+      "gpxOriginalName": "propozycja ustawkowa 3.gpx"
+    },
+    {
+      "id": "propozycja-ustawkowa-4",
+      "categoryId": "1CPjShBpcQUS5enY6itI4B5Y3nYddc1LR",
+      "title": "propozycja ustawkowa 4",
+      "date": null,
+      "distanceKm": 44.2,
+      "ascentM": 110,
+      "descentM": 110,
+      "durationMin": null,
+      "start": [
+        17.947424,
+        50.682502
+      ],
+      "bbox": [
+        17.907052,
+        50.678529,
+        18.009937,
+        50.789291
+      ],
+      "surface": null,
+      "gpxFile": "propozycja-ustawkowa-4.gpx",
+      "gpxOriginalName": "propozycja ustawkowa 4.gpx"
+    },
+    {
+      "id": "trasa-w-kszta-cie-polski",
+      "categoryId": "1FDidnHW-pgHL8MsK5a2Nw9d5J0r9MVfk",
+      "title": "Trasa w kształcie Polski",
+      "date": null,
+      "distanceKm": 60.1,
+      "ascentM": 133,
+      "descentM": 132,
+      "durationMin": 183.2374333333333,
+      "start": [
+        17.970647,
+        50.611648
+      ],
+      "bbox": [
+        17.963359,
+        50.532373,
+        18.194516,
+        50.673173
+      ],
+      "surface": null,
+      "gpxFile": "trasa-w-kszta-cie-polski.gpx",
+      "gpxOriginalName": "Trasa_w_kształcie_Polski.gpx"
+    },
+    {
+      "id": "trasa-kamzik-altvater-prad-d-pocz-tek-karlova-stud-nka",
+      "categoryId": "1FDidnHW-pgHL8MsK5a2Nw9d5J0r9MVfk",
+      "title": "Trasa Kamzik Altvater Prad d pocz tek Karlova Stud nka",
+      "date": null,
+      "distanceKm": 49.2,
+      "ascentM": 1303,
+      "descentM": 1302,
+      "durationMin": 246.36963333333333,
+      "start": [
+        17.311758,
+        50.073898
+      ],
+      "bbox": [
+        17.149252,
+        50.066722,
+        17.311771,
+        50.142744
+      ],
+      "surface": null,
+      "gpxFile": "trasa-kamzik-altvater-prad-d-pocz-tek-karlova-stud-nka.gpx",
+      "gpxOriginalName": "Trasa_Kamzik_Altvater__Prad_d___pocz_tek__Karlova_Stud_nka_.gpx"
+    },
+    {
+      "id": "strada-ponale-lago-di-ledro-punta-larici",
+      "categoryId": "1FDidnHW-pgHL8MsK5a2Nw9d5J0r9MVfk",
+      "title": "Strada Ponale Lago di Ledro Punta Larici",
+      "date": null,
+      "distanceKm": 57.1,
+      "ascentM": 1398,
+      "descentM": 1400,
+      "durationMin": 526.4544166666667,
+      "start": [
+        10.870198,
+        45.874814
+      ],
+      "bbox": [
+        10.729667,
+        45.835255,
+        10.870465,
+        45.886121
+      ],
+      "surface": null,
+      "gpxFile": "strada-ponale-lago-di-ledro-punta-larici.gpx",
+      "gpxOriginalName": "Strada_Ponale___Lago_di_Ledro___Punta_Larici.gpx"
+    },
+    {
+      "id": "bia-a-nyska-vidnava-pisecna",
+      "categoryId": "1FDidnHW-pgHL8MsK5a2Nw9d5J0r9MVfk",
+      "title": "Biała Nyska - Vidnava - Pisecna",
+      "date": null,
+      "distanceKm": 77.8,
+      "ascentM": 738,
+      "descentM": 739,
+      "durationMin": 442.8833333333333,
+      "start": [
+        17.306202,
+        50.432416
+      ],
+      "bbox": [
+        17.12061,
+        50.277294,
+        17.351376,
+        50.432463
+      ],
+      "surface": null,
+      "gpxFile": "bia-a-nyska-vidnava-pisecna.gpx",
+      "gpxOriginalName": "Biała Nyska - Vidnava - Pisecna.gpx"
+    },
+    {
+      "id": "dolina-baryczy-stawy-milickie",
+      "categoryId": "1FDidnHW-pgHL8MsK5a2Nw9d5J0r9MVfk",
+      "title": "Dolina Baryczy Stawy Milickie",
+      "date": null,
+      "distanceKm": 105.4,
+      "ascentM": 421,
+      "descentM": 419,
+      "durationMin": 499.09041666666667,
+      "start": [
+        16.93692,
+        51.500374
+      ],
+      "bbox": [
+        16.936857,
+        51.460335,
+        17.514492,
+        51.544307
+      ],
+      "surface": null,
+      "gpxFile": "dolina-baryczy-stawy-milickie.gpx",
+      "gpxOriginalName": "Dolina_Baryczy___Stawy_Milickie.gpx"
+    },
+    {
+      "id": "giro-di-garda-1",
+      "categoryId": "1bFCLLoZr-k4_FmT6jkfyJOgtz-Rju1AW",
+      "title": "Giro di Garda-1",
+      "date": null,
+      "distanceKm": 150.1,
+      "ascentM": 829,
+      "descentM": 831,
+      "durationMin": 695.4944833333334,
+      "start": [
+        10.870355,
+        45.874863
+      ],
+      "bbox": [
+        10.509116,
+        45.439155,
+        10.877089,
+        45.88488
+      ],
+      "surface": null,
+      "gpxFile": "giro-di-garda-1.gpx",
+      "gpxOriginalName": "Giro_di_Garda-1.gpx"
+    },
+    {
+      "id": "szlak-wok-tatr",
+      "categoryId": "1FDidnHW-pgHL8MsK5a2Nw9d5J0r9MVfk",
+      "title": "szlak wok tatr",
+      "date": null,
+      "distanceKm": 285.1,
+      "ascentM": 2869,
+      "descentM": 2870,
+      "durationMin": 2994.733333333333,
+      "start": [
+        20.014563,
+        49.474962
+      ],
+      "bbox": [
+        19.529613,
+        49.006275,
+        20.458085,
+        49.487726
+      ],
+      "surface": null,
+      "gpxFile": "szlak-wok-tatr.gpx",
+      "gpxOriginalName": "szlak_wok___tatr.gpx"
+    },
+    {
+      "id": "bozejow-gravel",
+      "categoryId": "1HB4ZJ4Bnt3hXCSBBpVvQVmri9wLFzpd7",
+      "title": "bozejow gravel",
+      "date": null,
+      "distanceKm": 87.7,
+      "ascentM": 318,
+      "descentM": 321,
+      "durationMin": 264.50446666666664,
+      "start": [
+        18.054878,
+        50.926327
+      ],
+      "bbox": [
+        17.786412,
+        50.802627,
+        18.097973,
+        50.928165
+      ],
+      "surface": null,
+      "gpxFile": "bozejow-gravel.gpx",
+      "gpxOriginalName": "bozejow_gravel.gpx"
+    },
+    {
+      "id": "ustawka-26-raciborska-oska-lite",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #26 - Raciborska Ośka Lite",
+      "date": null,
+      "distanceKm": 80.0,
+      "ascentM": 358,
+      "descentM": 357,
+      "durationMin": 316.10796666666664,
+      "start": [
+        18.219481,
+        50.089895
+      ],
+      "bbox": [
+        18.215644,
+        50.029272,
+        18.491122,
+        50.232847
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-26-raciborska-oska-lite.gpx",
+      "gpxOriginalName": "Ustawka #26 - Raciborska Ośka Lite.gpx"
+    },
+    {
+      "id": "ustawka-26-raciborska-oska",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #26 - Raciborska Ośka",
+      "date": null,
+      "distanceKm": 112.1,
+      "ascentM": 427,
+      "descentM": 426,
+      "durationMin": 463.86405,
+      "start": [
+        18.219496,
+        50.089939
+      ],
+      "bbox": [
+        18.215644,
+        50.015727,
+        18.501132,
+        50.270314
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-26-raciborska-oska.gpx",
+      "gpxOriginalName": "Ustawka #26 - Raciborska Ośka.gpx"
+    },
+    {
+      "id": "ustawka-27-medalowa-dogrywka-tomex-gravel",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #27 - Medalowa Dogrywka Tomex Gravel",
+      "date": null,
+      "distanceKm": 79.4,
+      "ascentM": 323,
+      "descentM": 324,
+      "durationMin": 201.01666666666668,
+      "start": [
+        17.53804525360465,
+        50.41948579251766
+      ],
+      "bbox": [
+        17.53565238788724,
+        50.41871943511069,
+        17.8189193084836,
+        50.59830732643604
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-27-medalowa-dogrywka-tomex-gravel.gpx",
+      "gpxOriginalName": "Ustawka #27 - Medalowa Dogrywka Tomex Gravel.gpx"
+    },
+    {
+      "id": "ustawka-10-koz-owa-gora-czyli-gravelovy-sztos",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #10 - Kozłowa Góra - czyli GraveLovy Sztos",
+      "date": null,
+      "distanceKm": 135.3,
+      "ascentM": 356,
+      "descentM": 356,
+      "durationMin": 643.9434333333334,
+      "start": [
+        18.522694,
+        50.586417
+      ],
+      "bbox": [
+        18.522694,
+        50.409903,
+        18.993139,
+        50.656708
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-10-koz-owa-gora-czyli-gravelovy-sztos.gpx",
+      "gpxOriginalName": "Ustawka #10 - Kozłowa Góra - czyli GraveLovy Sztos.gpx"
+    },
+    {
+      "id": "ustawka-24-stobrawska-wstega-ii-gravelova-sroda-100-bis",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #24 - Stobrawska Wstęga II - GraveLova Środa #100 BIS",
+      "date": null,
+      "distanceKm": 99.4,
+      "ascentM": 190,
+      "descentM": 189,
+      "durationMin": 343.0059333333333,
+      "start": [
+        17.869524,
+        50.84489
+      ],
+      "bbox": [
+        17.628864,
+        50.796076,
+        18.089576,
+        50.914731
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-24-stobrawska-wstega-ii-gravelova-sroda-100-bis.gpx",
+      "gpxOriginalName": "Ustawka #24 - Stobrawska Wstęga II - GraveLova Środa #100 BIS.gpx"
+    },
+    {
+      "id": "ustawka-22-jesenicki-szturm",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #22 - Jesenicki Szturm",
+      "date": null,
+      "distanceKm": 70.7,
+      "ascentM": 1717,
+      "descentM": 1716,
+      "durationMin": null,
+      "start": [
+        17.29797,
+        50.22932
+      ],
+      "bbox": [
+        17.14925,
+        50.06672,
+        17.38045,
+        50.22971
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-22-jesenicki-szturm.gpx",
+      "gpxOriginalName": "Ustawka #22 - Jesenicki Szturm.gpx"
+    },
+    {
+      "id": "ustawka-25-tomex-gravel-objazd-trasy",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #25 - Tomex Gravel - objazd trasy",
+      "date": null,
+      "distanceKm": 79.6,
+      "ascentM": 441,
+      "descentM": 435,
+      "durationMin": 229.48333333333332,
+      "start": [
+        17.538092024624348,
+        50.419450253248215
+      ],
+      "bbox": [
+        17.5356303434819,
+        50.41871314868331,
+        17.81891738064587,
+        50.598307410255075
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-25-tomex-gravel-objazd-trasy.gpx",
+      "gpxOriginalName": "Ustawka #25 - Tomex Gravel - objazd trasy.gpx"
+    },
+    {
+      "id": "ultra-ustawka-02-opolski-horyzont",
+      "categoryId": "1YDD47YpoczEZX-GuAnYhv63K3zH_UoXO",
+      "title": "Ultra Ustawka #02 - Opolski Horyzont",
+      "date": null,
+      "distanceKm": 578.9,
+      "ascentM": 2751,
+      "descentM": 2753,
+      "durationMin": 1403.4930833333335,
+      "start": [
+        17.466719,
+        50.863411
+      ],
+      "bbox": [
+        17.005133,
+        49.998378,
+        18.657364,
+        51.166787
+      ],
+      "surface": null,
+      "gpxFile": "ultra-ustawka-02-opolski-horyzont.gpx",
+      "gpxOriginalName": "Ultra Ustawka #02 - Opolski Horyzont.gpx"
+    },
+    {
+      "id": "ustawka-23-wariant-krotszy-szychta-na-szutrolandii",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #23 (wariant krótszy) - Szychta na Szutrolandii",
+      "date": null,
+      "distanceKm": 74.1,
+      "ascentM": 293,
+      "descentM": 293,
+      "durationMin": null,
+      "start": [
+        18.522270000000002,
+        50.58619
+      ],
+      "bbox": [
+        18.507250000000003,
+        50.53764,
+        18.8454,
+        50.62821
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-23-wariant-krotszy-szychta-na-szutrolandii.gpx",
+      "gpxOriginalName": "Ustawka #23 (wariant krótszy) - Szychta na Szutrolandii.gpx"
+    },
+    {
+      "id": "ustawka-19-do-boju-polsko",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #19 - Do boju Polsko!",
+      "date": null,
+      "distanceKm": 139.9,
+      "ascentM": 345,
+      "descentM": 346,
+      "durationMin": 656.10615,
+      "start": [
+        17.947441,
+        50.682369
+      ],
+      "bbox": [
+        17.761244,
+        50.626858,
+        18.200962,
+        50.894881
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-19-do-boju-polsko.gpx",
+      "gpxOriginalName": "Ustawka #19 - Do boju Polsko!.gpx"
+    },
+    {
+      "id": "ultra-ustawka-01-go-to-hel",
+      "categoryId": "1YDD47YpoczEZX-GuAnYhv63K3zH_UoXO",
+      "title": "Ultra Ustawka #01 - Go to Hel",
+      "date": null,
+      "distanceKm": 681.9,
+      "ascentM": 1728,
+      "descentM": 1881,
+      "durationMin": 1710.2224833333335,
+      "start": [
+        17.922537,
+        50.668128
+      ],
+      "bbox": [
+        17.900121,
+        50.668128,
+        18.862619,
+        54.790454
+      ],
+      "surface": null,
+      "gpxFile": "ultra-ustawka-01-go-to-hel.gpx",
+      "gpxOriginalName": "Ultra Ustawka #01 - Go to Hel.gpx"
+    },
+    {
+      "id": "ustawka-18-gravelova-randka-jesien",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #18 - GraveLova 🧡 Randka - jesień",
+      "date": null,
+      "distanceKm": 76.9,
+      "ascentM": 299,
+      "descentM": 299,
+      "durationMin": 343.40524999999997,
+      "start": [
+        18.001442,
+        50.719273
+      ],
+      "bbox": [
+        17.880809,
+        50.715862,
+        18.217455,
+        50.873226
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-18-gravelova-randka-jesien.gpx",
+      "gpxOriginalName": "Ustawka #18 - GraveLova 🧡 Randka - jesień.gpx"
+    },
+    {
+      "id": "ustawka-17-objazd-trasy-gravelove-bory-120-km",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #17 - Objazd trasy GraveLove Bory 120 km",
+      "date": null,
+      "distanceKm": 120.5,
+      "ascentM": 444,
+      "descentM": 443,
+      "durationMin": 599.5158166666666,
+      "start": [
+        17.603724,
+        50.615675
+      ],
+      "bbox": [
+        17.570179,
+        50.468124,
+        17.916466,
+        50.615675
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-17-objazd-trasy-gravelove-bory-120-km.gpx",
+      "gpxOriginalName": "Ustawka #17 - Objazd trasy GraveLove Bory 120 km.gpx"
+    },
+    {
+      "id": "ustawka-16-projekt-riese",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #16 - Projekt Riese",
+      "date": null,
+      "distanceKm": 314.5,
+      "ascentM": 1998,
+      "descentM": 1996,
+      "durationMin": 807.9966333333334,
+      "start": [
+        17.961612,
+        50.675171
+      ],
+      "bbox": [
+        16.291467,
+        50.476893,
+        17.961678,
+        50.888098
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-16-projekt-riese.gpx",
+      "gpxOriginalName": "Ustawka #16 - Projekt Riese.gpx"
+    },
+    {
+      "id": "ustawka-15-tour-de-opole",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #15 - Tour de Opole",
+      "date": null,
+      "distanceKm": 119.6,
+      "ascentM": 327,
+      "descentM": 325,
+      "durationMin": 496.9326333333333,
+      "start": [
+        17.900883,
+        50.721351
+      ],
+      "bbox": [
+        17.644099,
+        50.476731,
+        18.098859,
+        50.763651
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-15-tour-de-opole.gpx",
+      "gpxOriginalName": "Ustawka #15 - Tour de Opole.gpx"
+    },
+    {
+      "id": "campfire-130",
+      "categoryId": "1UGPmUncKybfzSg3_mouZDj1uHcn7E9sC",
+      "title": "CampFire 130",
+      "date": null,
+      "distanceKm": 130.6,
+      "ascentM": 600,
+      "descentM": 600,
+      "durationMin": null,
+      "start": [
+        18.52276,
+        50.58646
+      ],
+      "bbox": [
+        18.34043,
+        50.476870000000005,
+        18.657120000000003,
+        50.66133000000001
+      ],
+      "surface": null,
+      "gpxFile": "campfire-130.gpx",
+      "gpxOriginalName": "CampFire 130.gpx"
+    },
+    {
+      "id": "campfire-83",
+      "categoryId": "1UGPmUncKybfzSg3_mouZDj1uHcn7E9sC",
+      "title": "CampFire 83",
+      "date": null,
+      "distanceKm": 83.6,
+      "ascentM": 300,
+      "descentM": 300,
+      "durationMin": null,
+      "start": [
+        18.52276,
+        50.58646
+      ],
+      "bbox": [
+        18.34043,
+        50.569750000000006,
+        18.657120000000003,
+        50.66133000000001
+      ],
+      "surface": null,
+      "gpxFile": "campfire-83.gpx",
+      "gpxOriginalName": "CampFire 83.gpx"
+    },
+    {
+      "id": "ustawka-11-gravel-bory-stobrawskie-2024",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #11 - Gravel Bory Stobrawskie-2024",
+      "date": null,
+      "distanceKm": 87.4,
+      "ascentM": 329,
+      "descentM": 326,
+      "durationMin": null,
+      "start": [
+        18.0548776,
+        50.9263267
+      ],
+      "bbox": [
+        17.7863732,
+        50.8026141,
+        18.0977998,
+        50.9281583
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-11-gravel-bory-stobrawskie-2024.gpx",
+      "gpxOriginalName": "Ustawka #11 - Gravel Bory Stobrawskie-2024.gpx"
+    },
+    {
+      "id": "ustawka-4-runda-spadajacych-lisci",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #4 - Runda Spadających Liści",
+      "date": null,
+      "distanceKm": 88.3,
+      "ascentM": 372,
+      "descentM": 372,
+      "durationMin": 463.6445333333333,
+      "start": [
+        17.924498,
+        50.646233
+      ],
+      "bbox": [
+        17.688479,
+        50.477007,
+        17.96187,
+        50.647423
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-4-runda-spadajacych-lisci.gpx",
+      "gpxOriginalName": "Ustawka #4 - Runda Spadających Liści  .gpx"
+    },
+    {
+      "id": "2026-07-01-gravelova-sroda-111-pretty-woman",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #111 - Pretty Woman",
+      "date": "2026-07-01",
+      "distanceKm": 45.2,
+      "ascentM": 132,
+      "descentM": 132,
+      "durationMin": 144.74291666666667,
+      "start": [
+        17.865458,
+        50.648418
+      ],
+      "bbox": [
+        17.734025,
+        50.52973,
+        17.867884,
+        50.648418
+      ],
+      "surface": null,
+      "gpxFile": "2026-07-01-gravelova-sroda-111-pretty-woman.gpx",
+      "gpxOriginalName": "2026/07/01 - GraveLova Środa #111 - Pretty Woman.gpx"
+    },
+    {
+      "id": "2026-06-24-gravelova-sroda-110-s-oneczny-patrol",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #110 - Słoneczny patrol",
+      "date": "2026-06-24",
+      "distanceKm": 62.9,
+      "ascentM": 140,
+      "descentM": 140,
+      "durationMin": 295.39293333333336,
+      "start": [
+        17.900332,
+        50.72523
+      ],
+      "bbox": [
+        17.797144,
+        50.72523,
+        17.962594,
+        50.884911
+      ],
+      "surface": null,
+      "gpxFile": "2026-06-24-gravelova-sroda-110-s-oneczny-patrol.gpx",
+      "gpxOriginalName": "2026/06/24 - GraveLova Środa #110 - Słoneczny patrol.gpx"
+    },
+    {
+      "id": "2026-06-10-gravelova-sroda-108-ostry-dyzur",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #108 - Ostry dyżur",
+      "date": "2026-06-10",
+      "distanceKm": 49.9,
+      "ascentM": 114,
+      "descentM": 115,
+      "durationMin": 197.05951666666667,
+      "start": [
+        17.941483,
+        50.650257
+      ],
+      "bbox": [
+        17.938553,
+        50.58412,
+        18.11267,
+        50.653632
+      ],
+      "surface": null,
+      "gpxFile": "2026-06-10-gravelova-sroda-108-ostry-dyzur.gpx",
+      "gpxOriginalName": "2026/06/10 - GraveLova Środa #108 - Ostry dyżur.gpx"
+    },
+    {
+      "id": "2106-06-17-gravelova-sroda-109-wzgorza-maja-oczy",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #109 - Wzgórza mają oczy",
+      "date": "2106-06-17",
+      "distanceKm": 48.1,
+      "ascentM": 112,
+      "descentM": 112,
+      "durationMin": 155.58738333333335,
+      "start": [
+        18.003011,
+        50.719251
+      ],
+      "bbox": [
+        18.003011,
+        50.7191,
+        18.222721,
+        50.78542
+      ],
+      "surface": null,
+      "gpxFile": "2106-06-17-gravelova-sroda-109-wzgorza-maja-oczy.gpx",
+      "gpxOriginalName": "2106/06/17 - GraveLova Środa #109 - Wzgórza mają oczy.gpx"
+    },
+    {
+      "id": "2026-06-03-gravelova-sroda-107-kochaj-albo-rzuc",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #107 - Kochaj albo rzuć",
+      "date": "2026-06-03",
+      "distanceKm": 49.5,
+      "ascentM": 149,
+      "descentM": 149,
+      "durationMin": 210.11535,
+      "start": [
+        17.865587,
+        50.648537
+      ],
+      "bbox": [
+        17.613232,
+        50.635394,
+        17.865587,
+        50.69159
+      ],
+      "surface": null,
+      "gpxFile": "2026-06-03-gravelova-sroda-107-kochaj-albo-rzuc.gpx",
+      "gpxOriginalName": "2026/06/03 - GraveLova Środa #107 - Kochaj albo rzuć.gpx"
+    },
+    {
+      "id": "2026-05-13-gravelova-sroda-104-w-adca-pierscieni-dwie-wieze",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #104 - Władca pierścieni: Dwie wieże",
+      "date": "2026-05-13",
+      "distanceKm": 49.6,
+      "ascentM": 231,
+      "descentM": 216,
+      "durationMin": null,
+      "start": [
+        17.986502051353455,
+        50.662776650860906
+      ],
+      "bbox": [
+        17.949514389038086,
+        50.61255463398993,
+        18.142054080963135,
+        50.70089587010443
+      ],
+      "surface": null,
+      "gpxFile": "2026-05-13-gravelova-sroda-104-w-adca-pierscieni-dwie-wieze.gpx",
+      "gpxOriginalName": "2026/05/13 - GraveLova Środa #104 - Władca pierścieni: Dwie wieże.gpx"
+    },
+    {
+      "id": "2026-05-27-gravelova-sroda-106-nie-ma-mocnych",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #106 - Nie ma mocnych",
+      "date": "2026-05-27",
+      "distanceKm": 51.4,
+      "ascentM": 64,
+      "descentM": 65,
+      "durationMin": 209.4525,
+      "start": [
+        17.907253,
+        50.702945
+      ],
+      "bbox": [
+        17.682372,
+        50.691374,
+        17.907955,
+        50.790341
+      ],
+      "surface": null,
+      "gpxFile": "2026-05-27-gravelova-sroda-106-nie-ma-mocnych.gpx",
+      "gpxOriginalName": "2026/05/27 - GraveLova Środa #106 - Nie ma mocnych.gpx"
+    },
+    {
+      "id": "2026-05-06-gravelova-sroda-103-x-5uper-bike-szybcy-i-wsciekli",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #103 x 5uper Bike - Szybcy i wściekli",
+      "date": "2026-05-06",
+      "distanceKm": 62.0,
+      "ascentM": 161,
+      "descentM": 162,
+      "durationMin": 327.6415,
+      "start": [
+        17.960421,
+        50.672597
+      ],
+      "bbox": [
+        17.948271,
+        50.621106,
+        18.181343,
+        50.711977
+      ],
+      "surface": null,
+      "gpxFile": "2026-05-06-gravelova-sroda-103-x-5uper-bike-szybcy-i-wsciekli.gpx",
+      "gpxOriginalName": "2026/05/06 - GraveLova Środa #103 x 5uper Bike - Szybcy i wściekli.gpx"
+    },
+    {
+      "id": "2026-05-20-gravelova-sroda-105-sami-swoi",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #105 - Sami swoi",
+      "date": "2026-05-20",
+      "distanceKm": 60.6,
+      "ascentM": 177,
+      "descentM": 177,
+      "durationMin": 207.30803333333333,
+      "start": [
+        17.909294,
+        50.652106
+      ],
+      "bbox": [
+        17.684681,
+        50.525012,
+        17.933778,
+        50.669955
+      ],
+      "surface": null,
+      "gpxFile": "2026-05-20-gravelova-sroda-105-sami-swoi.gpx",
+      "gpxOriginalName": "2026/05/20 - GraveLova Środa #105 - Sami swoi.gpx"
+    },
+    {
+      "id": "2026-04-29-gravelova-sroda-102-x-pop-yard-czterej-pancerni-i-pies",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #102 x Pop Yard - Czterej pancerni i pies",
+      "date": "2026-04-29",
+      "distanceKm": 63.2,
+      "ascentM": 178,
+      "descentM": 181,
+      "durationMin": 244.3594,
+      "start": [
+        17.931014,
+        50.656312
+      ],
+      "bbox": [
+        17.930365,
+        50.604645,
+        18.206365,
+        50.697292
+      ],
+      "surface": null,
+      "gpxFile": "2026-04-29-gravelova-sroda-102-x-pop-yard-czterej-pancerni-i-pies.gpx",
+      "gpxOriginalName": "2026/04/29 - GraveLova Środa #102 x Pop Yard - Czterej pancerni i pies.gpx"
+    },
+    {
+      "id": "2026-04-15-gravelova-sroda-100-top-gun",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #100 - Top Gun",
+      "date": "2026-04-15",
+      "distanceKm": 45.2,
+      "ascentM": 121,
+      "descentM": 123,
+      "durationMin": 174.07171666666667,
+      "start": [
+        17.947478,
+        50.682105
+      ],
+      "bbox": [
+        17.932195,
+        50.676826,
+        18.178288,
+        50.71272
+      ],
+      "surface": null,
+      "gpxFile": "2026-04-15-gravelova-sroda-100-top-gun.gpx",
+      "gpxOriginalName": "2026/04/15 - GraveLova Środa #100 - Top Gun.gpx"
+    },
+    {
+      "id": "2026-04-08-gravelova-sroda-099-braveheart-waleczne-serce",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #099 - Braveheart. Waleczne serce",
+      "date": "2026-04-08",
+      "distanceKm": 46.6,
+      "ascentM": 106,
+      "descentM": 105,
+      "durationMin": 179.00106666666667,
+      "start": [
+        17.931026,
+        50.763678
+      ],
+      "bbox": [
+        17.929067,
+        50.729665,
+        18.091511,
+        50.841016
+      ],
+      "surface": null,
+      "gpxFile": "2026-04-08-gravelova-sroda-099-braveheart-waleczne-serce.gpx",
+      "gpxOriginalName": "2026/04/08 - GraveLova Środa #099 - Braveheart. Waleczne serce.gpx"
+    },
+    {
+      "id": "2026-03-25-gravelova-sroda-097-straznik-teksasu",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #097 - Strażnik Teksasu",
+      "date": "2026-03-25",
+      "distanceKm": 43.1,
+      "ascentM": 90,
+      "descentM": 91,
+      "durationMin": 162.89421666666667,
+      "start": [
+        17.970902,
+        50.60897
+      ],
+      "bbox": [
+        17.957338,
+        50.539865,
+        18.12675,
+        50.613045
+      ],
+      "surface": null,
+      "gpxFile": "2026-03-25-gravelova-sroda-097-straznik-teksasu.gpx",
+      "gpxOriginalName": "2026/03/25 - GraveLova Środa #097 - Strażnik Teksasu.gpx"
+    },
+    {
+      "id": "2026-04-01-gravelova-sroda-098-iluzjonista",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #098 - Iluzjonista",
+      "date": "2026-04-01",
+      "distanceKm": 43.9,
+      "ascentM": 126,
+      "descentM": 126,
+      "durationMin": 162.59949999999998,
+      "start": [
+        17.865401,
+        50.64849
+      ],
+      "bbox": [
+        17.694555,
+        50.588269,
+        17.867884,
+        50.657597
+      ],
+      "surface": null,
+      "gpxFile": "2026-04-01-gravelova-sroda-098-iluzjonista.gpx",
+      "gpxOriginalName": "2026/04/01 - GraveLova Środa #098 - Iluzjonista.gpx"
+    },
+    {
+      "id": "2026-02-25-gravelova-sroda-093-kapitan-ameryka",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #093 - Kapitan Ameryka",
+      "date": "2026-02-25",
+      "distanceKm": 36.9,
+      "ascentM": 55,
+      "descentM": 57,
+      "durationMin": 70.04588333333332,
+      "start": [
+        17.906761,
+        50.702869
+      ],
+      "bbox": [
+        17.786265,
+        50.69657,
+        17.931007,
+        50.786363
+      ],
+      "surface": null,
+      "gpxFile": "2026-02-25-gravelova-sroda-093-kapitan-ameryka.gpx",
+      "gpxOriginalName": "2026/02/25 - GraveLova Środa #093 - Kapitan Ameryka.gpx"
+    },
+    {
+      "id": "2026-02-11-gravelova-sroda-091-prze-ecz-ocalonych",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #091 - Przełęcz Ocalonych",
+      "date": "2026-02-11",
+      "distanceKm": 38.0,
+      "ascentM": 60,
+      "descentM": 60,
+      "durationMin": 111.2686,
+      "start": [
+        17.932839,
+        50.704301
+      ],
+      "bbox": [
+        17.859473,
+        50.704278,
+        18.00482,
+        50.810206
+      ],
+      "surface": null,
+      "gpxFile": "2026-02-11-gravelova-sroda-091-prze-ecz-ocalonych.gpx",
+      "gpxOriginalName": "2026/02/11 - GraveLova Środa #091 - Przełęcz Ocalonych.gpx"
+    },
+    {
+      "id": "2026-02-04-gravelova-sroda-090-nienawistna-osemka",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #090 - Nienawistna ósemka",
+      "date": "2026-02-04",
+      "distanceKm": 37.6,
+      "ascentM": 126,
+      "descentM": 125,
+      "durationMin": 153.9605,
+      "start": [
+        17.922479,
+        50.65937
+      ],
+      "bbox": [
+        17.749384,
+        50.566052,
+        17.922479,
+        50.659446
+      ],
+      "surface": null,
+      "gpxFile": "2026-02-04-gravelova-sroda-090-nienawistna-osemka.gpx",
+      "gpxOriginalName": "2026/02/04 - GraveLova Środa #090 - Nienawistna ósemka.gpx"
+    },
+    {
+      "id": "2026-02-18-gravelova-sroda-092-b-ekitna-laguna",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #092 - Błękitna laguna",
+      "date": "2026-02-18",
+      "distanceKm": 43.9,
+      "ascentM": 101,
+      "descentM": 101,
+      "durationMin": 198.0380166666667,
+      "start": [
+        17.953838,
+        50.676833
+      ],
+      "bbox": [
+        17.949564,
+        50.657582,
+        18.113173,
+        50.736255
+      ],
+      "surface": null,
+      "gpxFile": "2026-02-18-gravelova-sroda-092-b-ekitna-laguna.gpx",
+      "gpxOriginalName": "2026/02/18 - GraveLova Środa #092 - Błękitna laguna.gpx"
+    },
+    {
+      "id": "2026-01-28-gravelova-sroda-089-ch-opaki-nie-p-acza",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #089 - Chłopaki nie płaczą",
+      "date": "2026-01-28",
+      "distanceKm": 40.2,
+      "ascentM": 87,
+      "descentM": 87,
+      "durationMin": 183.56186666666665,
+      "start": [
+        17.990076,
+        50.629344
+      ],
+      "bbox": [
+        17.981137,
+        50.570561,
+        18.130133,
+        50.636753
+      ],
+      "surface": null,
+      "gpxFile": "2026-01-28-gravelova-sroda-089-ch-opaki-nie-p-acza.gpx",
+      "gpxOriginalName": "2026/01/28 - GraveLova Środa #089 - Chłopaki nie płaczą.gpx"
+    },
+    {
+      "id": "2026-01-21-gravelova-sroda-088-reggae-na-lodzie",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #088 - Reggae na lodzie",
+      "date": "2026-01-21",
+      "distanceKm": 41.0,
+      "ascentM": 110,
+      "descentM": 110,
+      "durationMin": 95.95431666666667,
+      "start": [
+        18.044469,
+        50.649827
+      ],
+      "bbox": [
+        18.043277,
+        50.608464,
+        18.220662,
+        50.664162
+      ],
+      "surface": null,
+      "gpxFile": "2026-01-21-gravelova-sroda-088-reggae-na-lodzie.gpx",
+      "gpxOriginalName": "2026/01/21 - GraveLova Środa #088 - Reggae na lodzie.gpx"
+    },
+    {
+      "id": "2026-01-14-gravelova-sroda-087-szeregowiec-ryan",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #087 - Szeregowiec Ryan",
+      "date": "2026-01-14",
+      "distanceKm": 42.4,
+      "ascentM": 74,
+      "descentM": 74,
+      "durationMin": 145.86576666666667,
+      "start": [
+        17.9477,
+        50.682424
+      ],
+      "bbox": [
+        17.872198,
+        50.681708,
+        18.001148,
+        50.800998
+      ],
+      "surface": null,
+      "gpxFile": "2026-01-14-gravelova-sroda-087-szeregowiec-ryan.gpx",
+      "gpxOriginalName": "2026/01/14 - GraveLova Środa #087 - Szeregowiec Ryan.gpx"
+    },
+    {
+      "id": "2026-01-07-gravelova-sroda-086-epoka-lodowcowa",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #086 - Epoka Lodowcowa",
+      "date": "2026-01-07",
+      "distanceKm": 36.5,
+      "ascentM": 84,
+      "descentM": 83,
+      "durationMin": 91.20063333333333,
+      "start": [
+        17.922496,
+        50.659311
+      ],
+      "bbox": [
+        17.746322,
+        50.618153,
+        17.929582,
+        50.678198
+      ],
+      "surface": null,
+      "gpxFile": "2026-01-07-gravelova-sroda-086-epoka-lodowcowa.gpx",
+      "gpxOriginalName": "2026/01/07 - GraveLova Środa #086 - Epoka Lodowcowa.gpx"
+    },
+    {
+      "id": "2025-12-17-gravelova-sroda-085-ostatni-ryk-lwa",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #085 - Ostatni Ryk Lwa",
+      "date": "2025-12-17",
+      "distanceKm": 40.7,
+      "ascentM": 85,
+      "descentM": 85,
+      "durationMin": 174.528,
+      "start": [
+        17.947549,
+        50.682417
+      ],
+      "bbox": [
+        17.900477,
+        50.678522,
+        18.094213,
+        50.743036
+      ],
+      "surface": null,
+      "gpxFile": "2025-12-17-gravelova-sroda-085-ostatni-ryk-lwa.gpx",
+      "gpxOriginalName": "2025/12/17 - GraveLova Środa #085 - Ostatni Ryk Lwa.gpx"
+    },
+    {
+      "id": "2025-12-10-gravelova-sroda-084-swietliki-gonia-renifera",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #084 - Świetliki gonią Renifera",
+      "date": "2025-12-10",
+      "distanceKm": 38.9,
+      "ascentM": 131,
+      "descentM": 127,
+      "durationMin": 165.90366666666665,
+      "start": [
+        17.92248,
+        50.659367
+      ],
+      "bbox": [
+        17.819059,
+        50.570329,
+        17.926164,
+        50.666533
+      ],
+      "surface": null,
+      "gpxFile": "2025-12-10-gravelova-sroda-084-swietliki-gonia-renifera.gpx",
+      "gpxOriginalName": "2025/12/10 - GraveLova Środa #084 - Świetliki gonią Renifera.gpx"
+    },
+    {
+      "id": "2025-11-19-gravelova-sroda-081-mrozny-gil",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #081 - Mroźny Gil",
+      "date": "2025-11-19",
+      "distanceKm": 40.0,
+      "ascentM": 81,
+      "descentM": 81,
+      "durationMin": 161.06195,
+      "start": [
+        18.001526,
+        50.719244
+      ],
+      "bbox": [
+        17.914235,
+        50.718643,
+        18.018826,
+        50.833637
+      ],
+      "surface": null,
+      "gpxFile": "2025-11-19-gravelova-sroda-081-mrozny-gil.gpx",
+      "gpxOriginalName": "2025/11/19 - GraveLova Środa #081 - Mroźny Gil.gpx"
+    },
+    {
+      "id": "2025-12-03-gravelova-sroda-083-bizon-na-wypasie",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #083 - Bizon na Wypasie",
+      "date": "2025-12-03",
+      "distanceKm": 41.0,
+      "ascentM": 81,
+      "descentM": 81,
+      "durationMin": 267.9553833333333,
+      "start": [
+        17.9477,
+        50.682424
+      ],
+      "bbox": [
+        17.932195,
+        50.638335,
+        18.075321,
+        50.71493
+      ],
+      "surface": null,
+      "gpxFile": "2025-12-03-gravelova-sroda-083-bizon-na-wypasie.gpx",
+      "gpxOriginalName": "2025/12/03 - GraveLova Środa #083 - Bizon na Wypasie.gpx"
+    },
+    {
+      "id": "2025-11-12-gravelova-sroda-080-pogon-wilka",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #080 - Pogoń Wilka",
+      "date": "2025-11-12",
+      "distanceKm": 44.2,
+      "ascentM": 112,
+      "descentM": 107,
+      "durationMin": 184.16621666666666,
+      "start": [
+        17.94251,
+        50.64693
+      ],
+      "bbox": [
+        17.94251,
+        50.591967,
+        18.137391,
+        50.657184
+      ],
+      "surface": null,
+      "gpxFile": "2025-11-12-gravelova-sroda-080-pogon-wilka.gpx",
+      "gpxOriginalName": "2025/11/12 - GraveLova Środa #080 - Pogoń Wilka.gpx"
+    },
+    {
+      "id": "2025-11-05-gravelova-sroda-079-madra-sowa",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #079 - Mądra Sowa",
+      "date": "2025-11-05",
+      "distanceKm": 42.7,
+      "ascentM": 61,
+      "descentM": 65,
+      "durationMin": 182.38636666666667,
+      "start": [
+        17.915772,
+        50.691809
+      ],
+      "bbox": [
+        17.748344,
+        50.671723,
+        17.919621,
+        50.748218
+      ],
+      "surface": null,
+      "gpxFile": "2025-11-05-gravelova-sroda-079-madra-sowa.gpx",
+      "gpxOriginalName": "2025/11/05 - GraveLova Środa #079 - Mądra Sowa.gpx"
+    },
+    {
+      "id": "2025-11-05-gravelova-sroda-079-madra-sowka",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #079 - Mądra Sówka",
+      "date": "2025-11-05",
+      "distanceKm": 29.6,
+      "ascentM": 31,
+      "descentM": 37,
+      "durationMin": 128.16556666666668,
+      "start": [
+        17.915772,
+        50.691809
+      ],
+      "bbox": [
+        17.792583,
+        50.688879,
+        17.919621,
+        50.740279
+      ],
+      "surface": null,
+      "gpxFile": "2025-11-05-gravelova-sroda-079-madra-sowka.gpx",
+      "gpxOriginalName": "2025/11/05 - GraveLova Środa #079 - Mądra Sówka.gpx"
+    },
+    {
+      "id": "2025-10-29-gravelova-sroda-078-odrzanska-ges",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #078 - Odrzańska Gęś",
+      "date": "2025-10-29",
+      "distanceKm": 50.2,
+      "ascentM": 100,
+      "descentM": 99,
+      "durationMin": 210.90888333333334,
+      "start": [
+        17.890858,
+        50.661196
+      ],
+      "bbox": [
+        17.733334,
+        50.661196,
+        17.890858,
+        50.761044
+      ],
+      "surface": null,
+      "gpxFile": "2025-10-29-gravelova-sroda-078-odrzanska-ges.gpx",
+      "gpxOriginalName": "2025/10/29 - GraveLova Środa #078 - Odrzańska Gęś.gpx"
+    },
+    {
+      "id": "2025-10-22-gravelova-sroda-077-pedzace-wiewiorki",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #077 - Pędzące Wiewiórki",
+      "date": "2025-10-22",
+      "distanceKm": 45.5,
+      "ascentM": 111,
+      "descentM": 113,
+      "durationMin": 162.28053333333335,
+      "start": [
+        17.974734,
+        50.669126
+      ],
+      "bbox": [
+        17.971491,
+        50.539865,
+        18.111995,
+        50.669247
+      ],
+      "surface": null,
+      "gpxFile": "2025-10-22-gravelova-sroda-077-pedzace-wiewiorki.gpx",
+      "gpxOriginalName": "2025/10/22 - GraveLova Środa #077 - Pędzące Wiewiórki.gpx"
+    },
+    {
+      "id": "2025-10-15-gravelova-sroda-076-nie-draznij-padalca",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #076 - Nie Drażnij Padalca",
+      "date": "2025-10-15",
+      "distanceKm": 42.5,
+      "ascentM": 118,
+      "descentM": 118,
+      "durationMin": 209.94486666666666,
+      "start": [
+        17.947478,
+        50.682105
+      ],
+      "bbox": [
+        17.946871,
+        50.669092,
+        18.12376,
+        50.711335
+      ],
+      "surface": null,
+      "gpxFile": "2025-10-15-gravelova-sroda-076-nie-draznij-padalca.gpx",
+      "gpxOriginalName": "2025/10/15 - GraveLova Środa #076 - Nie Drażnij Padalca.gpx"
+    },
+    {
+      "id": "2025-10-08-gravelova-sroda-075-zabie-udka-w-paryzu",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #075 - Żabie Udka w Paryżu",
+      "date": "2025-10-08",
+      "distanceKm": 48.2,
+      "ascentM": 87,
+      "descentM": 87,
+      "durationMin": 166.73165,
+      "start": [
+        17.935747,
+        50.806217
+      ],
+      "bbox": [
+        17.83368,
+        50.803487,
+        17.987911,
+        50.950565
+      ],
+      "surface": null,
+      "gpxFile": "2025-10-08-gravelova-sroda-075-zabie-udka-w-paryzu.gpx",
+      "gpxOriginalName": "2025/10/08 - GraveLova Środa #075 - Żabie Udka w Paryżu.gpx"
+    },
+    {
+      "id": "2025-10-01-gravelova-sroda-074-velo-jez",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #074 - Velo Jeż",
+      "date": "2025-10-01",
+      "distanceKm": 43.9,
+      "ascentM": 114,
+      "descentM": 115,
+      "durationMin": 154.98601666666667,
+      "start": [
+        17.992499,
+        50.622072
+      ],
+      "bbox": [
+        17.992028,
+        50.539865,
+        18.160681,
+        50.664162
+      ],
+      "surface": null,
+      "gpxFile": "2025-10-01-gravelova-sroda-074-velo-jez.gpx",
+      "gpxOriginalName": "2025/10/01 - GraveLova Środa #074 - Velo Jeż.gpx"
+    },
+    {
+      "id": "2025-09-24-gravelova-sroda-073-os-na-ratunek",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #073 - Łoś Na Ratunek",
+      "date": "2025-09-24",
+      "distanceKm": 37.2,
+      "ascentM": 106,
+      "descentM": 106,
+      "durationMin": 183.49476666666666,
+      "start": [
+        17.947478,
+        50.682105
+      ],
+      "bbox": [
+        17.928634,
+        50.680081,
+        18.133903,
+        50.71272
+      ],
+      "surface": null,
+      "gpxFile": "2025-09-24-gravelova-sroda-073-os-na-ratunek.gpx",
+      "gpxOriginalName": "2025/09/24 - GraveLova Środa #073 - Łoś Na Ratunek.gpx"
+    },
+    {
+      "id": "2025-09-17-gravelova-sroda-072-elektryczny-kangur",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #072 - Elektryczny Kangur",
+      "date": "2025-09-17",
+      "distanceKm": 39.0,
+      "ascentM": 93,
+      "descentM": 92,
+      "durationMin": 192.67436666666666,
+      "start": [
+        17.960357,
+        50.672594
+      ],
+      "bbox": [
+        17.950255,
+        50.641988,
+        18.102572,
+        50.711934
+      ],
+      "surface": null,
+      "gpxFile": "2025-09-17-gravelova-sroda-072-elektryczny-kangur.gpx",
+      "gpxOriginalName": "2025/09/17 - GraveLova Środa #072 - Elektryczny Kangur.gpx"
+    },
+    {
+      "id": "2025-09-10-gravelova-sroda-071-turbo-pantera",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #071 - Turbo Pantera",
+      "date": "2025-09-10",
+      "distanceKm": 40.0,
+      "ascentM": 142,
+      "descentM": 142,
+      "durationMin": 165.82700000000003,
+      "start": [
+        17.899142,
+        50.626638
+      ],
+      "bbox": [
+        17.712986,
+        50.541384,
+        17.899142,
+        50.629547
+      ],
+      "surface": null,
+      "gpxFile": "2025-09-10-gravelova-sroda-071-turbo-pantera.gpx",
+      "gpxOriginalName": "2025/09/10 - GraveLova Środa #071 - Turbo Pantera.gpx"
+    },
+    {
+      "id": "2025-08-27-gravelova-sroda-069-flamingowa-sroda",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #069 - Flamingowa środa",
+      "date": "2025-08-27",
+      "distanceKm": 46.7,
+      "ascentM": 170,
+      "descentM": 170,
+      "durationMin": 188.73286666666667,
+      "start": [
+        17.865458,
+        50.648418
+      ],
+      "bbox": [
+        17.673871,
+        50.61897,
+        17.867884,
+        50.707451
+      ],
+      "surface": null,
+      "gpxFile": "2025-08-27-gravelova-sroda-069-flamingowa-sroda.gpx",
+      "gpxOriginalName": "2025/08/27 - GraveLova Środa #069 - Flamingowa środa.gpx"
+    },
+    {
+      "id": "2025-08-20-gravelova-sroda-068-5uper-gepard-bike",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #068 - 5uper Gepard Bike",
+      "date": "2025-08-20",
+      "distanceKm": 49.1,
+      "ascentM": 137,
+      "descentM": 137,
+      "durationMin": 219.37606666666667,
+      "start": [
+        17.96213,
+        50.671702
+      ],
+      "bbox": [
+        17.946871,
+        50.642933,
+        18.177262,
+        50.703695
+      ],
+      "surface": null,
+      "gpxFile": "2025-08-20-gravelova-sroda-068-5uper-gepard-bike.gpx",
+      "gpxOriginalName": "2025/08/20 - GraveLova Środa #068 - 5uper Gepard Bike.gpx"
+    },
+    {
+      "id": "2025-08-06-gravelova-sroda-066-pierwszy-lot-kopciuszka",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #066 - Pierwszy lot Kopciuszka",
+      "date": "2025-08-06",
+      "distanceKm": 50.0,
+      "ascentM": 109,
+      "descentM": 109,
+      "durationMin": 205.79688333333334,
+      "start": [
+        17.991658,
+        50.716448
+      ],
+      "bbox": [
+        17.932274,
+        50.716248,
+        18.018826,
+        50.875101
+      ],
+      "surface": null,
+      "gpxFile": "2025-08-06-gravelova-sroda-066-pierwszy-lot-kopciuszka.gpx",
+      "gpxOriginalName": "2025/08/06 - GraveLova Środa #066 - Pierwszy lot Kopciuszka.gpx"
+    },
+    {
+      "id": "2025-07-16-gravelova-sroda-063-zew-szakala",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #063 - Zew Szakala",
+      "date": "2025-07-16",
+      "distanceKm": 58.4,
+      "ascentM": 108,
+      "descentM": 108,
+      "durationMin": 295.52456666666666,
+      "start": [
+        17.932709,
+        50.704959
+      ],
+      "bbox": [
+        17.846618,
+        50.704777,
+        17.964042,
+        50.886305
+      ],
+      "surface": null,
+      "gpxFile": "2025-07-16-gravelova-sroda-063-zew-szakala.gpx",
+      "gpxOriginalName": "2025/07/16 - GraveLova Środa #063 - Zew Szakala.gpx"
+    },
+    {
+      "id": "2025-07-30-gravelova-sroda-065-kia-na-skrzyd-ach-or-a",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #065 - KIA - Na Skrzydłach Orła",
+      "date": "2025-07-30",
+      "distanceKm": 54.4,
+      "ascentM": 175,
+      "descentM": 176,
+      "durationMin": 248.14045,
+      "start": [
+        17.909171,
+        50.654183
+      ],
+      "bbox": [
+        17.769942,
+        50.512572,
+        17.923895,
+        50.654535
+      ],
+      "surface": null,
+      "gpxFile": "2025-07-30-gravelova-sroda-065-kia-na-skrzyd-ach-or-a.gpx",
+      "gpxOriginalName": "2025/07/30 - GraveLova Środa #065 - KIA - Na Skrzydłach Orła.gpx"
+    },
+    {
+      "id": "2025-06-25-gravelova-sroda-060-strus-pedzi-wiatr",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #060 -Struś Pędzi Wiatr",
+      "date": "2025-06-25",
+      "distanceKm": 55.6,
+      "ascentM": 77,
+      "descentM": 77,
+      "durationMin": 154.99811666666668,
+      "start": [
+        17.930942,
+        50.763745
+      ],
+      "bbox": [
+        17.786265,
+        50.697268,
+        18.028944,
+        50.796024
+      ],
+      "surface": null,
+      "gpxFile": "2025-06-25-gravelova-sroda-060-strus-pedzi-wiatr.gpx",
+      "gpxOriginalName": "2025/06/25 - GraveLova Środa #060 -Struś Pędzi Wiatr.gpx"
+    },
+    {
+      "id": "2025-07-09-gravelova-sroda-062-mokry-szczur",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #062 - Mokry Szczur",
+      "date": "2025-07-09",
+      "distanceKm": 45.7,
+      "ascentM": 99,
+      "descentM": 98,
+      "durationMin": 116.57328333333334,
+      "start": [
+        17.942818,
+        50.646939
+      ],
+      "bbox": [
+        17.942818,
+        50.508959,
+        18.071132,
+        50.646939
+      ],
+      "surface": null,
+      "gpxFile": "2025-07-09-gravelova-sroda-062-mokry-szczur.gpx",
+      "gpxOriginalName": "2025/07/09 - GraveLova Środa #062 - Mokry Szczur.gpx"
+    },
+    {
+      "id": "2025-06-18-gravelova-sroda-059-sciezka-rysia",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #059 - Ścieżka Rysia",
+      "date": "2025-06-18",
+      "distanceKm": 49.4,
+      "ascentM": 130,
+      "descentM": 127,
+      "durationMin": 220.12378333333334,
+      "start": [
+        17.914435,
+        50.656555
+      ],
+      "bbox": [
+        17.762774,
+        50.579679,
+        17.936594,
+        50.669955
+      ],
+      "surface": null,
+      "gpxFile": "2025-06-18-gravelova-sroda-059-sciezka-rysia.gpx",
+      "gpxOriginalName": "2025/06/18 - GraveLova Środa #059 - Ścieżka Rysia.gpx"
+    },
+    {
+      "id": "2025-06-11-gravelova-sroda-058-odrzanska-anakonda",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #058 - Odrzańska Anakonda",
+      "date": "2025-06-11",
+      "distanceKm": 53.8,
+      "ascentM": 87,
+      "descentM": 94,
+      "durationMin": 274.8078666666667,
+      "start": [
+        17.940731,
+        50.643053
+      ],
+      "bbox": [
+        17.917847,
+        50.48291,
+        17.980604,
+        50.657594
+      ],
+      "surface": null,
+      "gpxFile": "2025-06-11-gravelova-sroda-058-odrzanska-anakonda.gpx",
+      "gpxOriginalName": "2025/06/11 - GraveLova Środa #058 - Odrzańska Anakonda.gpx"
+    },
+    {
+      "id": "2025-04-09-gravelova-sroda-049-szlakiem-wieloryba",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #049 - Szlakiem Wieloryba",
+      "date": "2025-04-09",
+      "distanceKm": 50.2,
+      "ascentM": 127,
+      "descentM": 128,
+      "durationMin": 207.03203333333335,
+      "start": [
+        17.947549,
+        50.682417
+      ],
+      "bbox": [
+        17.946871,
+        50.650897,
+        18.187738,
+        50.711934
+      ],
+      "surface": null,
+      "gpxFile": "2025-04-09-gravelova-sroda-049-szlakiem-wieloryba.gpx",
+      "gpxOriginalName": "2025/04/09 - GraveLova Środa #049 - Szlakiem Wieloryba.gpx"
+    },
+    {
+      "id": "2025-06-04-gravelova-sroda-057-szutrowy-zajac",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #057 - Szutrowy Zając",
+      "date": "2025-06-04",
+      "distanceKm": 41.6,
+      "ascentM": 76,
+      "descentM": 76,
+      "durationMin": 194.54028333333332,
+      "start": [
+        17.9477,
+        50.682424
+      ],
+      "bbox": [
+        17.946871,
+        50.613045,
+        18.075321,
+        50.687997
+      ],
+      "surface": null,
+      "gpxFile": "2025-06-04-gravelova-sroda-057-szutrowy-zajac.gpx",
+      "gpxOriginalName": "2025/06/04 - GraveLova Środa #057 - Szutrowy Zając.gpx"
+    },
+    {
+      "id": "2025-04-16-gravelova-sroda-050-szlakiem-borsuka",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #050 - Szlakiem Borsuka",
+      "date": "2025-04-16",
+      "distanceKm": 48.8,
+      "ascentM": 105,
+      "descentM": 105,
+      "durationMin": 223.80988333333335,
+      "start": [
+        17.947435,
+        50.682409
+      ],
+      "bbox": [
+        17.880643,
+        50.682105,
+        17.966148,
+        50.794252
+      ],
+      "surface": null,
+      "gpxFile": "2025-04-16-gravelova-sroda-050-szlakiem-borsuka.gpx",
+      "gpxOriginalName": "2025/04/16 - GraveLova Środa #050 - Szlakiem Borsuka.gpx"
+    },
+    {
+      "id": "2025-04-23-gravelova-sroda-051-szlakiem-muflona",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #051 - Szlakiem Muflona",
+      "date": "2025-04-23",
+      "distanceKm": 44.5,
+      "ascentM": 157,
+      "descentM": 157,
+      "durationMin": 188.29451666666668,
+      "start": [
+        17.913921,
+        50.656527
+      ],
+      "bbox": [
+        17.725134,
+        50.579679,
+        17.914644,
+        50.679653
+      ],
+      "surface": null,
+      "gpxFile": "2025-04-23-gravelova-sroda-051-szlakiem-muflona.gpx",
+      "gpxOriginalName": "2025/04/23 - GraveLova Środa #051 - Szlakiem Muflona.gpx"
+    },
+    {
+      "id": "2025-04-30-gravelova-sroda-052-wyprawa-po-zubra",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #052 - Wyprawa po Żubra",
+      "date": "2025-04-30",
+      "distanceKm": 45.5,
+      "ascentM": 124,
+      "descentM": 120,
+      "durationMin": 217.9558,
+      "start": [
+        17.940698,
+        50.642496
+      ],
+      "bbox": [
+        17.938553,
+        50.536528,
+        18.113108,
+        50.649733
+      ],
+      "surface": null,
+      "gpxFile": "2025-04-30-gravelova-sroda-052-wyprawa-po-zubra.gpx",
+      "gpxOriginalName": "2025/04/30 - GraveLova Środa #052 - Wyprawa po Żubra.gpx"
+    },
+    {
+      "id": "2025-05-07-gravelova-sroda-053-bobrowy-patrol",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #053 - Bobrowy Patrol",
+      "date": "2025-05-07",
+      "distanceKm": 55.7,
+      "ascentM": 129,
+      "descentM": 129,
+      "durationMin": 264.10645,
+      "start": [
+        17.947416,
+        50.682547
+      ],
+      "bbox": [
+        17.946871,
+        50.590074,
+        18.159808,
+        50.692979
+      ],
+      "surface": null,
+      "gpxFile": "2025-05-07-gravelova-sroda-053-bobrowy-patrol.gpx",
+      "gpxOriginalName": "2025/05/07 - GraveLova Środa #053 - Bobrowy Patrol.gpx"
+    },
+    {
+      "id": "2025-05-14-gravelova-sroda-054-jelen-express",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #054 - Jeleń Express",
+      "date": "2025-05-14",
+      "distanceKm": 45.5,
+      "ascentM": 128,
+      "descentM": 128,
+      "durationMin": 136.24923333333334,
+      "start": [
+        17.9477,
+        50.682424
+      ],
+      "bbox": [
+        17.946871,
+        50.677445,
+        18.133903,
+        50.759909
+      ],
+      "surface": null,
+      "gpxFile": "2025-05-14-gravelova-sroda-054-jelen-express.gpx",
+      "gpxOriginalName": "2025/05/14 - GraveLova Środa #054 - Jeleń Express.gpx"
+    },
+    {
+      "id": "2025-05-22-gravelova-jazda-055-pa-ac-w-rogowie",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Jazda #055 - Pałac w Rogowie",
+      "date": "2025-05-22",
+      "distanceKm": 50.0,
+      "ascentM": 159,
+      "descentM": 162,
+      "durationMin": 221.51761666666667,
+      "start": [
+        17.99006,
+        50.629418
+      ],
+      "bbox": [
+        17.861192,
+        50.511076,
+        18.044382,
+        50.664892
+      ],
+      "surface": null,
+      "gpxFile": "2025-05-22-gravelova-jazda-055-pa-ac-w-rogowie.gpx",
+      "gpxOriginalName": "2025/05/22 - GraveLova Jazda #055 - Pałac w Rogowie.gpx"
+    },
+    {
+      "id": "2025-05-28-asfaltova-sroda-056-konie-po-betonie",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "AsfalTova Środa #056 - Konie Po Betonie",
+      "date": "2025-05-28",
+      "distanceKm": 52.0,
+      "ascentM": 97,
+      "descentM": 97,
+      "durationMin": 120.0236,
+      "start": [
+        17.989418,
+        50.743998
+      ],
+      "bbox": [
+        17.905907,
+        50.728552,
+        18.089576,
+        50.873226
+      ],
+      "surface": null,
+      "gpxFile": "2025-05-28-asfaltova-sroda-056-konie-po-betonie.gpx",
+      "gpxOriginalName": "2025/05/28 - AsfalTova Środa #056 - Konie Po Betonie.gpx"
+    },
+    {
+      "id": "2024-gravelova-sroda-zmieszana",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Sroda - Zmieszana",
+      "date": null,
+      "distanceKm": 45.2,
+      "ascentM": 117,
+      "descentM": 117,
+      "durationMin": 217.31436666666664,
+      "start": [
+        17.947549,
+        50.682417
+      ],
+      "bbox": [
+        17.946756,
+        50.664772,
+        18.18201,
+        50.711934
+      ],
+      "surface": null,
+      "gpxFile": "2024-gravelova-sroda-zmieszana.gpx",
+      "gpxOriginalName": "2024 - GraveLova Sroda - Zmieszana.gpx"
+    },
+    {
+      "id": "2024-gravelova-sroda-wzd-uz-odry",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Sroda - Wzdłuż Odry",
+      "date": null,
+      "distanceKm": 38.3,
+      "ascentM": 59,
+      "descentM": 60,
+      "durationMin": 140.9658,
+      "start": [
+        17.947454,
+        50.68227
+      ],
+      "bbox": [
+        17.786184,
+        50.678364,
+        17.950861,
+        50.766577
+      ],
+      "surface": null,
+      "gpxFile": "2024-gravelova-sroda-wzd-uz-odry.gpx",
+      "gpxOriginalName": "2024 - GraveLova Sroda - Wzdłuż Odry.gpx"
+    },
+    {
+      "id": "2024-gravelova-sroda-asfaltem-pod-prad",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Sroda - Asfaltem Pod Prad",
+      "date": null,
+      "distanceKm": 39.5,
+      "ascentM": 86,
+      "descentM": 86,
+      "durationMin": 130.78815,
+      "start": [
+        17.947452,
+        50.68229
+      ],
+      "bbox": [
+        17.946871,
+        50.651255,
+        18.108558,
+        50.730611
+      ],
+      "surface": null,
+      "gpxFile": "2024-gravelova-sroda-asfaltem-pod-prad.gpx",
+      "gpxOriginalName": "2024 - GraveLova Sroda - Asfaltem Pod Prad.gpx"
+    },
+    {
+      "id": "2024-gravelova-sroda-bodzio-zakurzony-trop",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Sroda Bodzio - Zakurzony Trop",
+      "date": null,
+      "distanceKm": 51.0,
+      "ascentM": 133,
+      "descentM": 133,
+      "durationMin": null,
+      "start": [
+        17.947424,
+        50.682502
+      ],
+      "bbox": [
+        17.946875,
+        50.590072,
+        18.13739,
+        50.687994
+      ],
+      "surface": null,
+      "gpxFile": "2024-gravelova-sroda-bodzio-zakurzony-trop.gpx",
+      "gpxOriginalName": "2024 - GraveLova Sroda_Bodzio - Zakurzony Trop.gpx"
+    },
+    {
+      "id": "2024-gravelova-sroda-4-droga-w-nieznane",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Sroda 4 - Droga W Nieznane",
+      "date": null,
+      "distanceKm": 38.4,
+      "ascentM": 122,
+      "descentM": 122,
+      "durationMin": null,
+      "start": [
+        17.94741,
+        50.682520000000004
+      ],
+      "bbox": [
+        17.91489,
+        50.682520000000004,
+        18.071530000000003,
+        50.74559000000001
+      ],
+      "surface": null,
+      "gpxFile": "2024-gravelova-sroda-4-droga-w-nieznane.gpx",
+      "gpxOriginalName": "2024 - GraveLova Sroda_4 - Droga W Nieznane.gpx"
+    },
+    {
+      "id": "2024-gravelova-sroda-2-coffee-ride",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Sroda 2 - Coffee Ride",
+      "date": null,
+      "distanceKm": 37.1,
+      "ascentM": 99,
+      "descentM": 99,
+      "durationMin": 140.34196666666668,
+      "start": [
+        17.947469,
+        50.682164
+      ],
+      "bbox": [
+        17.928634,
+        50.680081,
+        18.133903,
+        50.71272
+      ],
+      "surface": null,
+      "gpxFile": "2024-gravelova-sroda-2-coffee-ride.gpx",
+      "gpxOriginalName": "2024 - GraveLova Sroda_2 - Coffee Ride.gpx"
+    },
+    {
+      "id": "2024-gravelova-sroda-1-asfaltowa-gonka",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Sroda 1 - Asfaltowa Gonka",
+      "date": null,
+      "distanceKm": 39.5,
+      "ascentM": 79,
+      "descentM": 80,
+      "durationMin": 129.6099,
+      "start": [
+        17.947435,
+        50.682409
+      ],
+      "bbox": [
+        17.942268,
+        50.654583,
+        18.108558,
+        50.730611
+      ],
+      "surface": null,
+      "gpxFile": "2024-gravelova-sroda-1-asfaltowa-gonka.gpx",
+      "gpxOriginalName": "2024 - GraveLova Sroda_1 - Asfaltowa Gonka.gpx"
+    },
+    {
+      "id": "2024-gravelova-sroda-5-mosty",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Sroda 5 - Mosty",
+      "date": null,
+      "distanceKm": 55.2,
+      "ascentM": 195,
+      "descentM": 195,
+      "durationMin": null,
+      "start": [
+        17.94743,
+        50.682390000000005
+      ],
+      "bbox": [
+        17.786260000000002,
+        50.644600000000004,
+        17.951800000000002,
+        50.76657
+      ],
+      "surface": null,
+      "gpxFile": "2024-gravelova-sroda-5-mosty.gpx",
+      "gpxOriginalName": "2024 - GraveLova Sroda_5 - Mosty.gpx"
+    },
+    {
+      "id": "2024-gravelova-sroda-5-jedziemy-po-zmianach",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Sroda 5 - Jedziemy Po Zmianach",
+      "date": null,
+      "distanceKm": 41.9,
+      "ascentM": 79,
+      "descentM": 79,
+      "durationMin": 117.68329999999999,
+      "start": [
+        17.947471,
+        50.682154
+      ],
+      "bbox": [
+        17.900121,
+        50.681708,
+        18.005572,
+        50.796024
+      ],
+      "surface": null,
+      "gpxFile": "2024-gravelova-sroda-5-jedziemy-po-zmianach.gpx",
+      "gpxOriginalName": "2024 - GraveLova Sroda_5 - Jedziemy Po Zmianach.gpx"
+    },
+    {
+      "id": "2024-gravelova-sroda-woko-komina",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Sroda - Wokół Komina",
+      "date": null,
+      "distanceKm": 43.1,
+      "ascentM": 67,
+      "descentM": 67,
+      "durationMin": 98.27993333333333,
+      "start": [
+        17.947435,
+        50.682409
+      ],
+      "bbox": [
+        17.850232,
+        50.682409,
+        18.00104,
+        50.808935
+      ],
+      "surface": null,
+      "gpxFile": "2024-gravelova-sroda-woko-komina.gpx",
+      "gpxOriginalName": "2024 - GraveLova Sroda - Wokół Komina.gpx"
     }
   ]
 }

@@ -79,23 +79,36 @@ export async function walkDriveTree(
   return { folders, gpxFiles };
 }
 
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+/**
+ * Nieuwierzytelniony dostęp przez klucz API (bez OAuth) ma dużo niższy limit zapytań
+ * niż OAuth/service account. Uwaga: obserwowana w praktyce blokada 403 ("Sorry...",
+ * strona anty-spamowa Google) bywa DŁUGOTRWAŁA (nie mija w sekundy/minuty) — dlatego
+ * ponawiamy tylko 2 razy z krótkim opóźnieniem (szybka porażka), zamiast długo próbować
+ * bez sensu. Jeśli to się powtarza, poczekaj dłużej przed kolejnym uruchomieniem `sync`.
+ */
 async function downloadRaw(client: { apiKey: string }, fileId: string): Promise<ArrayBuffer> {
   const url = new URL(`${API_BASE}/${fileId}`);
   url.searchParams.set("alt", "media");
   url.searchParams.set("key", client.apiKey);
-  const res = await fetch(url.toString());
-  if (!res.ok) {
-    const body = await res.text().catch(() => "");
-    throw new Error(`Drive API files.get ${res.status}: ${body.slice(0, 300)}`);
+
+  const maxAttempts = 2;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    const res = await fetch(url.toString());
+    if (res.ok) return res.arrayBuffer();
+
+    const retryable = res.status === 429 || res.status >= 500;
+    if (!retryable || attempt === maxAttempts) {
+      const body = await res.text().catch(() => "");
+      throw new Error(`Drive API files.get ${res.status}: ${body.slice(0, 300)}`);
+    }
+    await sleep(1000 * 2 ** (attempt - 1));
   }
-  return res.arrayBuffer();
+  throw new Error("unreachable");
 }
 
-export async function downloadFileText(client: { apiKey: string }, fileId: string): Promise<string> {
-  const buf = await downloadRaw(client, fileId);
-  return Buffer.from(buf).toString("utf-8");
-}
-
+/** Pobiera plik raz jako bufor — wywołujący może z niego wyprowadzić i tekst, i surowe bajty. */
 export async function downloadFileBuffer(client: { apiKey: string }, fileId: string): Promise<Buffer> {
   const buf = await downloadRaw(client, fileId);
   return Buffer.from(buf);
