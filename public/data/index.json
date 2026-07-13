@@ -1,42 +1,354 @@
 {
-  "generatedAt": "2026-07-13T00:00:00.000Z",
+  "generatedAt": "2026-07-13T13:30:00.000Z",
   "categories": [
-    { "id": "cat-srody", "name": "GraveLove Środy", "parentId": null },
-    { "id": "cat-ustawy", "name": "GraveLove Ustawy (czyli dłuższe ustawki)", "parentId": null },
-    { "id": "cat-polecane", "name": "Polecane trasy klubowiczów", "parentId": null },
-    { "id": "cat-polecane-mieszane", "name": "Mieszane", "parentId": "cat-polecane" },
-    { "id": "cat-polecane-gravelove", "name": "GraveLove", "parentId": "cat-polecane" }
+    {
+      "id": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "name": "GraveLove Środy",
+      "parentId": null
+    },
+    {
+      "id": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "name": "GraveLove Ustawy (czyli dłuższe ustawki)",
+      "parentId": null
+    },
+    {
+      "id": "1-PhHqt02HXdK74t0PQScacZSZv4idF7N",
+      "name": "Polecane trasy klubowiczów",
+      "parentId": null
+    },
+    {
+      "id": "1FDidnHW-pgHL8MsK5a2Nw9d5J0r9MVfk",
+      "name": "Mieszane",
+      "parentId": "1-PhHqt02HXdK74t0PQScacZSZv4idF7N"
+    },
+    {
+      "id": "1HB4ZJ4Bnt3hXCSBBpVvQVmri9wLFzpd7",
+      "name": "GraveLove",
+      "parentId": "1-PhHqt02HXdK74t0PQScacZSZv4idF7N"
+    }
   ],
   "routes": [
     {
+      "id": "112-opowiesci-z-mchu-i-paproci",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #112 - Opowieści z mchu i paproci",
+      "date": "2026-07-08",
+      "distanceKm": 50.3,
+      "ascentM": 285,
+      "descentM": 285,
+      "durationMin": null,
+      "start": [
+        18.095438880845904,
+        50.69488596171141
+      ],
+      "bbox": [
+        18.094206992536783,
+        50.687965946272016,
+        18.32125598564744,
+        50.75682998634875
+      ],
+      "surface": null,
+      "gpxFile": "112-opowiesci-z-mchu-i-paproci.gpx",
+      "gpxOriginalName": "2026/07/08 - GraveLova Środa #112 - Opowieści z mchu i paproci.gpx"
+    },
+    {
+      "id": "101-mocna-kawa-wcale-nie-jest-taka-zla",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #101 x Hard Beans - Mocna kawa wcale nie jest taka zła",
+      "date": "2026-04-22",
+      "distanceKm": 50.6,
+      "ascentM": 146,
+      "descentM": 150,
+      "durationMin": 163.8567,
+      "start": [
+        17.942159,
+        50.659778
+      ],
+      "bbox": [
+        17.77707,
+        50.525012,
+        17.942193,
+        50.664892
+      ],
+      "surface": null,
+      "gpxFile": "101-mocna-kawa-wcale-nie-jest-taka-zla.gpx",
+      "gpxOriginalName": "2026/04/22 - GraveLova Środa #101 x Hard Beans - Mocna kawa wcale nie jest taka zła.gpx"
+    },
+    {
+      "id": "096-czarnobyl",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #096 - Czarnobyl",
+      "date": "2026-03-18",
+      "distanceKm": 42.5,
+      "ascentM": 74,
+      "descentM": 73,
+      "durationMin": 113.73389999999999,
+      "start": [
+        17.93538,
+        50.704563
+      ],
+      "bbox": [
+        17.805815,
+        50.704563,
+        17.964042,
+        50.815322
+      ],
+      "surface": null,
+      "gpxFile": "096-czarnobyl.gpx",
+      "gpxOriginalName": "2026/03/18 - GraveLova Środa #096 - Czarnobyl.gpx"
+    },
+    {
       "id": "095-w-samo-poludnie",
-      "categoryId": "cat-srody",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
       "title": "GraveLova Środa #095 - W samo południe",
       "date": "2026-03-11",
       "distanceKm": 40.9,
       "ascentM": 85,
       "descentM": 85,
       "durationMin": null,
-      "start": [17.875612, 50.695914],
-      "bbox": [17.733334, 50.664434, 17.894163, 50.751477],
+      "start": [
+        17.875612,
+        50.695914
+      ],
+      "bbox": [
+        17.733334,
+        50.664434,
+        17.894163,
+        50.751477
+      ],
       "surface": null,
       "gpxFile": "095-w-samo-poludnie.gpx",
       "gpxOriginalName": "2026/03/11 - GraveLova Środa #095 - W samo południe.gpx"
     },
     {
+      "id": "094-demon-z-jeziora",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #094 - Demon z jeziora",
+      "date": "2026-03-04",
+      "distanceKm": 45.6,
+      "ascentM": 100,
+      "descentM": 100,
+      "durationMin": 122.80576666666666,
+      "start": [
+        17.97859,
+        50.685488
+      ],
+      "bbox": [
+        17.978337,
+        50.634323,
+        18.109959,
+        50.756003
+      ],
+      "surface": null,
+      "gpxFile": "094-demon-z-jeziora.gpx",
+      "gpxOriginalName": "2026/03/04 - GraveLova Środa #094 - Demon z jeziora.gpx"
+    },
+    {
+      "id": "082-marsz-pingwinow",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #082 - Marsz Pingwinów",
+      "date": "2025-11-26",
+      "distanceKm": 39.7,
+      "ascentM": 81,
+      "descentM": 81,
+      "durationMin": 154.0428,
+      "start": [
+        17.947416,
+        50.682547
+      ],
+      "bbox": [
+        17.932195,
+        50.681708,
+        18.090847,
+        50.755295
+      ],
+      "surface": null,
+      "gpxFile": "082-marsz-pingwinow.gpx",
+      "gpxOriginalName": "2025/11/26 - GraveLova Środa #082 - Marsz Pingwinów.gpx"
+    },
+    {
+      "id": "061-labedzi-spiew",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #061 - Łabędzi Śpiew",
+      "date": "2025-07-02",
+      "distanceKm": 51.0,
+      "ascentM": 136,
+      "descentM": 136,
+      "durationMin": null,
+      "start": [
+        17.947470000000003,
+        50.682100000000005
+      ],
+      "bbox": [
+        17.94687,
+        50.67857000000001,
+        18.19198,
+        50.74371000000001
+      ],
+      "surface": null,
+      "gpxFile": "061-labedzi-spiew.gpx",
+      "gpxOriginalName": "2025/07/02 - GraveLova Środa #061 - Łabędzi Śpiew.gpx"
+    },
+    {
       "id": "017-objazd-trasy-gravelove-bory",
-      "categoryId": "cat-ustawy",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
       "title": "Ustawka #17 - Objazd trasy GraveLove Bory 60 km",
       "date": null,
       "distanceKm": 61.7,
       "ascentM": 266,
       "descentM": 265,
       "durationMin": null,
-      "start": [17.603724, 50.615675],
-      "bbox": [17.603724, 50.615675, 17.9, 50.7],
+      "start": [
+        17.603724,
+        50.615675
+      ],
+      "bbox": [
+        17.603724,
+        50.615675,
+        17.9,
+        50.7
+      ],
       "surface": null,
       "gpxFile": "017-objazd-trasy-gravelove-bory.gpx",
       "gpxOriginalName": "Ustawka #17 - Objazd trasy GraveLove Bory 60 km.gpx"
+    },
+    {
+      "id": "2024-suchym-borem",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa - Suchym Borem",
+      "date": null,
+      "distanceKm": 39.2,
+      "ascentM": 88,
+      "descentM": 89,
+      "durationMin": 132.30891666666668,
+      "start": [
+        17.947435,
+        50.682409
+      ],
+      "bbox": [
+        17.947435,
+        50.641988,
+        18.102572,
+        50.711934
+      ],
+      "surface": null,
+      "gpxFile": "2024-suchym-borem.gpx",
+      "gpxOriginalName": "2024 - GraveLova Sroda_3 - Suchym Borem.gpx"
+    },
+    {
+      "id": "2024-z-grzancem",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa z grzańcem",
+      "date": null,
+      "distanceKm": 38.9,
+      "ascentM": 82,
+      "descentM": 83,
+      "durationMin": 162.90275000000003,
+      "start": [
+        17.947435,
+        50.682409
+      ],
+      "bbox": [
+        17.908385,
+        50.605246,
+        18.043356,
+        50.698119
+      ],
+      "surface": null,
+      "gpxFile": "2024-z-grzancem.gpx",
+      "gpxOriginalName": "2024 - GraveLova Sroda z grzańcem.gpx"
+    },
+    {
+      "id": "023-szychta-na-szutrolandii",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #23 - Szychta na Szutrolandii",
+      "date": null,
+      "distanceKm": 96.7,
+      "ascentM": 291,
+      "descentM": 291,
+      "durationMin": null,
+      "start": [
+        18.522270000000002,
+        50.58619
+      ],
+      "bbox": [
+        18.507250000000003,
+        50.509750000000004,
+        18.88933,
+        50.6567
+      ],
+      "surface": null,
+      "gpxFile": "023-szychta-na-szutrolandii.gpx",
+      "gpxOriginalName": "Ustawka #23 - Szychta na Szutrolandii.gpx"
+    },
+    {
+      "id": "021-toszek-kebab-ride",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #021 - Toszek Kebab Ride",
+      "date": null,
+      "distanceKm": 188.8,
+      "ascentM": 752,
+      "descentM": 753,
+      "durationMin": 394.61323333333337,
+      "start": [
+        17.925022,
+        50.650379
+      ],
+      "bbox": [
+        17.763016,
+        50.365345,
+        18.556786,
+        50.659568
+      ],
+      "surface": null,
+      "gpxFile": "021-toszek-kebab-ride.gpx",
+      "gpxOriginalName": "Ustawka #021 - Toszek Kebab Ride.gpx"
+    },
+    {
+      "id": "020-anka-w-nowy-rok",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #20 - Anka w Nowy Rok (4 urodziny GraveLove Opole)",
+      "date": null,
+      "distanceKm": 102.9,
+      "ascentM": 444,
+      "descentM": 444,
+      "durationMin": 266.86691666666667,
+      "start": [
+        17.9477,
+        50.682424
+      ],
+      "bbox": [
+        17.855684,
+        50.432988,
+        18.17481,
+        50.686871
+      ],
+      "surface": null,
+      "gpxFile": "020-anka-w-nowy-rok.gpx",
+      "gpxOriginalName": "Ustawka #20 - Anka w Nowy Rok (4 urodziny GraveLove Opole).gpx"
+    },
+    {
+      "id": "szlakiem-kolejowym-wiekszyce-polska-cerekiew",
+      "categoryId": "1FDidnHW-pgHL8MsK5a2Nw9d5J0r9MVfk",
+      "title": "SZLAKIEM KOLEJOWYM WIĘKSZYCE-POLSKA CEREKIEW — Powiat kędzierzyńsko-kozielski",
+      "date": null,
+      "distanceKm": 112.0,
+      "ascentM": 646,
+      "descentM": 646,
+      "durationMin": 525.3763833333334,
+      "start": [
+        18.121132,
+        50.33772
+      ],
+      "bbox": [
+        18.110264,
+        50.088035,
+        18.491048,
+        50.338807
+      ],
+      "surface": null,
+      "gpxFile": "szlakiem-kolejowym-wiekszyce-polska-cerekiew.gpx",
+      "gpxOriginalName": "SZLAKIEM_KOLEJOWYM_WI_KSZYCE_POLSKA_CEREKIEW___Powiat_k_dzierzy_sko_kozielski.gpx"
     }
   ]
 }

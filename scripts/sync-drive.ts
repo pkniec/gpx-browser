@@ -41,6 +41,21 @@ function extractDate(name: string): string | null {
   return `${m[1]}-${m[2]}-${m[3]}`;
 }
 
+/**
+ * Tytuł z nazwy pliku (obcina prefiks daty i rozszerzenie) — wg obserwacji na realnych
+ * danych klubu jest wiarygodniejszy niż wewnętrzne metadane GPX (`<name>`), które bywają
+ * wewnętrznymi roboczymi nazwami z aplikacji routingowej (np. "biestrzynnik_glo fin04").
+ */
+function titleFromFilename(name: string): string {
+  return name
+    .replace(/\.gpx$/i, "")
+    .replace(/^\d{4}[/_-]\d{2}[/_-]\d{2}\s*-\s*/, "")
+    .replace(/^\d{4}\s*-\s*/, "")
+    .replace(/_/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 async function main() {
   console.log(`Łączenie z Dyskiem Google (folder ${ROOT_FOLDER_ID})…`);
   const drive = createDriveClient(API_KEY!);
@@ -87,7 +102,7 @@ async function main() {
       routes.push({
         id,
         categoryId: file.parentId,
-        title: (parsed.name ?? file.name.replace(/\.gpx$/i, "")).trim(),
+        title: titleFromFilename(file.name) || (parsed.name ?? file.name).trim(),
         date: extractDate(file.name),
         distanceKm: parsed.distanceKm,
         ascentM: parsed.ascentM,

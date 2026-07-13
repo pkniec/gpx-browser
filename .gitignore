@@ -20,3 +20,4 @@ vite.config.js
 # Sekrety Google Drive — nigdy nie commitować.
 .env
 service-account.json
+.env*
