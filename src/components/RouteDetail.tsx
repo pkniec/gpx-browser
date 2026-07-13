@@ -4,6 +4,10 @@ import { routeGpxUrl } from "../data";
 type Props = {
   route: RouteMeta;
   onBack: () => void;
+  onPrev: () => void;
+  onNext: () => void;
+  hasPrev: boolean;
+  hasNext: boolean;
 };
 
 const SURFACE_LABELS: Record<"paved" | "gravel" | "unpaved", string> = {
@@ -12,7 +16,7 @@ const SURFACE_LABELS: Record<"paved" | "gravel" | "unpaved", string> = {
   unpaved: "Ziemna/nieutwardzona",
 };
 
-export default function RouteDetail({ route, onBack }: Props) {
+export default function RouteDetail({ route, onBack, onPrev, onNext, hasPrev, hasNext }: Props) {
   const surface = route.surface;
 
   return (
@@ -92,6 +96,15 @@ export default function RouteDetail({ route, onBack }: Props) {
       <a className="download-btn" href={routeGpxUrl(route)} download={route.gpxOriginalName}>
         ⬇ Pobierz GPX
       </a>
+
+      <div className="route-nav">
+        <button className="route-nav-btn" onClick={onPrev} disabled={!hasPrev}>
+          ← Poprzednia
+        </button>
+        <button className="route-nav-btn" onClick={onNext} disabled={!hasNext}>
+          Następna →
+        </button>
+      </div>
     </div>
   );
 }
