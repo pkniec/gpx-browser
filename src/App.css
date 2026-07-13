@@ -22,15 +22,41 @@
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.app-header {
+  flex-shrink: 0;
+}
+
+.app-header h1 {
+  font-size: 1.1rem;
+  margin: 0 0 4px;
+}
+
+.browser {
+  flex: 1;
+  min-height: 0;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.app-header h1 {
-  font-size: 1.1rem;
-  margin: 0 0 4px;
+.detail-panel {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .status-screen {
@@ -278,6 +304,7 @@
   display: flex;
   gap: 8px;
   margin-top: 12px;
+  flex-shrink: 0;
 }
 
 .route-nav-btn {
