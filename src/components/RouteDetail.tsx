@@ -1,9 +1,7 @@
 import type { RouteMeta } from "../types";
-import { routeGpxUrl } from "../data";
 
 type Props = {
   route: RouteMeta;
-  onBack: () => void;
   onPrev: () => void;
   onNext: () => void;
   hasPrev: boolean;
@@ -16,15 +14,12 @@ const SURFACE_LABELS: Record<"paved" | "gravel" | "unpaved", string> = {
   unpaved: "Ziemna/nieutwardzona",
 };
 
-export default function RouteDetail({ route, onBack, onPrev, onNext, hasPrev, hasNext }: Props) {
+export default function RouteDetail({ route, onPrev, onNext, hasPrev, hasNext }: Props) {
   const surface = route.surface;
 
   return (
     <div className="detail-panel">
       <div className="detail-scroll">
-        <button className="back-link" onClick={onBack}>
-          ← Wróć do listy
-        </button>
         <h2>{route.title}</h2>
         {route.date && <p className="detail-date">{route.date}</p>}
 
@@ -93,10 +88,6 @@ export default function RouteDetail({ route, onBack, onPrev, onNext, hasPrev, ha
             <p className="empty-state">Brak danych o nawierzchni dla tej trasy.</p>
           )}
         </div>
-
-        <a className="download-btn" href={routeGpxUrl(route)} download={route.gpxOriginalName}>
-          ⬇ Pobierz GPX
-        </a>
       </div>
 
       <div className="route-nav">

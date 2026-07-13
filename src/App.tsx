@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import MapView, { type DisplayTrack } from "./components/MapView";
 import CategoryBrowser from "./components/CategoryBrowser";
 import RouteDetail from "./components/RouteDetail";
-import { loadCategoryHeatmap, loadIndex, loadTrack, routesInCategory } from "./data";
+import { loadCategoryHeatmap, loadIndex, loadTrack, routeGpxUrl, routesInCategory } from "./data";
 import type { DataIndex, HeatmapPoint, RouteTrack } from "./types";
 import "./App.css";
 
@@ -181,12 +181,34 @@ export default function App() {
       <MapView tracks={displayTracks} heatmapPoints={effectiveHeatmap} />
       <aside className="side-panel">
         <header className="app-header">
-          <h1>Trasy GPX</h1>
+          {selectedRoute ? (
+            <>
+              <button className="back-link" onClick={handleBack}>
+                ← Wróć do listy
+              </button>
+              <a
+                className="icon-btn"
+                href={routeGpxUrl(selectedRoute)}
+                download={selectedRoute.gpxOriginalName}
+                title="Pobierz GPX"
+                aria-label="Pobierz plik GPX tej trasy"
+              >
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M12 3a1 1 0 0 1 1 1v9.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.42l2.3 2.3V4a1 1 0 0 1 1-1Zm-7 15a1 1 0 0 1 1 1v1h12v-1a1 1 0 1 1 2 0v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1a1 1 0 0 1 1-1Z"
+                  />
+                </svg>
+                GPX
+              </a>
+            </>
+          ) : (
+            <h1>Trasy GPX</h1>
+          )}
         </header>
         {selectedRoute ? (
           <RouteDetail
             route={selectedRoute}
-            onBack={handleBack}
             onPrev={handlePrev}
             onNext={handleNext}
             hasPrev={hasPrev}

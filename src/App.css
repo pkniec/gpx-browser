@@ -30,11 +30,38 @@
 
 .app-header {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 28px;
 }
 
 .app-header h1 {
   font-size: 1.1rem;
-  margin: 0 0 4px;
+  margin: 0;
+}
+
+.icon-btn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 8px;
+  background: #2f6f4f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.icon-btn:hover {
+  background: #368058;
 }
 
 .browser {
@@ -377,23 +404,6 @@
   margin: 8px 0 0;
 }
 
-.download-btn {
-  display: inline-block;
-  margin-top: 16px;
-  background: #2f6f4f;
-  color: white;
-  text-decoration: none;
-  padding: 10px 14px;
-  border-radius: 8px;
-  text-align: center;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.download-btn:hover {
-  background: #368058;
-}
-
 .route-nav {
   display: flex;
   gap: 8px;
@@ -431,5 +441,91 @@
     bottom: 8px;
     width: auto;
     max-height: 55vh;
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .app-header h1 {
+    font-size: 0.95rem;
+  }
+
+  .icon-btn {
+    height: 28px;
+    padding: 0 10px;
+    font-size: 0.75rem;
+  }
+
+  .browser {
+    gap: 8px;
+  }
+
+  .breadcrumb {
+    font-size: 0.78rem;
+  }
+
+  .tile-grid {
+    gap: 6px;
+  }
+
+  .tile {
+    padding: 8px;
+    gap: 2px;
+  }
+
+  .tile-name {
+    font-size: 0.82rem;
+  }
+
+  .tile-meta {
+    font-size: 0.7rem;
+  }
+
+  .heatmap-toggle {
+    padding: 6px 8px;
+    font-size: 0.78rem;
+  }
+
+  .selection-bar {
+    font-size: 0.72rem;
+  }
+
+  .route-list {
+    gap: 4px;
+  }
+
+  .route-row {
+    padding: 4px 6px;
+    gap: 6px;
+  }
+
+  .route-title {
+    font-size: 0.82rem;
+  }
+
+  .route-meta {
+    font-size: 0.7rem;
+  }
+
+  .detail-panel h2 {
+    font-size: 0.95rem;
+    margin-top: 0;
+  }
+
+  .stat-grid {
+    margin: 8px 0;
+    gap: 6px;
+  }
+
+  .surface-section h3 {
+    margin-bottom: 4px;
+  }
+
+  .route-nav {
+    margin-top: 8px;
+  }
+
+  .route-nav-btn {
+    padding: 8px 10px;
+    font-size: 0.8rem;
   }
 }
