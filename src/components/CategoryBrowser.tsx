@@ -7,6 +7,13 @@ type Props = {
   currentCategoryId: string | null;
   onSelectCategory: (id: string | null) => void;
   onSelectRoute: (id: string) => void;
+  checkedRouteIds: Set<string>;
+  onToggleRoute: (id: string) => void;
+  onSelectAllInCategory: (ids: string[]) => void;
+  onClearSelection: () => void;
+  routeColor: (id: string) => string | null;
+  showHeatmap: boolean;
+  onToggleHeatmap: () => void;
 };
 
 export default function CategoryBrowser({
@@ -15,10 +22,18 @@ export default function CategoryBrowser({
   currentCategoryId,
   onSelectCategory,
   onSelectRoute,
+  checkedRouteIds,
+  onToggleRoute,
+  onSelectAllInCategory,
+  onClearSelection,
+  routeColor,
+  showHeatmap,
+  onToggleHeatmap,
 }: Props) {
   const subcategories = childCategories(categories, currentCategoryId);
   const directRoutes = currentCategoryId ? routesInCategory(routes, currentCategoryId) : [];
   const breadcrumb = currentCategoryId ? categoryPath(categories, currentCategoryId) : [];
+  const checkedCount = directRoutes.filter((r) => checkedRouteIds.has(r.id)).length;
 
   return (
     <div className="browser">
@@ -54,18 +69,62 @@ export default function CategoryBrowser({
       )}
 
       {currentCategoryId && directRoutes.length > 0 && (
+        <label className="heatmap-toggle">
+          <input type="checkbox" checked={showHeatmap} onChange={onToggleHeatmap} />
+          Heatmapa tras w tym folderze
+        </label>
+      )}
+
+      {currentCategoryId && directRoutes.length > 1 && (
+        <div className="selection-bar">
+          <span className="selection-count">
+            {checkedCount > 0 ? `Zaznaczono: ${checkedCount}` : "Zaznacz kilka, by porównać na mapie"}
+          </span>
+          <div className="selection-actions">
+            <button className="selection-link" onClick={() => onSelectAllInCategory(directRoutes.map((r) => r.id))}>
+              Zaznacz wszystkie
+            </button>
+            <button className="selection-link" onClick={onClearSelection} disabled={checkedCount === 0}>
+              Wyczyść
+            </button>
+          </div>
+        </div>
+      )}
+
+      {currentCategoryId && directRoutes.length > 0 && (
         <ul className="route-list">
-          {directRoutes.map((r) => (
-            <li key={r.id}>
-              <button className="route-row" onClick={() => onSelectRoute(r.id)}>
-                <span className="route-title">{r.title}</span>
-                <span className="route-meta">
-                  {r.date ? `${r.date} · ` : ""}
-                  {r.distanceKm.toFixed(1)} km · {r.ascentM} m w górę
-                </span>
-              </button>
-            </li>
-          ))}
+          {directRoutes.map((r) => {
+            const color = routeColor(r.id);
+            const checked = checkedRouteIds.has(r.id);
+            return (
+              <li key={r.id}>
+                <div className={`route-row${checked ? " route-row-checked" : ""}`}>
+                  <label
+                    className="route-checkbox"
+                    style={checked && color ? { borderColor: color } : undefined}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={checked}
+                      onChange={() => onToggleRoute(r.id)}
+                      aria-label={`Zaznacz trasę ${r.title} do porównania na mapie`}
+                    />
+                    {checked && color && (
+                      <span className="route-color-dot" style={{ background: color }} />
+                    )}
+                  </label>
+                  <button className="route-row-main" onClick={() => onSelectRoute(r.id)}>
+                    <span className="route-title">{r.title}</span>
+                    <span className="route-meta">
+                      {r.date ? `${r.date} · ` : ""}
+                      {r.distanceKm.toFixed(1)} km · {r.ascentM} m w górę
+                    </span>
+                  </button>
+                </div>
+              </li>
+            );
+          })}
         </ul>
       )}
 

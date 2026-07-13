@@ -1,12 +1,23 @@
 import { useCallback, useEffect, useState } from "react";
-import MapView from "./components/MapView";
+import MapView, { type DisplayTrack } from "./components/MapView";
 import CategoryBrowser from "./components/CategoryBrowser";
 import RouteDetail from "./components/RouteDetail";
-import { loadIndex, loadTrack, routesInCategory } from "./data";
-import type { DataIndex, RouteTrack } from "./types";
+import { loadCategoryHeatmap, loadIndex, loadTrack, routesInCategory } from "./data";
+import type { DataIndex, HeatmapPoint, RouteTrack } from "./types";
 import "./App.css";
 
 type LoadState = "loading" | "done" | "error";
+
+const MULTI_COLORS = [
+  "#c25fd0",
+  "#3ba3e0",
+  "#e0a63b",
+  "#3be0a0",
+  "#e05f5f",
+  "#8f6fe0",
+  "#e0c23b",
+  "#5fe0d0",
+];
 
 export default function App() {
   const [index, setIndex] = useState<DataIndex | null>(null);
@@ -14,6 +25,10 @@ export default function App() {
   const [currentCategoryId, setCurrentCategoryId] = useState<string | null>(null);
   const [selectedRouteId, setSelectedRouteId] = useState<string | null>(null);
   const [track, setTrack] = useState<RouteTrack | null>(null);
+  const [checkedRouteIds, setCheckedRouteIds] = useState<Set<string>>(new Set());
+  const [multiTracks, setMultiTracks] = useState<Map<string, RouteTrack>>(new Map());
+  const [showHeatmap, setShowHeatmap] = useState(false);
+  const [heatmapData, setHeatmapData] = useState<HeatmapPoint[] | null>(null);
 
   useEffect(() => {
     loadIndex()
@@ -42,6 +57,31 @@ export default function App() {
     };
   }, [selectedRouteId]);
 
+  // Wczytuje geometrię dla wszystkich zaznaczonych (checkbox) tras naraz.
+  useEffect(() => {
+    let cancelled = false;
+    const ids = [...checkedRouteIds];
+    if (ids.length === 0) {
+      setMultiTracks(new Map());
+      return;
+    }
+    Promise.all(
+      ids.map((id) =>
+        loadTrack(id)
+          .then((t) => [id, t] as const)
+          .catch(() => null),
+      ),
+    ).then((results) => {
+      if (cancelled) return;
+      const next = new Map<string, RouteTrack>();
+      for (const r of results) if (r) next.set(r[0], r[1]);
+      setMultiTracks(next);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [checkedRouteIds]);
+
   const handleBack = useCallback(() => setSelectedRouteId(null), []);
 
   const handlePrev = useCallback(() => {
@@ -66,6 +106,41 @@ export default function App() {
     });
   }, [index]);
 
+  const handleSelectCategory = useCallback((id: string | null) => {
+    setCurrentCategoryId(id);
+    setCheckedRouteIds(new Set());
+    setShowHeatmap(false);
+    setHeatmapData(null);
+  }, []);
+
+  const handleToggleRoute = useCallback((id: string) => {
+    setCheckedRouteIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  }, []);
+
+  const handleSelectAllInCategory = useCallback((ids: string[]) => {
+    setCheckedRouteIds(new Set(ids));
+  }, []);
+
+  const handleClearSelection = useCallback(() => setCheckedRouteIds(new Set()), []);
+
+  const handleToggleHeatmap = useCallback(() => {
+    setShowHeatmap((prev) => {
+      const next = !prev;
+      if (next && !heatmapData && index && currentCategoryId) {
+        const ids = routesInCategory(index.routes, currentCategoryId).map((r) => r.id);
+        loadCategoryHeatmap(ids)
+          .then(setHeatmapData)
+          .catch(() => setHeatmapData([]));
+      }
+      return next;
+    });
+  }, [heatmapData, index, currentCategoryId]);
+
   if (loadState === "loading") {
     return <div className="status-screen">Wczytywanie tras…</div>;
   }
@@ -82,9 +157,28 @@ export default function App() {
   const hasPrev = siblingIndex > 0;
   const hasNext = siblingIndex >= 0 && siblingIndex < siblingRoutes.length - 1;
 
+  const orderedChecked = currentCategoryId
+    ? routesInCategory(index.routes, currentCategoryId).filter((r) => checkedRouteIds.has(r.id))
+    : [];
+  const colorById = new Map(orderedChecked.map((r, i) => [r.id, MULTI_COLORS[i % MULTI_COLORS.length]]));
+  const routeColor = (id: string): string | null => colorById.get(id) ?? null;
+
+  let displayTracks: DisplayTrack[] = [];
+  if (selectedRoute && track) {
+    displayTracks = [{ id: selectedRoute.id, color: "#c25fd0", track, showMarkers: true }];
+  } else if (orderedChecked.length > 0) {
+    displayTracks = orderedChecked.flatMap((r) => {
+      const t = multiTracks.get(r.id);
+      const color = colorById.get(r.id);
+      return t && color ? [{ id: r.id, color, track: t, showMarkers: false }] : [];
+    });
+  }
+
+  const effectiveHeatmap = selectedRoute ? null : showHeatmap ? heatmapData : null;
+
   return (
     <div className="app-shell">
-      <MapView track={selectedRoute ? track : null} />
+      <MapView tracks={displayTracks} heatmapPoints={effectiveHeatmap} />
       <aside className="side-panel">
         <header className="app-header">
           <h1>Trasy GPX</h1>
@@ -103,8 +197,15 @@ export default function App() {
             categories={index.categories}
             routes={index.routes}
             currentCategoryId={currentCategoryId}
-            onSelectCategory={setCurrentCategoryId}
+            onSelectCategory={handleSelectCategory}
             onSelectRoute={setSelectedRouteId}
+            checkedRouteIds={checkedRouteIds}
+            onToggleRoute={handleToggleRoute}
+            onSelectAllInCategory={handleSelectAllInCategory}
+            onClearSelection={handleClearSelection}
+            routeColor={routeColor}
+            showHeatmap={showHeatmap}
+            onToggleHeatmap={handleToggleHeatmap}
           />
         )}
       </aside>

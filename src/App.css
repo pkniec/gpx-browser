@@ -136,20 +136,61 @@
 .route-row {
   width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: stretch;
+  gap: 8px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 8px;
-  padding: 8px 10px;
-  text-align: left;
-  color: inherit;
-  cursor: pointer;
-  font: inherit;
+  padding: 6px 8px;
 }
 
 .route-row:hover {
   background: rgba(255, 255, 255, 0.08);
+}
+
+.route-row-checked {
+  background: rgba(194, 95, 208, 0.1);
+  border-color: rgba(194, 95, 208, 0.35);
+}
+
+.route-checkbox {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 4px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+
+.route-checkbox input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #c25fd0;
+}
+
+.route-color-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.route-row-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: none;
+  border: none;
+  padding: 2px 2px;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
 }
 
 .route-title {
@@ -160,6 +201,59 @@
 .route-meta {
   font-size: 0.75rem;
   opacity: 0.7;
+}
+
+.heatmap-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.heatmap-toggle input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #e0a63b;
+}
+
+.selection-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.78rem;
+  opacity: 0.85;
+  flex-wrap: wrap;
+}
+
+.selection-count {
+  opacity: 0.8;
+}
+
+.selection-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.selection-link {
+  background: none;
+  border: none;
+  color: #8fd1ac;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.78rem;
+  padding: 0;
+}
+
+.selection-link:disabled {
+  opacity: 0.4;
+  cursor: default;
 }
 
 .empty-state {

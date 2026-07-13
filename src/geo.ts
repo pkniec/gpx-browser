@@ -14,3 +14,15 @@ export function haversineKm(a: [number, number], b: [number, number]): number {
     Math.sin(Δφ / 2) ** 2 + Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) ** 2;
   return 2 * R * Math.asin(Math.sqrt(h));
 }
+
+/** Ogranicza liczbę punktów trasy dodawanych do heatmapy (rozkład równomierny wzdłuż trasy). */
+export function downsampleForHeatmap(
+  coords: [number, number][],
+  maxPoints = 150,
+): [number, number][] {
+  if (coords.length <= maxPoints) return coords;
+  const step = (coords.length - 1) / (maxPoints - 1);
+  const out: [number, number][] = [];
+  for (let i = 0; i < maxPoints; i++) out.push(coords[Math.round(i * step)]);
+  return out;
+}

@@ -1,4 +1,5 @@
-import type { Category, DataIndex, RouteMeta, RouteTrack } from "./types";
+import { downsampleForHeatmap } from "./geo";
+import type { Category, DataIndex, HeatmapPoint, RouteMeta, RouteTrack } from "./types";
 
 const INDEX_URL = "/data/index.json";
 const TRACK_URL = (id: string) => `/data/tracks/${id}.json`;
@@ -30,6 +31,22 @@ export async function loadTrack(id: string): Promise<RouteTrack> {
   const data = (await res.json()) as RouteTrack;
   trackCache.set(id, data);
   return data;
+}
+
+/**
+ * Buduje punkty heatmapy dla podanych tras (typowo: wszystkie trasy bieżącego folderu) —
+ * pobiera ich geometrię (z cache `loadTrack`) i próbkuje równomiernie, żeby uniknąć
+ * pobierania/renderowania pełnej rozdzielczości tylko na potrzeby podglądu zagęszczenia.
+ */
+export async function loadCategoryHeatmap(routeIds: string[]): Promise<HeatmapPoint[]> {
+  const tracks = await Promise.all(
+    routeIds.map((id) => loadTrack(id).catch(() => null)),
+  );
+  const points: HeatmapPoint[] = [];
+  for (const t of tracks) {
+    if (t) points.push(...downsampleForHeatmap(t.coords));
+  }
+  return points;
 }
 
 /** Bezpośrednie podkategorie danej kategorii (lub kategorie najwyższego poziomu, gdy `parentId` = null). */

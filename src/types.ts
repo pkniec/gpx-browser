@@ -43,3 +43,6 @@ export type DataIndex = {
   categories: Category[];
   routes: RouteMeta[];
 };
+
+/** Punkty do warstwy heatmapy — próbka tras wybranego folderu (patrz `loadCategoryHeatmap`). */
+export type HeatmapPoint = [number, number]; // [lng, lat]
