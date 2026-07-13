@@ -1,0 +1,22 @@
+node_modules
+dist
+dist-ssr
+*.local
+
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+
+.vercel
+
+*.tsbuildinfo
+src/**/*.d.ts
+!src/vite-env.d.ts
+src/**/*.js
+vite.config.d.ts
+vite.config.js
+
+# Sekrety Google Drive — nigdy nie commitować.
+.env
+service-account.json

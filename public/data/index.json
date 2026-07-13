@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-07-13T00:00:00.000Z",
+  "categories": [
+    { "id": "cat-srody", "name": "GraveLove Środy", "parentId": null },
+    { "id": "cat-ustawy", "name": "GraveLove Ustawy (czyli dłuższe ustawki)", "parentId": null },
+    { "id": "cat-polecane", "name": "Polecane trasy klubowiczów", "parentId": null },
+    { "id": "cat-polecane-mieszane", "name": "Mieszane", "parentId": "cat-polecane" },
+    { "id": "cat-polecane-gravelove", "name": "GraveLove", "parentId": "cat-polecane" }
+  ],
+  "routes": [
+    {
+      "id": "095-w-samo-poludnie",
+      "categoryId": "cat-srody",
+      "title": "GraveLova Środa #095 - W samo południe",
+      "date": "2026-03-11",
+      "distanceKm": 40.9,
+      "ascentM": 85,
+      "descentM": 85,
+      "durationMin": null,
+      "start": [17.875612, 50.695914],
+      "bbox": [17.733334, 50.664434, 17.894163, 50.751477],
+      "surface": null,
+      "gpxFile": "095-w-samo-poludnie.gpx",
+      "gpxOriginalName": "2026/03/11 - GraveLova Środa #095 - W samo południe.gpx"
+    },
+    {
+      "id": "017-objazd-trasy-gravelove-bory",
+      "categoryId": "cat-ustawy",
+      "title": "Ustawka #17 - Objazd trasy GraveLove Bory 60 km",
+      "date": null,
+      "distanceKm": 61.7,
+      "ascentM": 266,
+      "descentM": 265,
+      "durationMin": null,
+      "start": [17.603724, 50.615675],
+      "bbox": [17.603724, 50.615675, 17.9, 50.7],
+      "surface": null,
+      "gpxFile": "017-objazd-trasy-gravelove-bory.gpx",
+      "gpxOriginalName": "Ustawka #17 - Objazd trasy GraveLove Bory 60 km.gpx"
+    }
+  ]
+}
