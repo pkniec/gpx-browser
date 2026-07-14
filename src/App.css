@@ -1,3 +1,40 @@
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes panel-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes item-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popup-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .app-shell {
   position: relative;
   height: 100vh;
@@ -24,14 +61,19 @@
   border: none;
   cursor: pointer;
   color: #333;
+  transition: background-color 150ms ease, transform 140ms var(--ease-out);
 }
 
 .layers-ctrl-btn:hover {
   background: rgba(0, 0, 0, 0.05);
 }
 
+.layers-ctrl-btn:active {
+  transform: scale(0.93);
+}
+
 .layers-ctrl-menu {
-  display: none;
+  display: flex;
   position: absolute;
   top: 0;
   right: 100%;
@@ -44,10 +86,17 @@
   flex-direction: column;
   min-width: 130px;
   z-index: 10;
+  transform-origin: top right;
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+  transition: opacity 180ms ease-out, transform 180ms var(--ease-out);
 }
 
 .layers-ctrl-menu.open {
-  display: flex;
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
 }
 
 .layers-ctrl-menu button {
@@ -64,6 +113,7 @@
   cursor: pointer;
   font-size: 0.82rem;
   font-family: inherit;
+  transition: background-color 150ms ease;
 }
 
 .layers-ctrl-menu button:hover {
@@ -87,6 +137,23 @@
   padding: 10px 12px;
   border-radius: 8px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  animation: popup-enter 150ms var(--ease-out);
+}
+
+.maplibregl-popup-anchor-bottom .maplibregl-popup-content {
+  transform-origin: bottom center;
+}
+
+.maplibregl-popup-anchor-top .maplibregl-popup-content {
+  transform-origin: top center;
+}
+
+.maplibregl-popup-anchor-left .maplibregl-popup-content {
+  transform-origin: left center;
+}
+
+.maplibregl-popup-anchor-right .maplibregl-popup-content {
+  transform-origin: right center;
 }
 
 .maplibregl-popup-anchor-bottom .maplibregl-popup-tip {
@@ -109,6 +176,7 @@
   color: #e8e8ea;
   font-size: 1rem;
   padding: 2px 6px;
+  transition: background-color 150ms ease;
 }
 
 .maplibregl-popup-close-button:hover {
@@ -164,10 +232,15 @@
   text-decoration: none;
   font-weight: 500;
   font-size: 0.8rem;
+  transition: background-color 150ms ease, transform 140ms var(--ease-out);
 }
 
 .icon-btn:hover {
   background: #368058;
+}
+
+.icon-btn:active {
+  transform: scale(0.97);
 }
 
 .browser {
@@ -177,6 +250,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  animation: panel-enter 200ms var(--ease-out);
 }
 
 .detail-panel {
@@ -184,6 +258,7 @@
   min-height: 0;
   display: flex;
   flex-direction: column;
+  animation: panel-enter 200ms var(--ease-out);
 }
 
 .detail-scroll {
@@ -217,6 +292,11 @@
   padding: 2px 4px;
   font: inherit;
   font-weight: 500;
+  transition: transform 140ms var(--ease-out);
+}
+
+.crumb:active {
+  transform: scale(0.95);
 }
 
 .crumb-sep {
@@ -242,10 +322,17 @@
   color: inherit;
   cursor: pointer;
   font: inherit;
+  transition: background-color 150ms ease, transform 140ms var(--ease-out);
+  animation: item-enter 220ms var(--ease-out) both;
+  animation-delay: var(--enter-delay, 0ms);
 }
 
 .tile:hover {
   background: rgba(255, 255, 255, 0.09);
+}
+
+.tile:active {
+  transform: scale(0.97);
 }
 
 .tile-name {
@@ -277,6 +364,7 @@
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 8px;
   padding: 6px 8px;
+  transition: background-color 180ms ease, border-color 180ms ease;
 }
 
 .route-row:hover {
@@ -286,6 +374,11 @@
 .route-row-checked {
   background: rgba(194, 95, 208, 0.1);
   border-color: rgba(194, 95, 208, 0.35);
+}
+
+.route-list li {
+  animation: item-enter 220ms var(--ease-out) both;
+  animation-delay: var(--enter-delay, 0ms);
 }
 
 .route-checkbox {
@@ -326,6 +419,11 @@
   color: inherit;
   cursor: pointer;
   font: inherit;
+  transition: transform 140ms var(--ease-out);
+}
+
+.route-row-main:active {
+  transform: scale(0.98);
 }
 
 .route-title {
@@ -387,6 +485,7 @@
   font-size: 0.78rem;
   font-weight: 500;
   padding: 0;
+  transition: opacity 150ms ease;
 }
 
 .selection-link:disabled {
@@ -409,6 +508,11 @@
   font-weight: 500;
   padding: 0;
   text-align: left;
+  transition: transform 140ms var(--ease-out);
+}
+
+.back-link:active {
+  transform: scale(0.96);
 }
 
 .detail-panel h2 {
@@ -541,10 +645,15 @@
   font-size: 0.85rem;
   font-weight: 500;
   cursor: pointer;
+  transition: background-color 150ms ease, transform 140ms var(--ease-out);
 }
 
 .route-nav-btn:hover:not(:disabled) {
   background: rgba(255, 255, 255, 0.12);
+}
+
+.route-nav-btn:active:not(:disabled) {
+  transform: scale(0.97);
 }
 
 .route-nav-btn:disabled {
@@ -646,5 +755,40 @@
   .route-nav-btn {
     padding: 8px 10px;
     font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layers-ctrl-menu,
+  .browser,
+  .detail-panel,
+  .tile,
+  .route-list li,
+  .maplibregl-popup-content {
+    animation: none;
+  }
+
+  .layers-ctrl-btn,
+  .icon-btn,
+  .crumb,
+  .back-link,
+  .tile,
+  .route-row-main,
+  .route-nav-btn {
+    transition-property: background-color, opacity;
+  }
+
+  .layers-ctrl-btn:active,
+  .icon-btn:active,
+  .crumb:active,
+  .back-link:active,
+  .tile:active,
+  .route-row-main:active,
+  .route-nav-btn:active:not(:disabled) {
+    transform: none;
+  }
+
+  .layers-ctrl-menu {
+    transition-property: opacity;
   }
 }

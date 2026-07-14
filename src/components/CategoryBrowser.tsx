@@ -1,5 +1,9 @@
+import type { CSSProperties } from "react";
 import type { Category, RouteMeta } from "../types";
 import { categoryPath, childCategories, routesInCategory } from "../data";
+
+const enterDelay = (i: number): CSSProperties =>
+  ({ "--enter-delay": `${Math.min(i, 8) * 35}ms` }) as CSSProperties;
 
 type Props = {
   categories: Category[];
@@ -53,11 +57,16 @@ export default function CategoryBrowser({
 
       {subcategories.length > 0 && (
         <div className="tile-grid">
-          {subcategories.map((c) => {
+          {subcategories.map((c, i) => {
             const count = routesInCategory(routes, c.id).length;
             const hasChildren = childCategories(categories, c.id).length > 0;
             return (
-              <button key={c.id} className="tile" onClick={() => onSelectCategory(c.id)}>
+              <button
+                key={c.id}
+                className="tile"
+                style={enterDelay(i)}
+                onClick={() => onSelectCategory(c.id)}
+              >
                 <span className="tile-name">{c.name.trim()}</span>
                 <span className="tile-meta">
                   {count > 0 ? `${count} tras` : hasChildren ? "podkategorie" : "brak tras"}
@@ -93,11 +102,11 @@ export default function CategoryBrowser({
 
       {currentCategoryId && directRoutes.length > 0 && (
         <ul className="route-list">
-          {directRoutes.map((r) => {
+          {directRoutes.map((r, i) => {
             const color = routeColor(r.id);
             const checked = checkedRouteIds.has(r.id);
             return (
-              <li key={r.id}>
+              <li key={r.id} style={enterDelay(i)}>
                 <div className={`route-row${checked ? " route-row-checked" : ""}`}>
                   <label
                     className="route-checkbox"

@@ -208,6 +208,7 @@ export default function App() {
         </header>
         {selectedRoute ? (
           <RouteDetail
+            key={selectedRoute.id}
             route={selectedRoute}
             onPrev={handlePrev}
             onNext={handleNext}
