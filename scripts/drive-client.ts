@@ -2,9 +2,21 @@ const FOLDER_MIME = "application/vnd.google-apps.folder";
 const API_BASE = "https://www.googleapis.com/drive/v3/files";
 
 export type DriveFolder = { id: string; name: string; parentId: string | null };
-export type DriveGpxFile = { id: string; name: string; parentId: string; size: number };
+export type DriveGpxFile = {
+  id: string;
+  name: string;
+  parentId: string;
+  size: number;
+  modifiedTime: string;
+};
 
-type DriveApiFile = { id: string; name: string; mimeType: string; size?: string };
+type DriveApiFile = {
+  id: string;
+  name: string;
+  mimeType: string;
+  size?: string;
+  modifiedTime?: string;
+};
 
 /**
  * Klient Dysku Google oparty o zwykły klucz API (bez OAuth/service accounta).
@@ -24,7 +36,10 @@ async function listChildren(
   do {
     const url = new URL(API_BASE);
     url.searchParams.set("q", `'${folderId}' in parents and trashed = false`);
-    url.searchParams.set("fields", "nextPageToken, files(id, name, mimeType, size)");
+    url.searchParams.set(
+      "fields",
+      "nextPageToken, files(id, name, mimeType, size, modifiedTime)",
+    );
     url.searchParams.set("pageSize", "1000");
     url.searchParams.set("key", client.apiKey);
     if (pageToken) url.searchParams.set("pageToken", pageToken);
@@ -70,6 +85,7 @@ export async function walkDriveTree(
           name: child.name,
           parentId: folderId,
           size: Number(child.size ?? 0),
+          modifiedTime: child.modifiedTime ?? "",
         });
       }
     }

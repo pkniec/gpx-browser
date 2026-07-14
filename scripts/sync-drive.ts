@@ -1,9 +1,10 @@
-import { mkdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { loadEnvFile } from "./env";
 import { createDriveClient, downloadFileBuffer, walkDriveTree } from "./drive-client";
 import { parseGpx } from "./gpx-parse";
 import { analyzeSurface } from "./brouter";
+import { loadManifest, saveManifest, type SyncManifest } from "./sync-manifest";
 import type { Category, DataIndex, RouteMeta, RouteTrack } from "../src/types";
 
 loadEnvFile();
@@ -22,6 +23,8 @@ if (!API_KEY || !ROOT_FOLDER_ID) {
 const OUT_DIR = path.resolve(process.cwd(), "public/data");
 const TRACKS_DIR = path.join(OUT_DIR, "tracks");
 const GPX_DIR = path.join(OUT_DIR, "gpx");
+const INDEX_PATH = path.join(OUT_DIR, "index.json");
+const MANIFEST_PATH = path.resolve(process.cwd(), "scripts/sync-manifest.json");
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function slugify(name: string): string {
@@ -57,11 +60,20 @@ function titleFromFilename(name: string): string {
     .trim();
 }
 
+function loadOldIndex(): DataIndex | null {
+  if (!existsSync(INDEX_PATH)) return null;
+  try {
+    return JSON.parse(readFileSync(INDEX_PATH, "utf-8")) as DataIndex;
+  } catch {
+    return null;
+  }
+}
+
 async function main() {
   console.log(`Łączenie z Dyskiem Google (folder ${ROOT_FOLDER_ID})…`);
   const drive = createDriveClient(API_KEY!);
   const { folders, gpxFiles } = await walkDriveTree(drive, ROOT_FOLDER_ID!);
-  console.log(`Znaleziono ${folders.length} kategorii i ${gpxFiles.length} plików GPX.`);
+  console.log(`Znaleziono ${folders.length} kategorii i ${gpxFiles.length} plików GPX na Dysku.`);
 
   mkdirSync(TRACKS_DIR, { recursive: true });
   mkdirSync(GPX_DIR, { recursive: true });
@@ -72,21 +84,63 @@ async function main() {
     parentId: f.parentId,
   }));
 
+  const oldIndex = loadOldIndex();
+  const oldRoutesById = new Map((oldIndex?.routes ?? []).map((r) => [r.id, r]));
+  // Dopasowanie po (folder, oryginalna nazwa pliku) — używane tylko jako fallback, gdy manifest
+  // nie zna jeszcze danego pliku (pierwsze uruchomienie tej wersji skryptu albo zgubiony manifest).
+  // Pozwala rozpoznać trasy, które już mamy pobrane na dysku, bez ponownego sięgania do Dysku.
+  const oldRoutesByLocation = new Map(
+    (oldIndex?.routes ?? []).map((r) => [`${r.categoryId}::${r.gpxOriginalName}`, r]),
+  );
+  const manifest = loadManifest(MANIFEST_PATH);
+  const newManifest: SyncManifest = {};
+
   const routes: RouteMeta[] = [];
   const usedIds = new Set<string>();
+  const stats = { new: 0, changed: 0, unchanged: 0, failed: 0, removed: 0, bootstrapped: 0 };
 
   for (const [i, file] of gpxFiles.entries()) {
-    process.stdout.write(`[${i + 1}/${gpxFiles.length}] ${file.name} … `);
+    let known = manifest[file.id];
+    const prefix = `[${i + 1}/${gpxFiles.length}] ${file.name}`;
+
+    if (!known) {
+      const bootstrap = oldRoutesByLocation.get(`${file.parentId}::${file.name}`);
+      if (bootstrap && existsSync(path.join(TRACKS_DIR, `${bootstrap.id}.json`))) {
+        // Bez manifestu nie znamy prawdziwego poprzedniego modifiedTime — przyjmujemy bieżący
+        // jako punkt odniesienia; kolejny sync poprawnie wykryje ewentualną zmianę od teraz.
+        known = { modifiedTime: file.modifiedTime, routeId: bootstrap.id };
+        stats.bootstrapped++;
+      }
+    }
+
+    if (known && known.modifiedTime === file.modifiedTime) {
+      const old = oldRoutesById.get(known.routeId);
+      if (old) {
+        routes.push({ ...old, categoryId: file.parentId });
+        newManifest[file.id] = known;
+        usedIds.add(old.id);
+        stats.unchanged++;
+        console.log(`${prefix} … bez zmian`);
+        continue;
+      }
+      // manifest wskazuje na trasę, której nie ma już w index.json — pobierz od nowa
+    }
+
+    const isChange = Boolean(known);
+    process.stdout.write(`${prefix} … `);
     try {
       const gpxBuffer = await downloadFileBuffer(drive, file.id);
       const parsed = parseGpx(gpxBuffer.toString("utf-8"));
       if (parsed.coords.length < 2) {
         console.log("pominięto (brak punktów trasy)");
+        await sleep(250);
         continue;
       }
 
-      let id = slugify(file.name);
-      if (usedIds.has(id)) id = `${id}-${file.id.slice(0, 6).toLowerCase()}`;
+      // Przy edycji pliku zachowaj dotychczasowe id trasy (stabilny URL/klucz),
+      // dla nowych plików wygeneruj świeże.
+      let id = known?.routeId ?? slugify(file.name);
+      if (!known && usedIds.has(id)) id = `${id}-${file.id.slice(0, 6).toLowerCase()}`;
       usedIds.add(id);
 
       let surface = null;
@@ -113,25 +167,58 @@ async function main() {
         gpxFile: `${id}.gpx`,
         gpxOriginalName: file.name,
       });
-
-      console.log(`ok (${parsed.distanceKm} km)`);
+      newManifest[file.id] = { modifiedTime: file.modifiedTime, routeId: id };
+      if (isChange) stats.changed++;
+      else stats.new++;
+      console.log(`ok (${parsed.distanceKm} km)${isChange ? " [zaktualizowano]" : " [nowa]"}`);
     } catch (err) {
-      console.log(`BŁĄD: ${err instanceof Error ? err.message : String(err)}`);
+      stats.failed++;
+      const old = known && oldRoutesById.get(known.routeId);
+      if (old) {
+        // Pobranie się nie udało (np. limit Drive API) — zostaw poprzednią, znaną dobrą wersję
+        // zamiast gubić trasę z indeksu.
+        routes.push({ ...old, categoryId: file.parentId });
+        newManifest[file.id] = known!;
+        usedIds.add(old.id);
+        console.log(`BŁĄD: ${err instanceof Error ? err.message : String(err)} — zachowano poprzednią wersję`);
+      } else {
+        console.log(`BŁĄD: ${err instanceof Error ? err.message : String(err)} — pominięto`);
+      }
     }
     await sleep(250); // odstęp między plikami — klucz API (bez OAuth) ma niski limit zapytań
   }
+
+  // Trasy usunięte/przeniesione poza folder na Dysku: sprzątamy ich pliki na dysku lokalnym.
+  const currentFileIds = new Set(gpxFiles.map((f) => f.id));
+  for (const [fileId, entry] of Object.entries(manifest)) {
+    if (currentFileIds.has(fileId)) continue;
+    stats.removed++;
+    console.log(`Usunięto z Dysku: ${entry.routeId} — sprzątanie lokalnych plików`);
+    rmSync(path.join(TRACKS_DIR, `${entry.routeId}.json`), { force: true });
+    rmSync(path.join(GPX_DIR, `${entry.routeId}.gpx`), { force: true });
+  }
+
+  // Kolejność z Drive API nie jest gwarantowana ani istotna dla UI (front sortuje po dacie) —
+  // stabilna kolejność po `id` trzyma diffy w git czytelnymi między kolejnymi synchronizacjami.
+  routes.sort((a, b) => a.id.localeCompare(b.id));
 
   const index: DataIndex = {
     generatedAt: new Date().toISOString(),
     categories,
     routes,
   };
-  writeFileSync(path.join(OUT_DIR, "index.json"), JSON.stringify(index, null, 2));
+  writeFileSync(INDEX_PATH, JSON.stringify(index, null, 2));
+  saveManifest(MANIFEST_PATH, newManifest);
 
-  console.log(`\nGotowe: ${routes.length} tras zapisanych do ${OUT_DIR}.`);
+  console.log(
+    `\nGotowe: ${routes.length} tras w indeksie ` +
+      `(nowe: ${stats.new}, zaktualizowane: ${stats.changed}, bez zmian: ${stats.unchanged}` +
+      `${stats.bootstrapped ? ` [w tym ${stats.bootstrapped} rozpoznanych bez manifestu]` : ""}, ` +
+      `usunięte z Dysku: ${stats.removed}, błędy pobierania: ${stats.failed}).`,
+  );
   if (!ENABLE_SURFACE) {
     console.log(
-      "Analiza nawierzchni była wyłączona (ENABLE_SURFACE_ANALYSIS=0) — pole `surface` jest puste dla wszystkich tras.",
+      "Analiza nawierzchni była wyłączona (ENABLE_SURFACE_ANALYSIS=0) — pole `surface` jest puste dla nowych/zmienionych tras.",
     );
   }
 }
