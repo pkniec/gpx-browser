@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { ArrowUp } from "lucide-react";
 import type { RouteMeta } from "../types";
 
@@ -16,6 +17,48 @@ const SURFACE_LABELS: Record<"paved" | "gravel" | "unpaved", string> = {
   gravel: "Szuter/drogi leśne",
   unpaved: "Ziemna/nieutwardzona",
 };
+
+const MARQUEE_PX_PER_SECOND = 45;
+
+/** Nazwa trasy w skompaktowanym pasku — gdy nie mieści się w dostępnej szerokości,
+ * zamiast obcinać wielokropkiem przewija się w pętli, jak tytuł utworu w Spotify. */
+function MarqueeText({ text }: { text: string }) {
+  const containerRef = useRef<HTMLSpanElement | null>(null);
+  const itemRef = useRef<HTMLSpanElement | null>(null);
+  const [overflow, setOverflow] = useState<{ scrolling: boolean; durationS: number }>({
+    scrolling: false,
+    durationS: 8,
+  });
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const item = itemRef.current;
+    if (!container || !item) return;
+    const scrolling = item.scrollWidth > container.clientWidth;
+    setOverflow({
+      scrolling,
+      durationS: Math.max(4, item.scrollWidth / MARQUEE_PX_PER_SECOND),
+    });
+  }, [text]);
+
+  return (
+    <span className="detail-peek-name" ref={containerRef}>
+      <span
+        className={`marquee-track${overflow.scrolling ? " marquee-scrolling" : ""}`}
+        style={overflow.scrolling ? ({ "--marquee-duration": `${overflow.durationS}s` } as CSSProperties) : undefined}
+      >
+        <span className="marquee-item" ref={itemRef}>
+          {text}
+        </span>
+        {overflow.scrolling && (
+          <span className="marquee-item" aria-hidden="true">
+            {text}
+          </span>
+        )}
+      </span>
+    </span>
+  );
+}
 
 export default function RouteDetail({
   route,
@@ -36,7 +79,7 @@ export default function RouteDetail({
         <span className="detail-grabber" />
         {collapsed && (
           <span className="detail-peek">
-            <span className="detail-peek-name">{route.title}</span>
+            <MarqueeText text={route.title} />
             <span className="detail-peek-stats">
               {route.distanceKm.toFixed(1)} km
               <span className="detail-peek-sep">·</span>

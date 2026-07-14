@@ -945,11 +945,41 @@
     font-size: 0.86rem;
     font-weight: 600;
     color: #f5f5f7;
-    white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
     min-width: 0;
     flex-shrink: 1;
+  }
+
+  /* Nazwa trasy: gdy się mieści, po prostu renderuje się w pełni (kontener ma overflow:hidden).
+     Gdy jest za długa, JS dubluje tekst i dopisuje .marquee-scrolling — przewija się w pętli
+     jak w Spotify. .marquee-item ma zawsze flex-shrink:0, żeby jego naturalna szerokość (do
+     pomiaru scrollWidth) nigdy nie była zaniżona przez skurczenie flexboksa. */
+  .marquee-track {
+    display: flex;
+    min-width: 0;
+  }
+
+  .marquee-item {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .marquee-track.marquee-scrolling .marquee-item {
+    padding-right: 32px;
+  }
+
+  .marquee-track.marquee-scrolling {
+    animation: marquee-scroll var(--marquee-duration, 8s) linear infinite;
+    animation-delay: 1.2s;
+  }
+
+  @keyframes marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
 
   .detail-peek-stats {
@@ -1075,6 +1105,21 @@
 
   .detail-body {
     transition-property: opacity;
+  }
+
+  .marquee-track.marquee-scrolling {
+    animation: none;
+  }
+
+  .marquee-track.marquee-scrolling .marquee-item {
+    flex-shrink: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0;
+  }
+
+  .marquee-track.marquee-scrolling .marquee-item + .marquee-item {
+    display: none;
   }
 
   .route-float-nav,
