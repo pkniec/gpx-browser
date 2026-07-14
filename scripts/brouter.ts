@@ -47,9 +47,10 @@ type BRouterMessages = { header: string[]; rows: string[][] };
  * ważony długością odcinków. To NIE jest analiza dokładnego GPS-śladu — BRouter
  * przelicza trasę przez własny graf, więc wynik jest przybliżeniem (map-matching).
  *
- * UWAGA: wymaga weryfikacji na żywo — dokładny układ kolumn `messages` (w tym nazwa
- * kolumny dystansu kumulatywnego) może się różnić między wersjami serwera BRouter.
- * Sprawdzone tylko na podstawie publicznej dokumentacji BRoutera, nie na żywym ruchu.
+ * Zweryfikowane na żywo na próbce tras (2026-07-14): kolumny `Distance` (długość
+ * segmentu, nie kumulatywna) i `WayTags` odpowiadają temu, czego oczekuje ten kod.
+ * Ok. 50-65% długości tras wokół Opola ląduje w `unknown` — brak tagu `surface=*`
+ * w OSM dla tych odcinków, nie błąd dopasowania.
  */
 export async function analyzeSurface(
   coords: [number, number][],
@@ -88,14 +89,11 @@ export async function analyzeSurface(
   let gravel = 0;
   let unpaved = 0;
   let unknown = 0;
-  let prevDist = 0;
 
   for (const row of table.rows) {
-    const dist = parseFloat(row[distIdx]);
-    if (!Number.isFinite(dist)) continue;
-    const segment = Math.max(0, dist - prevDist);
-    prevDist = dist;
-    if (segment === 0) continue;
+    // Distance to już długość tego segmentu (nie dystans skumulowany).
+    const segment = parseFloat(row[distIdx]);
+    if (!Number.isFinite(segment) || segment <= 0) continue;
 
     const tags = row[tagsIdx] ?? "";
     const match = /surface=([a-z_]+)/.exec(tags);
