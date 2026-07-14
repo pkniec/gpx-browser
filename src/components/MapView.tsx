@@ -18,7 +18,7 @@ type Props = {
 
 type MapStyleKey = "basic" | "cyclosm" | "cycling";
 
-const DEFAULT_STYLE_KEY: MapStyleKey = "cycling";
+const DEFAULT_STYLE_KEY: MapStyleKey = "basic";
 
 const OSM_SOURCE: RasterSourceSpecification = {
   type: "raster",
