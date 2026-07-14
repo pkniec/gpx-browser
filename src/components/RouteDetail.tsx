@@ -1,3 +1,4 @@
+import { ArrowUp } from "lucide-react";
 import type { RouteMeta } from "../types";
 
 type Props = {
@@ -6,6 +7,8 @@ type Props = {
   onNext: () => void;
   hasPrev: boolean;
   hasNext: boolean;
+  collapsed: boolean;
+  onToggleCollapsed: () => void;
 };
 
 const SURFACE_LABELS: Record<"paved" | "gravel" | "unpaved", string> = {
@@ -14,89 +17,116 @@ const SURFACE_LABELS: Record<"paved" | "gravel" | "unpaved", string> = {
   unpaved: "Ziemna/nieutwardzona",
 };
 
-export default function RouteDetail({ route, onPrev, onNext, hasPrev, hasNext }: Props) {
+export default function RouteDetail({
+  route,
+  onPrev,
+  onNext,
+  hasPrev,
+  hasNext,
+  collapsed,
+  onToggleCollapsed,
+}: Props) {
   const surface = route.surface;
 
   return (
     <div className="detail-panel">
-      <div className="detail-scroll">
-        <h2>{route.title}</h2>
-        {route.date && <p className="detail-date">{route.date}</p>}
+      {/* Widoczne tylko na mobile (patrz media query) — tap zwija panel do paska, żeby odsłonić mapę.
+          Nazwa/statystyki pokazują się tylko po zwinięciu — inaczej dublowałyby tytuł poniżej. */}
+      <button className="detail-handle" onClick={onToggleCollapsed}>
+        <span className="detail-grabber" />
+        {collapsed && (
+          <span className="detail-peek">
+            <span className="detail-peek-name">{route.title}</span>
+            <span className="detail-peek-stats">
+              {route.distanceKm.toFixed(1)} km
+              <span className="detail-peek-sep">·</span>
+              <ArrowUp className="detail-peek-ascent-icon" size={12} strokeWidth={2.5} />
+              {route.ascentM} m
+            </span>
+          </span>
+        )}
+      </button>
 
-        <dl className="stat-grid">
-          <div>
-            <dt>Dystans</dt>
-            <dd>{route.distanceKm.toFixed(1)} km</dd>
-          </div>
-          <div>
-            <dt>Przewyższenie</dt>
-            <dd>+{route.ascentM} m / -{route.descentM} m</dd>
-          </div>
-          <div>
-            <dt>Czas</dt>
-            <dd>{route.durationMin != null ? formatDuration(route.durationMin) : "brak danych"}</dd>
-          </div>
-        </dl>
+      <div className={`detail-body${collapsed ? " detail-body-collapsed" : ""}`}>
+        <div className="detail-scroll">
+          <h2>{route.title}</h2>
+          {route.date && <p className="detail-date">{route.date}</p>}
 
-        <div className="surface-section">
-          <h3>Nawierzchnia</h3>
-          {surface ? (
-            <>
-              <div className="surface-bar">
-                <span
-                  className="surface-seg surface-paved"
-                  style={{ width: `${surface.paved}%` }}
-                  title={`Asfalt/beton: ${surface.paved}%`}
-                />
-                <span
-                  className="surface-seg surface-gravel"
-                  style={{ width: `${surface.gravel}%` }}
-                  title={`Szuter: ${surface.gravel}%`}
-                />
-                <span
-                  className="surface-seg surface-unpaved"
-                  style={{ width: `${surface.unpaved}%` }}
-                  title={`Nieutwardzona: ${surface.unpaved}%`}
-                />
-                {surface.unknown > 0 && (
+          <dl className="stat-grid">
+            <div>
+              <dt>Dystans</dt>
+              <dd>{route.distanceKm.toFixed(1)} km</dd>
+            </div>
+            <div>
+              <dt>Przewyższenie</dt>
+              <dd>+{route.ascentM} m / -{route.descentM} m</dd>
+            </div>
+            <div>
+              <dt>Czas</dt>
+              <dd>{route.durationMin != null ? formatDuration(route.durationMin) : "brak danych"}</dd>
+            </div>
+          </dl>
+
+          <div className="surface-section">
+            <h3>Nawierzchnia</h3>
+            {surface ? (
+              <>
+                <div className="surface-bar">
                   <span
-                    className="surface-seg surface-unknown"
-                    style={{ width: `${surface.unknown}%` }}
-                    title={`Nieznana: ${surface.unknown}%`}
+                    className="surface-seg surface-paved"
+                    style={{ width: `${surface.paved}%` }}
+                    title={`Asfalt/beton: ${surface.paved}%`}
                   />
-                )}
-              </div>
-              <ul className="surface-legend">
-                {(Object.keys(SURFACE_LABELS) as (keyof typeof SURFACE_LABELS)[]).map((key) => (
-                  <li key={key}>
-                    <span className={`legend-dot legend-${key}`} />
-                    {SURFACE_LABELS[key]}: {surface[key]}%
-                  </li>
-                ))}
-                {surface.unknown > 0 && (
-                  <li>
-                    <span className="legend-dot legend-unknown" />
-                    Nieznana: {surface.unknown}%
-                  </li>
-                )}
-              </ul>
-              <p className="surface-disclaimer">
-                Szacunkowo, na podstawie dopasowania do danych OpenStreetMap.
-              </p>
-            </>
-          ) : (
-            <p className="empty-state">Brak danych o nawierzchni dla tej trasy.</p>
-          )}
+                  <span
+                    className="surface-seg surface-gravel"
+                    style={{ width: `${surface.gravel}%` }}
+                    title={`Szuter: ${surface.gravel}%`}
+                  />
+                  <span
+                    className="surface-seg surface-unpaved"
+                    style={{ width: `${surface.unpaved}%` }}
+                    title={`Nieutwardzona: ${surface.unpaved}%`}
+                  />
+                  {surface.unknown > 0 && (
+                    <span
+                      className="surface-seg surface-unknown"
+                      style={{ width: `${surface.unknown}%` }}
+                      title={`Nieznana: ${surface.unknown}%`}
+                    />
+                  )}
+                </div>
+                <ul className="surface-legend">
+                  {(Object.keys(SURFACE_LABELS) as (keyof typeof SURFACE_LABELS)[]).map((key) => (
+                    <li key={key}>
+                      <span className={`legend-dot legend-${key}`} />
+                      {SURFACE_LABELS[key]}: {surface[key]}%
+                    </li>
+                  ))}
+                  {surface.unknown > 0 && (
+                    <li>
+                      <span className="legend-dot legend-unknown" />
+                      Nieznana: {surface.unknown}%
+                    </li>
+                  )}
+                </ul>
+                <p className="surface-disclaimer">
+                  Szacunkowo, na podstawie dopasowania do danych OpenStreetMap.
+                </p>
+              </>
+            ) : (
+              <p className="empty-state">Brak danych o nawierzchni dla tej trasy.</p>
+            )}
+          </div>
         </div>
-      </div>
 
-      <div className="route-nav">
-        <button className="route-nav-btn" onClick={onPrev} disabled={!hasPrev}>
-          ← Poprzednia
-        </button>
-        <button className="route-nav-btn" onClick={onNext} disabled={!hasNext}>
-          Następna →
-        </button>
+        <div className="route-nav">
+          <button className="route-nav-btn" onClick={onPrev} disabled={!hasPrev}>
+            ← Poprzednia
+          </button>
+          <button className="route-nav-btn" onClick={onNext} disabled={!hasNext}>
+            Następna →
+          </button>
+        </div>
       </div>
     </div>
   );

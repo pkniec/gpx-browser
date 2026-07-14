@@ -1,9 +1,13 @@
 import type { CSSProperties } from "react";
+import { ArrowRight, Folder } from "lucide-react";
 import type { Category, RouteMeta } from "../types";
 import { categoryPath, childCategories, routesInCategory } from "../data";
 
 const enterDelay = (i: number): CSSProperties =>
   ({ "--enter-delay": `${Math.min(i, 8) * 35}ms` }) as CSSProperties;
+
+/** Ten folder ma się zawsze pokazywać jako pierwszy na liście (cotygodniowa jazda). */
+const PINNED_CATEGORY = "GraveLove Środy";
 
 type Props = {
   categories: Category[];
@@ -34,7 +38,9 @@ export default function CategoryBrowser({
   showHeatmap,
   onToggleHeatmap,
 }: Props) {
-  const subcategories = childCategories(categories, currentCategoryId);
+  const subcategories = childCategories(categories, currentCategoryId)
+    .slice()
+    .sort((a, b) => Number(b.name.trim() === PINNED_CATEGORY) - Number(a.name.trim() === PINNED_CATEGORY));
   const directRoutes = currentCategoryId ? routesInCategory(routes, currentCategoryId) : [];
   const breadcrumb = currentCategoryId ? categoryPath(categories, currentCategoryId) : [];
   const checkedCount = directRoutes.filter((r) => checkedRouteIds.has(r.id)).length;
@@ -56,20 +62,30 @@ export default function CategoryBrowser({
       </nav>
 
       {subcategories.length > 0 && (
-        <div className="tile-grid">
+        <div className="folder-list">
           {subcategories.map((c, i) => {
             const count = routesInCategory(routes, c.id).length;
-            const hasChildren = childCategories(categories, c.id).length > 0;
+            const subcategoryCount = childCategories(categories, c.id).length;
+            const badgeCount = count > 0 ? count : subcategoryCount;
             return (
               <button
                 key={c.id}
-                className="tile"
+                className="folder-row"
                 style={enterDelay(i)}
                 onClick={() => onSelectCategory(c.id)}
               >
-                <span className="tile-name">{c.name.trim()}</span>
-                <span className="tile-meta">
-                  {count > 0 ? `${count} tras` : hasChildren ? "podkategorie" : "brak tras"}
+                <span className="folder-avatar">
+                  <Folder size={18} strokeWidth={2} />
+                </span>
+                <span className="folder-text">
+                  <span className="folder-name">{c.name.trim()}</span>
+                  <span className="folder-count">
+                    {count > 0 ? `${count} tras` : subcategoryCount > 0 ? `${subcategoryCount} podkategorie` : "brak tras"}
+                  </span>
+                </span>
+                <span className="folder-side">
+                  <span className="folder-count-pill">{badgeCount}</span>
+                  <ArrowRight className="folder-arrow" size={16} strokeWidth={2} />
                 </span>
               </button>
             );

@@ -199,6 +199,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  z-index: 4; /* nad kontrolkami MapLibre (attribution ma z-index: 2) */
 }
 
 .app-header {
@@ -261,6 +262,18 @@
   animation: panel-enter 200ms var(--ease-out);
 }
 
+/* Uchwyt zwijania panelu — widoczny tylko na mobile, patrz media query poniżej. */
+.detail-handle {
+  display: none;
+}
+
+.detail-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .detail-scroll {
   flex: 1;
   min-height: 0;
@@ -304,46 +317,135 @@
   margin-right: 4px;
 }
 
-.tile-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.folder-list {
+  display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 
-.tile {
+.folder-row {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-  padding: 10px;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   text-align: left;
   color: inherit;
   cursor: pointer;
   font: inherit;
-  transition: background-color 150ms ease, transform 140ms var(--ease-out);
+  overflow: hidden;
+  transition: background-color 200ms ease, border-color 200ms ease, transform 140ms var(--ease-out);
   animation: item-enter 220ms var(--ease-out) both;
   animation-delay: var(--enter-delay, 0ms);
 }
 
-.tile:hover {
-  background: rgba(255, 255, 255, 0.09);
+.folder-row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(140px 70px at 0% 0%, rgba(34, 197, 94, 0.18), transparent 70%);
+  opacity: 0;
+  transition: opacity 250ms ease;
 }
 
-.tile:active {
-  transform: scale(0.97);
+.folder-row:hover {
+  background: rgba(255, 255, 255, 0.075);
+  border-color: rgba(34, 197, 94, 0.32);
 }
 
-.tile-name {
-  font-weight: 500;
+.folder-row:hover::before {
+  opacity: 1;
+}
+
+.folder-row:active {
+  transform: scale(0.98);
+}
+
+.folder-avatar {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.22), rgba(56, 189, 248, 0.14));
+  color: #4ade80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.folder-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+  z-index: 1;
+}
+
+.folder-name {
   font-size: 0.9rem;
+  font-weight: 600;
+  color: #f5f5f7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
 }
 
-.tile-meta {
-  font-size: 0.75rem;
-  font-weight: 300;
-  opacity: 0.7;
+.folder-count {
+  font-size: 0.76rem;
+  font-weight: 400;
+  opacity: 0.55;
+  text-align: left;
+}
+
+.folder-side {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 30px;
+  height: 22px;
+}
+
+.folder-count-pill {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 500;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.75);
+  transform: rotate(0deg) scale(1);
+  transition: opacity 240ms ease, transform 240ms var(--ease-out);
+}
+
+.folder-arrow {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  color: #4ade80;
+  opacity: 0;
+  transform: rotate(-80deg) scale(0.4);
+  transition: opacity 240ms ease, transform 240ms var(--ease-out);
+}
+
+.folder-row:hover .folder-count-pill {
+  opacity: 0;
+  transform: rotate(80deg) scale(0.4);
+}
+
+.folder-row:hover .folder-arrow {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
 }
 
 .route-list {
@@ -671,6 +773,47 @@
     max-height: 55vh;
     padding: 10px 12px;
     gap: 8px;
+    transition: gap 320ms var(--ease-out);
+  }
+
+  /* W widoku trasy właściwy nagłówek chowa się — zastępuje go .route-float-header,
+     renderowany poza .side-panel (który ma backdrop-filter, więc jego potomkowie
+     z position:fixed pozycjonowaliby się względem panelu, a nie viewportu). */
+  .app-header-route {
+    display: none;
+  }
+
+  .route-float-header {
+    display: flex;
+    position: absolute;
+    top: 12px;
+    left: 8px;
+    right: 44px; /* zostawia miejsce na kontrolki mapy (zoom/warstwy) w rogu */
+    z-index: 6;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .back-link-floating {
+    background: rgba(20, 22, 27, 0.9);
+    backdrop-filter: blur(8px);
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  }
+
+  .route-float-header .icon-btn {
+    height: 44px;
+    padding: 0 16px;
+    font-size: 0.8rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  }
+
+  .side-panel.side-panel-collapsed {
+    gap: 2px;
   }
 
   .app-header h1 {
@@ -691,20 +834,25 @@
     font-size: 0.78rem;
   }
 
-  .tile-grid {
+  .folder-list {
     gap: 6px;
   }
 
-  .tile {
-    padding: 8px;
-    gap: 2px;
+  .folder-row {
+    padding: 10px 12px;
+    gap: 10px;
   }
 
-  .tile-name {
+  .folder-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .folder-name {
     font-size: 0.82rem;
   }
 
-  .tile-meta {
+  .folder-count {
     font-size: 0.7rem;
   }
 
@@ -756,13 +904,144 @@
     padding: 8px 10px;
     font-size: 0.8rem;
   }
+
+  .detail-handle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    padding: 2px 0 8px;
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .detail-grabber {
+    width: 36px;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.22);
+    transition: background-color 180ms ease;
+  }
+
+  .detail-handle:hover .detail-grabber {
+    background: rgba(74, 222, 128, 0.55);
+  }
+
+  .detail-peek {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    text-align: left;
+  }
+
+  .detail-peek-name {
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: #f5f5f7;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .detail-peek-stats {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.76rem;
+    opacity: 0.7;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .detail-peek-sep {
+    opacity: 0.6;
+  }
+
+  .detail-peek-ascent-icon {
+    color: #4ade80;
+    flex-shrink: 0;
+  }
+
+  .detail-body {
+    overflow: hidden;
+    max-height: 600px;
+    opacity: 1;
+    transition: max-height 320ms var(--ease-out), opacity 200ms ease;
+  }
+
+  .detail-body-collapsed {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .route-float-nav {
+    display: flex;
+    position: absolute;
+    z-index: 5;
+    right: 16px;
+    bottom: 84px;
+    gap: 8px;
+    transform-origin: bottom right;
+    opacity: 0;
+    transform: translateY(6px) scale(0.92);
+    pointer-events: none;
+    transition: opacity 140ms var(--ease-out), transform 140ms var(--ease-out);
+  }
+
+  .route-float-nav-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    transition: opacity 220ms var(--ease-out) 120ms, transform 220ms var(--ease-out) 120ms;
+  }
+
+  .route-float-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(20, 22, 27, 0.9);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e8e8ea;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    transition: background-color 150ms ease, border-color 150ms ease, transform 140ms var(--ease-out);
+  }
+
+  .route-float-btn:hover:not(:disabled) {
+    background: rgba(34, 40, 32, 0.95);
+    border-color: rgba(74, 222, 128, 0.4);
+    color: #4ade80;
+  }
+
+  .route-float-btn:active:not(:disabled) {
+    transform: scale(0.92);
+  }
+
+  .route-float-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .layers-ctrl-menu,
   .browser,
   .detail-panel,
-  .tile,
+  .folder-row,
   .route-list li,
   .maplibregl-popup-content {
     animation: none;
@@ -772,9 +1051,10 @@
   .icon-btn,
   .crumb,
   .back-link,
-  .tile,
+  .folder-row,
   .route-row-main,
-  .route-nav-btn {
+  .route-nav-btn,
+  .route-float-btn {
     transition-property: background-color, opacity;
   }
 
@@ -782,13 +1062,24 @@
   .icon-btn:active,
   .crumb:active,
   .back-link:active,
-  .tile:active,
+  .folder-row:active,
   .route-row-main:active,
-  .route-nav-btn:active:not(:disabled) {
+  .route-nav-btn:active:not(:disabled),
+  .route-float-btn:active:not(:disabled) {
     transform: none;
   }
 
   .layers-ctrl-menu {
     transition-property: opacity;
+  }
+
+  .detail-body {
+    transition-property: opacity;
+  }
+
+  .route-float-nav,
+  .route-float-nav-visible {
+    transition-property: opacity;
+    transform: none;
   }
 }
