@@ -10,6 +10,67 @@
   inset: 0;
 }
 
+.layers-ctrl {
+  position: relative;
+}
+
+.layers-ctrl-btn {
+  width: 29px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.layers-ctrl-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.layers-ctrl-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 100%;
+  margin-right: 8px;
+  background: #1a1d24;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  padding: 4px;
+  flex-direction: column;
+  min-width: 130px;
+  z-index: 10;
+}
+
+.layers-ctrl-menu.open {
+  display: flex;
+}
+
+.layers-ctrl-menu button {
+  background: none;
+  border: none;
+  color: #e8e8ea;
+  text-align: left;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-family: inherit;
+}
+
+.layers-ctrl-menu button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.layers-ctrl-menu button.active {
+  background: #2f6f4f;
+  color: white;
+}
+
 /* Popup MapLibre (klik na pinezkę/punkt POI) — domyślny styl ma białe tło,
    a globalny jasny kolor tekstu (#e8e8ea, dobrany pod ciemny sidebar) robił
    się nieczytelny na białym. Przestylowane pod ciemny motyw aplikacji. */
