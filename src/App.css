@@ -51,6 +51,9 @@
 }
 
 .layers-ctrl-menu button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
   background: none;
   border: none;
   color: #e8e8ea;
