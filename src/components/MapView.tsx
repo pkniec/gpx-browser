@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import maplibregl, { type StyleSpecification } from "maplibre-gl";
+import maplibregl, { type RasterSourceSpecification, type StyleSpecification } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import type { HeatmapPoint, RouteTrack } from "../types";
 
@@ -20,7 +20,7 @@ type MapStyleKey = "basic" | "cyclosm" | "cycling";
 
 const DEFAULT_STYLE_KEY: MapStyleKey = "cycling";
 
-const OSM_SOURCE = {
+const OSM_SOURCE: RasterSourceSpecification = {
   type: "raster",
   tiles: [
     "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -30,7 +30,7 @@ const OSM_SOURCE = {
   tileSize: 256,
   attribution:
     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-} as const;
+};
 
 const BASIC_STYLE: StyleSpecification = {
   version: 8,
@@ -101,7 +101,7 @@ class LayersControl implements maplibregl.IControl {
   };
 
   constructor(
-    private current: MapStyleKey,
+    current: MapStyleKey,
     private onSelect: (key: MapStyleKey) => void,
   ) {
     this.container = document.createElement("div");
@@ -147,7 +147,6 @@ class LayersControl implements maplibregl.IControl {
   }
 
   setActive(key: MapStyleKey) {
-    this.current = key;
     for (const [k, el] of this.buttons) el.classList.toggle("active", k === key);
   }
 
