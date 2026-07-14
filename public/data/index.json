@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T07:15:24.598Z",
+  "generatedAt": "2026-07-14T07:22:32.054Z",
   "categories": [
     {
       "id": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
@@ -2106,6 +2106,34 @@
       },
       "gpxFile": "2026-07-08-gravelova-sroda-112-opowiesci-z-mchu-i-paproci.gpx",
       "gpxOriginalName": "2026/07/08 - GraveLova Środa #112 - Opowieści z mchu i paproci.gpx"
+    },
+    {
+      "id": "2026-07-15-gravelova-sroda-113-dzien-swistaka",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #113 - Dzień świstaka",
+      "date": "2026-07-15",
+      "distanceKm": 44.5,
+      "ascentM": 108,
+      "descentM": 104,
+      "durationMin": 176.08586666666667,
+      "start": [
+        17.943642,
+        50.648827
+      ],
+      "bbox": [
+        17.943575,
+        50.590074,
+        18.137391,
+        50.657184
+      ],
+      "surface": {
+        "paved": 20.8,
+        "gravel": 0.2,
+        "unpaved": 4.3,
+        "unknown": 74.7
+      },
+      "gpxFile": "2026-07-15-gravelova-sroda-113-dzien-swistaka.gpx",
+      "gpxOriginalName": "2026/07/15 - GraveLova Środa #113 - Dzień świstaka.gpx"
     },
     {
       "id": "2106-06-17-gravelova-sroda-109-wzgorza-maja-oczy",
