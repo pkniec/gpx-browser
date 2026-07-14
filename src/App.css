@@ -37,7 +37,8 @@
 
 .app-shell {
   position: relative;
-  height: 100vh;
+  height: 100vh; /* fallback dla przeglądarek bez wsparcia dvh */
+  height: 100dvh;
   width: 100vw;
   overflow: hidden;
 }
@@ -281,7 +282,8 @@
 }
 
 .status-screen {
-  height: 100vh;
+  height: 100vh; /* fallback dla przeglądarek bez wsparcia dvh */
+  height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
