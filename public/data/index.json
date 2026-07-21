@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T07:22:32.054Z",
+  "generatedAt": "2026-07-21T09:40:27.609Z",
   "categories": [
     {
       "id": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
@@ -2134,6 +2134,34 @@
       },
       "gpxFile": "2026-07-15-gravelova-sroda-113-dzien-swistaka.gpx",
       "gpxOriginalName": "2026/07/15 - GraveLova Środa #113 - Dzień świstaka.gpx"
+    },
+    {
+      "id": "2026-07-22-gravelova-sroda-114-oszukac-przeznaczenie",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #114 - Oszukać przeznaczenie",
+      "date": "2026-07-22",
+      "distanceKm": 59.3,
+      "ascentM": 233,
+      "descentM": 234,
+      "durationMin": 265.7615333333333,
+      "start": [
+        17.9477,
+        50.682424
+      ],
+      "bbox": [
+        17.947478,
+        50.641988,
+        18.19199,
+        50.744128
+      ],
+      "surface": {
+        "paved": 25.1,
+        "gravel": 15.8,
+        "unpaved": 6.6,
+        "unknown": 52.5
+      },
+      "gpxFile": "2026-07-22-gravelova-sroda-114-oszukac-przeznaczenie.gpx",
+      "gpxOriginalName": "2026/07/22 - GraveLova Środa #114 - Oszukać przeznaczenie.gpx"
     },
     {
       "id": "2106-06-17-gravelova-sroda-109-wzgorza-maja-oczy",
