@@ -1,0 +1,75 @@
+name: Sync GPX z Google Drive
+
+# Uruchamiamy się co godzinę i sami sprawdzamy, czy w Warszawie jest 10:00 lub 20:00 —
+# dzięki temu godziny są poprawne cały rok, mimo zmiany czasu lato/zima
+# (GitHub Actions umie planować crony tylko w UTC).
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sprawdź, czy to pora synchronizacji (10:00 lub 20:00 czasu polskiego)
+        id: gate
+        run: |
+          hour="$(TZ='Europe/Warsaw' date +%H)"
+          if [ "$hour" = "10" ] || [ "$hour" = "20" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout
+        if: steps.gate.outputs.run == 'true'
+        uses: actions/checkout@v4
+
+      - name: Node
+        if: steps.gate.outputs.run == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Zależności
+        if: steps.gate.outputs.run == 'true'
+        run: npm ci
+
+      - name: Sync z Dysku Google
+        if: steps.gate.outputs.run == 'true'
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          DRIVE_ROOT_FOLDER_ID: "14Ym90hHiqlLEz6ln8Jjdtb3yQB-EO5Sx"
+        shell: bash
+        run: set -o pipefail; npm run sync | tee sync-output.log
+
+      - name: Wykryj, czy coś się zmieniło
+        if: steps.gate.outputs.run == 'true'
+        id: changes
+        run: |
+          summary="$(grep 'Gotowe:' sync-output.log || true)"
+          nowe="$(echo "$summary" | grep -oP 'nowe: \K[0-9]+' || echo 0)"
+          zaktualizowane="$(echo "$summary" | grep -oP 'zaktualizowane: \K[0-9]+' || echo 0)"
+          usuniete="$(echo "$summary" | grep -oP 'usunięte z Dysku: \K[0-9]+' || echo 0)"
+          echo "count=$((nowe + zaktualizowane + usuniete))" >> "$GITHUB_OUTPUT"
+          {
+            echo "summary<<EOF"
+            echo "$summary"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Commit i push nowych/zmienionych tras
+        if: steps.gate.outputs.run == 'true' && steps.changes.outputs.count != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data scripts/sync-manifest.json
+          git commit -m "Auto-sync tras GPX z Dysku Google"
+          git push
+
+      # Powiadomienie e-mail: na razie pominięte — dodamy, gdy będą gotowe
+      # sekrety MAIL_USERNAME / MAIL_PASSWORD.

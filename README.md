@@ -35,8 +35,23 @@ npm run sync
 ```
 
 Skrypt nadpisze `public/data/index.json`, `public/data/tracks/*.json` i `public/data/gpx/*.gpx`
-zawartością z Dysku. Uruchamiaj go ręcznie, gdy chcesz odświeżyć dane (np. po dodaniu nowych
-tras przez klub) — nie ma automatycznego, cyklicznego odpytywania.
+zawartością z Dysku. Możesz go też uruchomić ręcznie, gdy chcesz odświeżyć dane od razu.
+
+### Automatyczny sync (GitHub Actions)
+
+Workflow `.github/workflows/gpx-sync.yml` uruchamia `npm run sync` dwa razy dziennie
+(10:00 i 20:00 czasu polskiego, z uwzględnieniem zmiany czasu — sam siebie sprawdza co
+godzinę i wykonuje właściwą pracę tylko o tych dwóch porach). Jeśli sync wykryje nowe lub
+zmienione trasy, workflow commituje zmiany w `public/data/` i `scripts/sync-manifest.json`
+i pushuje je do `main`. Jeśli Vercel jest podłączony do repo przez integrację Git, taki push
+sam uruchamia nowy deploy produkcyjny — nie trzeba nic więcej robić.
+
+Żeby to działało, w ustawieniach repo (**Settings → Secrets and variables → Actions →
+New repository secret**) trzeba dodać sekret `GOOGLE_API_KEY` z tą samą wartością, która
+jest w lokalnym `.env`. `DRIVE_ROOT_FOLDER_ID` jest wpisany wprost w workflow (folder jest
+publiczny, więc to nie jest sekret).
+
+Powiadomienie e-mail o nowych trasach nie jest jeszcze skonfigurowane — dodamy je później.
 
 ### Analiza nawierzchni (opcjonalna, wymaga weryfikacji)
 
