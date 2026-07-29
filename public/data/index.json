@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-21T09:40:27.609Z",
+  "generatedAt": "2026-07-29T18:05:59.985Z",
   "categories": [
     {
       "id": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
@@ -2162,6 +2162,29 @@
       },
       "gpxFile": "2026-07-22-gravelova-sroda-114-oszukac-przeznaczenie.gpx",
       "gpxOriginalName": "2026/07/22 - GraveLova Środa #114 - Oszukać przeznaczenie.gpx"
+    },
+    {
+      "id": "2026-07-29-gravelova-sroda-115-60-sekund",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #115 - 60 sekund",
+      "date": "2026-07-29",
+      "distanceKm": 53.7,
+      "ascentM": 202,
+      "descentM": 201,
+      "durationMin": 220.5327,
+      "start": [
+        17.876761,
+        50.696208
+      ],
+      "bbox": [
+        17.65874,
+        50.664434,
+        17.879951,
+        50.751477
+      ],
+      "surface": null,
+      "gpxFile": "2026-07-29-gravelova-sroda-115-60-sekund.gpx",
+      "gpxOriginalName": "2026/07/29 - GraveLova Środa #115 - 60 sekund.gpx"
     },
     {
       "id": "2106-06-17-gravelova-sroda-109-wzgorza-maja-oczy",
