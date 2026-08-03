@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-29T18:05:59.985Z",
+  "generatedAt": "2026-08-03T18:50:20.414Z",
   "categories": [
     {
       "id": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
@@ -63,6 +63,29 @@
     }
   ],
   "routes": [
+    {
+      "id": "2016-08-05-gravelova-sroda-116-narodziny-gwiazdy",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #116 - Narodziny gwiazdy",
+      "date": "2016-08-05",
+      "distanceKm": 52.6,
+      "ascentM": 173,
+      "descentM": 170,
+      "durationMin": 177.58335,
+      "start": [
+        17.913921,
+        50.656527
+      ],
+      "bbox": [
+        17.725134,
+        50.566052,
+        17.929582,
+        50.679653
+      ],
+      "surface": null,
+      "gpxFile": "2016-08-05-gravelova-sroda-116-narodziny-gwiazdy.gpx",
+      "gpxOriginalName": "2016/08/05 - GraveLova Środa #116 - Narodziny gwiazdy.gpx"
+    },
     {
       "id": "2024-gravelova-sroda-1-asfaltowa-gonka",
       "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
