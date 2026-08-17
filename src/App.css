@@ -244,6 +244,21 @@
   min-height: 28px;
 }
 
+.app-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.app-caption {
+  margin: 0;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
 .app-header h1 {
   font-size: 1.1rem;
   font-weight: 500;

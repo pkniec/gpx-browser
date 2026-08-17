@@ -268,7 +268,10 @@ export default function App() {
                 <GpxDownloadLink route={selectedRoute} />
               </>
             ) : (
-              <h1>Trasy GPX</h1>
+              <div className="app-title-block">
+                <p className="app-caption">Gravelove Opole</p>
+                <h1>Trasy GPX</h1>
+              </div>
             )}
           </header>
           {selectedRoute ? (
