@@ -35,12 +35,44 @@
   }
 }
 
-.app-shell {
-  position: relative;
+.app-root {
   height: 100vh; /* fallback dla przeglądarek bez wsparcia dvh */
   height: 100dvh;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
+}
+
+.app-shell {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.app-footer {
+  flex-shrink: 0;
+  height: 20px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+.footer-credit {
+  color: #fff;
+  font-size: 0.7rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.footer-credit a {
+  color: #fff;
+  text-decoration: underline;
 }
 
 .map-root {
@@ -282,8 +314,8 @@
 }
 
 .status-screen {
-  height: 100vh; /* fallback dla przeglądarek bez wsparcia dvh */
-  height: 100dvh;
+  flex: 1;
+  min-height: 0;
   display: flex;
   align-items: center;
   justify-content: center;

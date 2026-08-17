@@ -20,6 +20,19 @@ const MULTI_COLORS = [
   "#5fe0d0",
 ];
 
+function Footer() {
+  return (
+    <footer className="app-footer">
+      <div className="footer-credit">
+        crafted by{" "}
+        <a href="https://kniec.pl" target="_blank" rel="noopener noreferrer">
+          kniec.pl
+        </a>
+      </div>
+    </footer>
+  );
+}
+
 function GpxDownloadLink({ route }: { route: RouteMeta }) {
   return (
     <a
@@ -169,10 +182,20 @@ export default function App() {
   }, [heatmapData, index, currentCategoryId]);
 
   if (loadState === "loading") {
-    return <div className="status-screen">Wczytywanie tras…</div>;
+    return (
+      <div className="app-root">
+        <div className="status-screen">Wczytywanie tras…</div>
+        <Footer />
+      </div>
+    );
   }
   if (loadState === "error" || !index) {
-    return <div className="status-screen">Nie udało się wczytać biblioteki tras.</div>;
+    return (
+      <div className="app-root">
+        <div className="status-screen">Nie udało się wczytać biblioteki tras.</div>
+        <Footer />
+      </div>
+    );
   }
 
   const selectedRoute = selectedRouteId
@@ -204,77 +227,80 @@ export default function App() {
   const effectiveHeatmap = selectedRoute ? null : showHeatmap ? heatmapData : null;
 
   return (
-    <div className="app-shell">
-      <MapView tracks={displayTracks} heatmapPoints={effectiveHeatmap} />
-      {selectedRoute && (
-        <div className="route-float-header">
-          <button className="back-link back-link-floating" onClick={handleBack}>
-            ← Wróć do listy
-          </button>
-          <GpxDownloadLink route={selectedRoute} />
-        </div>
-      )}
-      {selectedRoute && (
-        <div className={`route-float-nav${routePanelCollapsed ? " route-float-nav-visible" : ""}`}>
-          <button
-            className="route-float-btn"
-            onClick={handlePrev}
-            disabled={!hasPrev}
-            aria-label="Poprzednia trasa"
-          >
-            <ArrowLeft size={18} strokeWidth={2} />
-          </button>
-          <button
-            className="route-float-btn"
-            onClick={handleNext}
-            disabled={!hasNext}
-            aria-label="Następna trasa"
-          >
-            <ArrowRight size={18} strokeWidth={2} />
-          </button>
-        </div>
-      )}
-      <aside className={`side-panel${routePanelCollapsed && selectedRoute ? " side-panel-collapsed" : ""}`}>
-        <header className={`app-header${selectedRoute ? " app-header-route" : ""}`}>
-          {selectedRoute ? (
-            <>
-              <button className="back-link" onClick={handleBack}>
-                ← Wróć do listy
-              </button>
-              <GpxDownloadLink route={selectedRoute} />
-            </>
-          ) : (
-            <h1>Trasy GPX</h1>
-          )}
-        </header>
-        {selectedRoute ? (
-          <RouteDetail
-            key={selectedRoute.id}
-            route={selectedRoute}
-            onPrev={handlePrev}
-            onNext={handleNext}
-            hasPrev={hasPrev}
-            hasNext={hasNext}
-            collapsed={routePanelCollapsed}
-            onToggleCollapsed={handleToggleRoutePanel}
-          />
-        ) : (
-          <CategoryBrowser
-            categories={index.categories}
-            routes={index.routes}
-            currentCategoryId={currentCategoryId}
-            onSelectCategory={handleSelectCategory}
-            onSelectRoute={setSelectedRouteId}
-            checkedRouteIds={checkedRouteIds}
-            onToggleRoute={handleToggleRoute}
-            onSelectAllInCategory={handleSelectAllInCategory}
-            onClearSelection={handleClearSelection}
-            routeColor={routeColor}
-            showHeatmap={showHeatmap}
-            onToggleHeatmap={handleToggleHeatmap}
-          />
+    <div className="app-root">
+      <div className="app-shell">
+        <MapView tracks={displayTracks} heatmapPoints={effectiveHeatmap} />
+        {selectedRoute && (
+          <div className="route-float-header">
+            <button className="back-link back-link-floating" onClick={handleBack}>
+              ← Wróć do listy
+            </button>
+            <GpxDownloadLink route={selectedRoute} />
+          </div>
         )}
-      </aside>
+        {selectedRoute && (
+          <div className={`route-float-nav${routePanelCollapsed ? " route-float-nav-visible" : ""}`}>
+            <button
+              className="route-float-btn"
+              onClick={handlePrev}
+              disabled={!hasPrev}
+              aria-label="Poprzednia trasa"
+            >
+              <ArrowLeft size={18} strokeWidth={2} />
+            </button>
+            <button
+              className="route-float-btn"
+              onClick={handleNext}
+              disabled={!hasNext}
+              aria-label="Następna trasa"
+            >
+              <ArrowRight size={18} strokeWidth={2} />
+            </button>
+          </div>
+        )}
+        <aside className={`side-panel${routePanelCollapsed && selectedRoute ? " side-panel-collapsed" : ""}`}>
+          <header className={`app-header${selectedRoute ? " app-header-route" : ""}`}>
+            {selectedRoute ? (
+              <>
+                <button className="back-link" onClick={handleBack}>
+                  ← Wróć do listy
+                </button>
+                <GpxDownloadLink route={selectedRoute} />
+              </>
+            ) : (
+              <h1>Trasy GPX</h1>
+            )}
+          </header>
+          {selectedRoute ? (
+            <RouteDetail
+              key={selectedRoute.id}
+              route={selectedRoute}
+              onPrev={handlePrev}
+              onNext={handleNext}
+              hasPrev={hasPrev}
+              hasNext={hasNext}
+              collapsed={routePanelCollapsed}
+              onToggleCollapsed={handleToggleRoutePanel}
+            />
+          ) : (
+            <CategoryBrowser
+              categories={index.categories}
+              routes={index.routes}
+              currentCategoryId={currentCategoryId}
+              onSelectCategory={handleSelectCategory}
+              onSelectRoute={setSelectedRouteId}
+              checkedRouteIds={checkedRouteIds}
+              onToggleRoute={handleToggleRoute}
+              onSelectAllInCategory={handleSelectAllInCategory}
+              onClearSelection={handleClearSelection}
+              routeColor={routeColor}
+              showHeatmap={showHeatmap}
+              onToggleHeatmap={handleToggleHeatmap}
+            />
+          )}
+        </aside>
+      </div>
+      <Footer />
     </div>
   );
 }
