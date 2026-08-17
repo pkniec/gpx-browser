@@ -1,4 +1,5 @@
 const FOLDER_MIME = "application/vnd.google-apps.folder";
+const GPX_MIME = "application/gpx+xml";
 const API_BASE = "https://www.googleapis.com/drive/v3/files";
 
 export type DriveFolder = { id: string; name: string; parentId: string | null };
@@ -78,7 +79,7 @@ export async function walkDriveTree(
         const parentId = isRootLevel ? null : folderId;
         folders.push({ id: child.id, name: child.name.trim(), parentId });
         await walk(child.id, false);
-      } else if (child.name.toLowerCase().endsWith(".gpx")) {
+      } else if (child.name.toLowerCase().endsWith(".gpx") || child.mimeType === GPX_MIME) {
         if (isRootLevel) continue;
         gpxFiles.push({
           id: child.id,

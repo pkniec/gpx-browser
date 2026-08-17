@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T18:55:05.213Z",
+  "generatedAt": "2026-08-17T09:48:04.485Z",
   "categories": [
     {
       "id": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
@@ -843,6 +843,34 @@
       "gpxOriginalName": "2025/07/16 - GraveLova Środa #063 - Zew Szakala.gpx"
     },
     {
+      "id": "2025-07-23-gravelova-sroda-064-zurawi-patrol",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #064 - Żurawi Patrol",
+      "date": "2025-07-23",
+      "distanceKm": 54.3,
+      "ascentM": 125,
+      "descentM": 124,
+      "durationMin": 265.18561666666665,
+      "start": [
+        17.990076,
+        50.629344
+      ],
+      "bbox": [
+        17.969552,
+        50.556722,
+        18.194163,
+        50.657184
+      ],
+      "surface": {
+        "paved": 12.4,
+        "gravel": 6.3,
+        "unpaved": 11,
+        "unknown": 70.4
+      },
+      "gpxFile": "2025-07-23-gravelova-sroda-064-zurawi-patrol.gpx",
+      "gpxOriginalName": "2025/07/23 - GraveLova Środa #064 - Żurawi Patrol"
+    },
+    {
       "id": "2025-07-30-gravelova-sroda-065-kia-na-skrzyd-ach-or-a",
       "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
       "title": "GraveLova Środa #065 - KIA - Na Skrzydłach Orła",
@@ -899,6 +927,34 @@
       "gpxOriginalName": "2025/08/06 - GraveLova Środa #066 - Pierwszy lot Kopciuszka.gpx"
     },
     {
+      "id": "2025-08-13-gravelova-sroda-067-mostopol-zelazny-pajak",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #067 - Mostopol - Żelazny Pająk",
+      "date": "2025-08-13",
+      "distanceKm": 54.7,
+      "ascentM": 142,
+      "descentM": 142,
+      "durationMin": 232.25335,
+      "start": [
+        17.908721,
+        50.698565
+      ],
+      "bbox": [
+        17.741241,
+        50.611424,
+        17.919114,
+        50.704983
+      ],
+      "surface": {
+        "paved": 54.8,
+        "gravel": 5.8,
+        "unpaved": 9.8,
+        "unknown": 29.6
+      },
+      "gpxFile": "2025-08-13-gravelova-sroda-067-mostopol-zelazny-pajak.gpx",
+      "gpxOriginalName": "2025/08/13 - GraveLova Środa #067 - Mostopol - Żelazny Pająk"
+    },
+    {
       "id": "2025-08-20-gravelova-sroda-068-5uper-gepard-bike",
       "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
       "title": "GraveLova Środa #068 - 5uper Gepard Bike",
@@ -953,6 +1009,34 @@
       },
       "gpxFile": "2025-08-27-gravelova-sroda-069-flamingowa-sroda.gpx",
       "gpxOriginalName": "2025/08/27 - GraveLova Środa #069 - Flamingowa środa.gpx"
+    },
+    {
+      "id": "2025-09-03-gravelova-sroda-070-ma-apanski-pyton",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #070 - Małapański Pyton",
+      "date": "2025-09-03",
+      "distanceKm": 38.6,
+      "ascentM": 56,
+      "descentM": 55,
+      "durationMin": 175.37021666666666,
+      "start": [
+        17.900332,
+        50.72523
+      ],
+      "bbox": [
+        17.882196,
+        50.717464,
+        18.094706,
+        50.74903
+      ],
+      "surface": {
+        "paved": 31,
+        "gravel": 3.6,
+        "unpaved": 3.8,
+        "unknown": 61.6
+      },
+      "gpxFile": "2025-09-03-gravelova-sroda-070-ma-apanski-pyton.gpx",
+      "gpxOriginalName": "2025/09/03 - GraveLova Środa #070 - Małapański Pyton"
     },
     {
       "id": "2025-09-10-gravelova-sroda-071-turbo-pantera",
@@ -2208,6 +2292,34 @@
       "surface": null,
       "gpxFile": "2026-07-29-gravelova-sroda-115-60-sekund.gpx",
       "gpxOriginalName": "2026/07/29 - GraveLova Środa #115 - 60 sekund.gpx"
+    },
+    {
+      "id": "2026-08-12-gravelova-sroda-117-zniwiarz",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #117 - Żniwiarz",
+      "date": "2026-08-12",
+      "distanceKm": 45.8,
+      "ascentM": 105,
+      "descentM": 104,
+      "durationMin": 218.60781666666668,
+      "start": [
+        17.990076,
+        50.629344
+      ],
+      "bbox": [
+        17.981119,
+        50.499681,
+        18.076247,
+        50.629344
+      ],
+      "surface": {
+        "paved": 13.8,
+        "gravel": 7.1,
+        "unpaved": 3.6,
+        "unknown": 75.4
+      },
+      "gpxFile": "2026-08-12-gravelova-sroda-117-zniwiarz.gpx",
+      "gpxOriginalName": "2026/08/12 - GraveLova Środa #117 - Żniwiarz"
     },
     {
       "id": "2106-06-17-gravelova-sroda-109-wzgorza-maja-oczy",
