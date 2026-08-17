@@ -20,6 +20,63 @@ const SURFACE_LABELS: Record<"paved" | "gravel" | "unpaved", string> = {
 
 const MARQUEE_PX_PER_SECOND = 45;
 
+// Próg, od którego pionowy ruch palca liczy się jako przeciąganie (a nie zwykłe tapnięcie).
+const SWIPE_INTENT_PX = 6;
+// Minimalny dystans przeciągnięcia, żeby swipe faktycznie zwinął/rozwinął panel.
+const SWIPE_TOGGLE_PX = 32;
+
+/** Swipe-down zwija panel, swipe-up rozwija go — jak natywny bottom sheet na iOS.
+ * Nasłuchujemy natywnie (nie przez props onTouch* z Reacta), żeby móc wywołać
+ * preventDefault na touchmove — inaczej przeglądarka od razu przechwytuje pionowy
+ * gest jako pull-to-refresh, zanim zdążymy rozpoznać, że to przeciąganie panelu. */
+function useSwipeToggle(collapsed: boolean, onToggleCollapsed: () => void) {
+  const ref = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    let startY = 0;
+    let dragging = false;
+
+    const onTouchStart = (e: TouchEvent) => {
+      startY = e.touches[0].clientY;
+      dragging = false;
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+      const deltaY = e.touches[0].clientY - startY;
+      if (!dragging && Math.abs(deltaY) > SWIPE_INTENT_PX) dragging = true;
+      if (dragging) e.preventDefault();
+    };
+
+    const onTouchEnd = (e: TouchEvent) => {
+      if (!dragging) return;
+      dragging = false;
+      const deltaY = e.changedTouches[0].clientY - startY;
+      if (!collapsed && deltaY > SWIPE_TOGGLE_PX) onToggleCollapsed();
+      else if (collapsed && deltaY < -SWIPE_TOGGLE_PX) onToggleCollapsed();
+    };
+
+    const onTouchCancel = () => {
+      dragging = false;
+    };
+
+    el.addEventListener("touchstart", onTouchStart, { passive: true });
+    el.addEventListener("touchmove", onTouchMove, { passive: false });
+    el.addEventListener("touchend", onTouchEnd);
+    el.addEventListener("touchcancel", onTouchCancel);
+    return () => {
+      el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchmove", onTouchMove);
+      el.removeEventListener("touchend", onTouchEnd);
+      el.removeEventListener("touchcancel", onTouchCancel);
+    };
+  }, [collapsed, onToggleCollapsed]);
+
+  return ref;
+}
+
 /** Nazwa trasy w skompaktowanym pasku — gdy nie mieści się w dostępnej szerokości,
  * zamiast obcinać wielokropkiem przewija się w pętli, jak tytuł utworu w Spotify. */
 function MarqueeText({ text }: { text: string }) {
@@ -70,12 +127,14 @@ export default function RouteDetail({
   onToggleCollapsed,
 }: Props) {
   const surface = route.surface;
+  const handleRef = useSwipeToggle(collapsed, onToggleCollapsed);
 
   return (
     <div className="detail-panel">
-      {/* Widoczne tylko na mobile (patrz media query) — tap zwija panel do paska, żeby odsłonić mapę.
-          Nazwa/statystyki pokazują się tylko po zwinięciu — inaczej dublowałyby tytuł poniżej. */}
-      <button className="detail-handle" onClick={onToggleCollapsed}>
+      {/* Widoczne tylko na mobile (patrz media query) — tap albo swipe (góra/dół) zwija/rozwija
+          panel, żeby odsłonić mapę. Nazwa/statystyki pokazują się tylko po zwinięciu — inaczej
+          dublowałyby tytuł poniżej. */}
+      <button className="detail-handle" onClick={onToggleCollapsed} ref={handleRef}>
         <span className="detail-grabber" />
         {collapsed && (
           <span className="detail-peek">

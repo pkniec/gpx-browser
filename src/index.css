@@ -42,4 +42,7 @@ body {
   background: #0f1115;
   color: #e8e8ea;
   font-weight: 400;
+  /* Bez tego pionowy swipe nad panelem tras (zwijanie/rozwijanie na mobile) bywa
+     przechwytywany przez natywny gest pull-to-refresh przeglądarki zamiast apki. */
+  overscroll-behavior-y: none;
 }
