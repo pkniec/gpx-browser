@@ -163,6 +163,7 @@ class LayersControl implements maplibregl.IControl {
 
 const srcId = (id: string) => `route-src-${id}`;
 const lineId = (id: string) => `route-line-${id}`;
+const casingId = (id: string) => `route-line-${id}-casing`;
 
 export default function MapView({ tracks, heatmapPoints }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -318,6 +319,7 @@ function drawTracks(
 ) {
   for (const id of drawnIdsRef.current) {
     if (map.getLayer(lineId(id))) map.removeLayer(lineId(id));
+    if (map.getLayer(casingId(id))) map.removeLayer(casingId(id));
     if (map.getSource(srcId(id))) map.removeSource(srcId(id));
   }
   drawnIdsRef.current = [];
@@ -334,12 +336,21 @@ function drawTracks(
         geometry: { type: "LineString", coordinates: dt.track.coords },
       },
     });
+    // Ciemna otoczka pod właściwą linią — niezależnie od tego, jaki kolor ma akurat
+    // mapa pod trasą (las, pole, woda), krawędź halo zapewnia stały, wysoki kontrast.
+    map.addLayer({
+      id: casingId(dt.id),
+      type: "line",
+      source: srcId(dt.id),
+      layout: { "line-join": "round", "line-cap": "round" },
+      paint: { "line-color": "#14161a", "line-width": 7.5, "line-opacity": 0.55 },
+    });
     map.addLayer({
       id: lineId(dt.id),
       type: "line",
       source: srcId(dt.id),
       layout: { "line-join": "round", "line-cap": "round" },
-      paint: { "line-color": dt.color, "line-width": 5, "line-opacity": 0.9 },
+      paint: { "line-color": dt.color, "line-width": 4.5, "line-opacity": 1 },
     });
     drawnIdsRef.current.push(dt.id);
 

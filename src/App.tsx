@@ -9,16 +9,20 @@ import "./App.css";
 
 type LoadState = "loading" | "done" | "error";
 
+// Nasycone, ciemniejsze odcienie — dobrane tak, by odróżniały się od typowych barw
+// mapy OSM pod spodem (jasna zieleń lasu, błękit wody, piaskowe tereny zabudowane).
+// Dodatkowo każda linia trasy ma ciemną otoczkę (MapView), która wzmacnia kontrast.
 const MULTI_COLORS = [
-  "#c25fd0",
-  "#3ba3e0",
-  "#e0a63b",
-  "#3be0a0",
-  "#e05f5f",
-  "#8f6fe0",
-  "#e0c23b",
-  "#5fe0d0",
+  "#e0218a",
+  "#2f7fe0",
+  "#e07d1a",
+  "#1fae74",
+  "#d92b2b",
+  "#7c3fe0",
+  "#c9a227",
+  "#12b5a6",
 ];
+const SELECTED_ROUTE_COLOR = MULTI_COLORS[0];
 
 function Footer() {
   return (
@@ -215,7 +219,7 @@ export default function App() {
 
   let displayTracks: DisplayTrack[] = [];
   if (selectedRoute && track) {
-    displayTracks = [{ id: selectedRoute.id, color: "#c25fd0", track, showMarkers: true }];
+    displayTracks = [{ id: selectedRoute.id, color: SELECTED_ROUTE_COLOR, track, showMarkers: true }];
   } else if (orderedChecked.length > 0) {
     displayTracks = orderedChecked.flatMap((r) => {
       const t = multiTracks.get(r.id);

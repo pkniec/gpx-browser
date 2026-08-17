@@ -523,8 +523,8 @@
 }
 
 .route-row-checked {
-  background: rgba(194, 95, 208, 0.1);
-  border-color: rgba(194, 95, 208, 0.35);
+  background: rgba(224, 33, 138, 0.1);
+  border-color: rgba(224, 33, 138, 0.35);
 }
 
 .route-list li {
@@ -547,7 +547,7 @@
   width: 16px;
   height: 16px;
   cursor: pointer;
-  accent-color: #c25fd0;
+  accent-color: #e0218a;
 }
 
 .route-color-dot {
