@@ -14,6 +14,8 @@ export type DisplayTrack = {
 type Props = {
   tracks: DisplayTrack[];
   heatmapPoints: HeatmapPoint[] | null;
+  /** Punkt zaznaczony na wykresie profilu wysokości — pokazywany jako kropka na trasie. */
+  highlightPoint: { lng: number; lat: number } | null;
 };
 
 type MapStyleKey = "basic" | "cyclosm" | "cycling";
@@ -165,11 +167,12 @@ const srcId = (id: string) => `route-src-${id}`;
 const lineId = (id: string) => `route-line-${id}`;
 const casingId = (id: string) => `route-line-${id}-casing`;
 
-export default function MapView({ tracks, heatmapPoints }: Props) {
+export default function MapView({ tracks, heatmapPoints, highlightPoint }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
   const readyRef = useRef(false);
   const markersRef = useRef<maplibregl.Marker[]>([]);
+  const highlightMarkerRef = useRef<maplibregl.Marker | null>(null);
   const drawnIdsRef = useRef<string[]>([]);
   const tracksRef = useRef<DisplayTrack[]>(tracks);
   const heatmapRef = useRef<HeatmapPoint[] | null>(heatmapPoints);
@@ -255,6 +258,30 @@ export default function MapView({ tracks, heatmapPoints }: Props) {
 
     if (readyRef.current) apply();
   }, [tracks]);
+
+  // Kropka pokazująca miejsce zaznaczone na wykresie profilu wysokości. Osobny efekt (nie
+  // część drawTracks) — zmienia się przy każdym przeciągnięciu po wykresie, więc musi działać
+  // tanio (tylko setLngLat), bez przebudowy warstw/źródeł tras.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !readyRef.current) return;
+
+    if (!highlightPoint) {
+      highlightMarkerRef.current?.remove();
+      highlightMarkerRef.current = null;
+      return;
+    }
+
+    if (!highlightMarkerRef.current) {
+      const el = document.createElement("div");
+      el.className = "elevation-cursor-marker";
+      highlightMarkerRef.current = new maplibregl.Marker({ element: el })
+        .setLngLat([highlightPoint.lng, highlightPoint.lat])
+        .addTo(map);
+    } else {
+      highlightMarkerRef.current.setLngLat([highlightPoint.lng, highlightPoint.lat]);
+    }
+  }, [highlightPoint]);
 
   return <div ref={containerRef} className="map-root" aria-label="Mapa tras" />;
 }

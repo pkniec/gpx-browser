@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { ArrowUp } from "lucide-react";
 import type { RouteMeta } from "../types";
+import { loadElevationProfile, type ElevationPoint } from "../elevation";
+import ElevationChart from "./ElevationChart";
 
 type Props = {
   route: RouteMeta;
@@ -10,6 +12,7 @@ type Props = {
   hasNext: boolean;
   collapsed: boolean;
   onToggleCollapsed: () => void;
+  onElevationSelect: (point: ElevationPoint | null) => void;
 };
 
 const SURFACE_LABELS: Record<"paved" | "gravel" | "unpaved", string> = {
@@ -125,9 +128,28 @@ export default function RouteDetail({
   hasNext,
   collapsed,
   onToggleCollapsed,
+  onElevationSelect,
 }: Props) {
   const surface = route.surface;
   const handleRef = useSwipeToggle(collapsed, onToggleCollapsed);
+  const [elevationProfile, setElevationProfile] = useState<ElevationPoint[] | null | "loading">(
+    "loading",
+  );
+
+  useEffect(() => {
+    let cancelled = false;
+    setElevationProfile("loading");
+    loadElevationProfile(route)
+      .then((points) => {
+        if (!cancelled) setElevationProfile(points);
+      })
+      .catch(() => {
+        if (!cancelled) setElevationProfile(null);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [route]);
 
   return (
     <div className="detail-panel">
@@ -168,6 +190,17 @@ export default function RouteDetail({
               <dd>{route.durationMin != null ? formatDuration(route.durationMin) : "brak danych"}</dd>
             </div>
           </dl>
+
+          {elevationProfile !== null && (
+            <div className="elevation-section">
+              <h3>Profil wysokości</h3>
+              {elevationProfile === "loading" ? (
+                <p className="empty-state">Wczytywanie profilu…</p>
+              ) : (
+                <ElevationChart points={elevationProfile} onSelect={onElevationSelect} />
+              )}
+            </div>
+          )}
 
           <div className="surface-section">
             <h3>Nawierzchnia</h3>

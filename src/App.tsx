@@ -97,6 +97,7 @@ export default function App() {
   const [showHeatmap, setShowHeatmap] = useState(false);
   const [heatmapData, setHeatmapData] = useState<HeatmapPoint[] | null>(null);
   const [routePanelCollapsed, setRoutePanelCollapsed] = useState(false);
+  const [elevationCursor, setElevationCursor] = useState<{ lng: number; lat: number } | null>(null);
   const [urlHydrated, setUrlHydrated] = useState(false);
   const urlHydratedOnceRef = useRef(false);
   // Domyślnie każda zmiana trasy/kategorii dopisuje wpis do historii przeglądarki (linkowalne
@@ -159,6 +160,7 @@ export default function App() {
   }, [index]);
 
   useEffect(() => {
+    setElevationCursor(null);
     if (!selectedRouteId) {
       setTrack(null);
       return;
@@ -315,7 +317,7 @@ export default function App() {
   return (
     <div className="app-root">
       <div className="app-shell">
-        <MapView tracks={displayTracks} heatmapPoints={effectiveHeatmap} />
+        <MapView tracks={displayTracks} heatmapPoints={effectiveHeatmap} highlightPoint={elevationCursor} />
         {selectedRoute && (
           <div className="route-float-header">
             <button className="back-link back-link-floating" onClick={handleBack}>
@@ -370,6 +372,7 @@ export default function App() {
               hasNext={hasNext}
               collapsed={routePanelCollapsed}
               onToggleCollapsed={handleToggleRoutePanel}
+              onElevationSelect={setElevationCursor}
             />
           ) : (
             <CategoryBrowser
