@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import MapView, { type DisplayTrack } from "./components/MapView";
 import CategoryBrowser from "./components/CategoryBrowser";
@@ -23,6 +23,35 @@ const MULTI_COLORS = [
   "#12b5a6",
 ];
 const SELECTED_ROUTE_COLOR = MULTI_COLORS[0];
+
+/** Adres URL jako jedyne źródło prawdy dla nawigacji — pozwala linkować/udostępniać
+ * konkretną trasę lub kategorię oraz korzystać z przycisków wstecz/dalej przeglądarki. */
+function readUrlState(): { category: string | null; route: string | null } {
+  const params = new URLSearchParams(window.location.search);
+  return { category: params.get("category"), route: params.get("route") };
+}
+
+function buildUrl(categoryId: string | null, routeId: string | null): string {
+  const params = new URLSearchParams();
+  if (routeId) params.set("route", routeId);
+  else if (categoryId) params.set("category", categoryId);
+  const qs = params.toString();
+  return qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+}
+
+/** Waliduje parametry z URL względem wczytanego indeksu — nieznane/usunięte id są ignorowane. */
+function resolveUrlState(
+  index: DataIndex,
+  categoryId: string | null,
+  routeId: string | null,
+): { categoryId: string | null; routeId: string | null } {
+  const route = routeId ? index.routes.find((r) => r.id === routeId) : undefined;
+  if (route) return { categoryId: route.categoryId, routeId: route.id };
+  if (categoryId && index.categories.some((c) => c.id === categoryId)) {
+    return { categoryId, routeId: null };
+  }
+  return { categoryId: null, routeId: null };
+}
 
 function Footer() {
   return (
@@ -68,6 +97,12 @@ export default function App() {
   const [showHeatmap, setShowHeatmap] = useState(false);
   const [heatmapData, setHeatmapData] = useState<HeatmapPoint[] | null>(null);
   const [routePanelCollapsed, setRoutePanelCollapsed] = useState(false);
+  const [urlHydrated, setUrlHydrated] = useState(false);
+  const urlHydratedOnceRef = useRef(false);
+  // Domyślnie każda zmiana trasy/kategorii dopisuje wpis do historii przeglądarki (linkowalne
+  // "miejsca"); Poprzednia/Następna zamiast tego podmieniają bieżący wpis (replaceState), żeby
+  // przeklikiwanie się przez trasy jednej po drugiej nie zapychało historii wieloma krokami.
+  const nextHistoryModeRef = useRef<"push" | "replace">("push");
 
   useEffect(() => {
     loadIndex()
@@ -77,6 +112,51 @@ export default function App() {
       })
       .catch(() => setLoadState("error"));
   }, []);
+
+  // Jednorazowa hydratacja stanu z parametrów URL (?route=… / ?category=…) po wczytaniu indeksu.
+  useEffect(() => {
+    if (!index || urlHydratedOnceRef.current) return;
+    urlHydratedOnceRef.current = true;
+    const { category, route } = readUrlState();
+    const resolved = resolveUrlState(index, category, route);
+    setCurrentCategoryId(resolved.categoryId);
+    setSelectedRouteId(resolved.routeId);
+    setUrlHydrated(true);
+  }, [index]);
+
+  // Odzwierciedla currentCategoryId/selectedRouteId w URL (po hydratacji).
+  useEffect(() => {
+    if (!urlHydrated) return;
+    const url = buildUrl(currentCategoryId, selectedRouteId);
+    const current = window.location.pathname + window.location.search;
+    if (url !== current) {
+      if (nextHistoryModeRef.current === "replace") {
+        window.history.replaceState(null, "", url);
+      } else {
+        window.history.pushState(null, "", url);
+      }
+    }
+    nextHistoryModeRef.current = "push";
+  }, [urlHydrated, currentCategoryId, selectedRouteId]);
+
+  // Przyciski wstecz/dalej przeglądarki — odtwarza stan z URL.
+  useEffect(() => {
+    const onPopState = () => {
+      if (!index) return;
+      const { category, route } = readUrlState();
+      const resolved = resolveUrlState(index, category, route);
+      setCurrentCategoryId(resolved.categoryId);
+      setSelectedRouteId(resolved.routeId);
+      if (!resolved.routeId) {
+        setCheckedRouteIds(new Set());
+        setShowHeatmap(false);
+        setHeatmapData(null);
+      }
+      setRoutePanelCollapsed(false);
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, [index]);
 
   useEffect(() => {
     if (!selectedRouteId) {
@@ -129,6 +209,7 @@ export default function App() {
   const handleToggleRoutePanel = useCallback(() => setRoutePanelCollapsed((prev) => !prev), []);
 
   const handlePrev = useCallback(() => {
+    nextHistoryModeRef.current = "replace";
     setSelectedRouteId((current) => {
       if (!index || !current) return current;
       const route = index.routes.find((r) => r.id === current);
@@ -140,6 +221,7 @@ export default function App() {
   }, [index]);
 
   const handleNext = useCallback(() => {
+    nextHistoryModeRef.current = "replace";
     setSelectedRouteId((current) => {
       if (!index || !current) return current;
       const route = index.routes.find((r) => r.id === current);
