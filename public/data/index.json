@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-17T09:48:04.485Z",
+  "generatedAt": "2026-08-17T12:19:12.352Z",
   "categories": [
     {
       "id": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
@@ -2320,6 +2320,34 @@
       },
       "gpxFile": "2026-08-12-gravelova-sroda-117-zniwiarz.gpx",
       "gpxOriginalName": "2026/08/12 - GraveLova Środa #117 - Żniwiarz"
+    },
+    {
+      "id": "2026-08-19-gravelova-sroda-118-dzien-swira",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #118 - Dzień swira",
+      "date": "2026-08-19",
+      "distanceKm": 44.4,
+      "ascentM": 77,
+      "descentM": 77,
+      "durationMin": 199.41113333333334,
+      "start": [
+        17.900321,
+        50.725131
+      ],
+      "bbox": [
+        17.807277,
+        50.725131,
+        17.962283,
+        50.820718
+      ],
+      "surface": {
+        "paved": 31.4,
+        "gravel": 2.3,
+        "unpaved": 9.8,
+        "unknown": 56.5
+      },
+      "gpxFile": "2026-08-19-gravelova-sroda-118-dzien-swira.gpx",
+      "gpxOriginalName": "2026/08/19 - GraveLova Środa #118 - Dzień swira.gpx"
     },
     {
       "id": "2106-06-17-gravelova-sroda-109-wzgorza-maja-oczy",
