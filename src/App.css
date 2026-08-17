@@ -1114,6 +1114,11 @@
     opacity: 0.35;
     cursor: default;
   }
+
+  /* Na mobile ekran jest ciasny — stopka zabiera miejsce, które lepiej oddać mapie/panelowi. */
+  .app-footer {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
