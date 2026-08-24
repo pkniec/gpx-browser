@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-17T12:19:12.352Z",
+  "generatedAt": "2026-08-24T08:50:23.030Z",
   "categories": [
     {
       "id": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
@@ -3715,6 +3715,52 @@
       },
       "gpxFile": "ustawka-27-medalowa-dogrywka-tomex-gravel.gpx",
       "gpxOriginalName": "Ustawka #27 - Medalowa Dogrywka Tomex Gravel.gpx"
+    },
+    {
+      "id": "ustawka-28-objazd-trasy-120-km-gravelove-bory-2026",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #28 - Objazd trasy 120 km - GraveLove Bory 2026",
+      "date": null,
+      "distanceKm": 120.3,
+      "ascentM": 497,
+      "descentM": 498,
+      "durationMin": null,
+      "start": [
+        17.607387,
+        50.624272
+      ],
+      "bbox": [
+        17.570179,
+        50.468124,
+        17.916466,
+        50.624272
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-28-objazd-trasy-120-km-gravelove-bory-2026.gpx",
+      "gpxOriginalName": "Ustawka #28 - Objazd trasy 120 km - GraveLove Bory 2026.gpx"
+    },
+    {
+      "id": "ustawka-28-objazd-trasy-60-km-gravelove-bory-2026",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #28 - Objazd trasy 60 km - GraveLove Bory 2026",
+      "date": null,
+      "distanceKm": 61.3,
+      "ascentM": 278,
+      "descentM": 279,
+      "durationMin": null,
+      "start": [
+        17.607378,
+        50.624295
+      ],
+      "bbox": [
+        17.570179,
+        50.496437,
+        17.802511,
+        50.624295
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-28-objazd-trasy-60-km-gravelove-bory-2026.gpx",
+      "gpxOriginalName": "Ustawka #28 - Objazd trasy 60 km - GraveLove Bory 2026.gpx"
     },
     {
       "id": "ustawka-4-runda-spadajacych-lisci",
