@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T08:39:37.500Z",
+  "generatedAt": "2026-09-03T18:20:54.147Z",
   "categories": [
     {
       "id": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
@@ -2371,6 +2371,52 @@
       "surface": null,
       "gpxFile": "2026-08-26-gravelova-sroda-119-to.gpx",
       "gpxOriginalName": "2026/08/26 - GraveLova Środa #119 - To.gpx"
+    },
+    {
+      "id": "2026-09-02-gravelova-sroda-120-x-lellek-pachnid-o",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #120 x Lellek - Pachnidło",
+      "date": "2026-09-02",
+      "distanceKm": 49.6,
+      "ascentM": 51,
+      "descentM": 51,
+      "durationMin": 106.47005,
+      "start": [
+        17.875951,
+        50.697011
+      ],
+      "bbox": [
+        17.723348,
+        50.696175,
+        17.877259,
+        50.778802
+      ],
+      "surface": null,
+      "gpxFile": "2026-09-02-gravelova-sroda-120-x-lellek-pachnid-o.gpx",
+      "gpxOriginalName": "2026/09/02 - GraveLova Środa #120 x Lellek - Pachnidło.gpx"
+    },
+    {
+      "id": "2026-09-02-gravelova-sroda-120-x-lellek-pachnide-ko",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #120 x Lellek - Pachnidełko",
+      "date": "2026-09-02",
+      "distanceKm": 32.4,
+      "ascentM": 30,
+      "descentM": 30,
+      "durationMin": 63.901716666666665,
+      "start": [
+        17.875951,
+        50.697011
+      ],
+      "bbox": [
+        17.783341,
+        50.696175,
+        17.877259,
+        50.771972
+      ],
+      "surface": null,
+      "gpxFile": "2026-09-02-gravelova-sroda-120-x-lellek-pachnide-ko.gpx",
+      "gpxOriginalName": "2026/09/02 - GraveLova Środa #120 x Lellek - Pachnidełko.gpx"
     },
     {
       "id": "2106-06-17-gravelova-sroda-109-wzgorza-maja-oczy",
