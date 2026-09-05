@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T18:20:54.147Z",
+  "generatedAt": "2026-09-05T18:47:01.442Z",
   "categories": [
     {
       "id": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
@@ -3830,6 +3830,29 @@
       "surface": null,
       "gpxFile": "ustawka-28-objazd-trasy-60-km-gravelove-bory-2026.gpx",
       "gpxOriginalName": "Ustawka #28 - Objazd trasy 60 km - GraveLove Bory 2026.gpx"
+    },
+    {
+      "id": "ustawka-29-nie-sesedni-z-kola",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #29 - Nie-Sesedni z Kola",
+      "date": null,
+      "distanceKm": 222,
+      "ascentM": 1144,
+      "descentM": 1147,
+      "durationMin": 775.0813666666667,
+      "start": [
+        17.92294,
+        50.66849
+      ],
+      "bbox": [
+        17.690185,
+        49.937153,
+        18.058432,
+        50.66849
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-29-nie-sesedni-z-kola.gpx",
+      "gpxOriginalName": "Ustawka #29 - Nie-Sesedni z Kola.gpx"
     },
     {
       "id": "ustawka-4-runda-spadajacych-lisci",
