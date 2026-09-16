@@ -1,8 +1,13 @@
 name: Sync GPX z Google Drive
 
-# Uruchamiamy się co godzinę i sami sprawdzamy, czy w Warszawie jest 10:00 lub 20:00 —
+# Uruchamiamy się co godzinę i sami sprawdzamy, czy w Warszawie jest ok. 10:00 lub 20:00 —
 # dzięki temu godziny są poprawne cały rok, mimo zmiany czasu lato/zima
 # (GitHub Actions umie planować crony tylko w UTC).
+#
+# Okno jest celowo szersze niż jedna godzina (9-11 i 19-21), bo GitHub traktuje
+# harmonogramy `schedule` z niskim priorytetem i potrafi całkowicie pominąć
+# tik danej godziny przy dużym obciążeniu — sztywne "==10"/"==20" prowadziło
+# do wielodniowych przerw w synchronizacji, gdy akurat ten jeden tik przepadł.
 on:
   schedule:
     - cron: "0 * * * *"
@@ -15,11 +20,11 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Sprawdź, czy to pora synchronizacji (10:00 lub 20:00 czasu polskiego)
+      - name: Sprawdź, czy to pora synchronizacji (ok. 10:00 lub 20:00 czasu polskiego)
         id: gate
         run: |
-          hour="$(TZ='Europe/Warsaw' date +%H)"
-          if [ "$hour" = "10" ] || [ "$hour" = "20" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          hour="$(TZ='Europe/Warsaw' date +%-H)"
+          if { [ "$hour" -ge 9 ] && [ "$hour" -le 11 ]; } || { [ "$hour" -ge 19 ] && [ "$hour" -le 21 ]; } || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
             echo "run=false" >> "$GITHUB_OUTPUT"
