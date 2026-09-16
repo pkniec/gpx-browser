@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T18:18:52.004Z",
+  "generatedAt": "2026-09-16T09:32:55.286Z",
   "categories": [
     {
       "id": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
@@ -2440,6 +2440,34 @@
       "surface": null,
       "gpxFile": "2026-09-09-gravelova-sroda-121-pojutrze.gpx",
       "gpxOriginalName": "2026/09/09 - GraveLova Środa #121 - Pojutrze.gpx"
+    },
+    {
+      "id": "2026-09-16-gravelova-sroda-122-wspomnien-czar",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #122 - Wspomnień czar",
+      "date": "2026-09-16",
+      "distanceKm": 46.5,
+      "ascentM": 113,
+      "descentM": 113,
+      "durationMin": 141.89745,
+      "start": [
+        17.947435,
+        50.682409
+      ],
+      "bbox": [
+        17.942279,
+        50.654583,
+        18.152258,
+        50.730611
+      ],
+      "surface": {
+        "paved": 68.8,
+        "gravel": 1.9,
+        "unpaved": 5.1,
+        "unknown": 24.2
+      },
+      "gpxFile": "2026-09-16-gravelova-sroda-122-wspomnien-czar.gpx",
+      "gpxOriginalName": "2026/09/16 - GraveLova Środa #122 - Wspomnień czar.gpx"
     },
     {
       "id": "2106-06-17-gravelova-sroda-109-wzgorza-maja-oczy",
