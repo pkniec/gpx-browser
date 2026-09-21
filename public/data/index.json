@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T09:32:55.286Z",
+  "generatedAt": "2026-09-21T19:03:36.137Z",
   "categories": [
     {
       "id": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
@@ -2470,6 +2470,29 @@
       "gpxOriginalName": "2026/09/16 - GraveLova Środa #122 - Wspomnień czar.gpx"
     },
     {
+      "id": "2026-09-23-gravelova-sroda-123-jeszcze-dalej-niz-po-noc",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #123 - Jeszcze dalej niż Północ",
+      "date": "2026-09-23",
+      "distanceKm": 41.8,
+      "ascentM": 72,
+      "descentM": 72,
+      "durationMin": 184.15923333333333,
+      "start": [
+        17.900332,
+        50.72523
+      ],
+      "bbox": [
+        17.849285,
+        50.725141,
+        17.962594,
+        50.819194
+      ],
+      "surface": null,
+      "gpxFile": "2026-09-23-gravelova-sroda-123-jeszcze-dalej-niz-po-noc.gpx",
+      "gpxOriginalName": "2026/09/23 - GraveLova Środa #123 - Jeszcze dalej niż Północ.gpx"
+    },
+    {
       "id": "2106-06-17-gravelova-sroda-109-wzgorza-maja-oczy",
       "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
       "title": "GraveLova Środa #109 - Wzgórza mają oczy",
@@ -3881,29 +3904,6 @@
       "surface": null,
       "gpxFile": "ustawka-28-objazd-trasy-60-km-gravelove-bory-2026.gpx",
       "gpxOriginalName": "Ustawka #28 - Objazd trasy 60 km - GraveLove Bory 2026.gpx"
-    },
-    {
-      "id": "ustawka-29-nie-sesedni-z-kola",
-      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
-      "title": "Ustawka #29 - Nie-Sesedni z Kola",
-      "date": null,
-      "distanceKm": 222,
-      "ascentM": 1144,
-      "descentM": 1147,
-      "durationMin": 775.0813666666667,
-      "start": [
-        17.92294,
-        50.66849
-      ],
-      "bbox": [
-        17.690185,
-        49.937153,
-        18.058432,
-        50.66849
-      ],
-      "surface": null,
-      "gpxFile": "ustawka-29-nie-sesedni-z-kola.gpx",
-      "gpxOriginalName": "Ustawka #29 - Nie-Sesedni z Kola.gpx"
     },
     {
       "id": "ustawka-4-runda-spadajacych-lisci",
