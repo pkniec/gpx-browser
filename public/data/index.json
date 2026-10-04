@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T17:39:48.160Z",
+  "generatedAt": "2026-10-04T19:11:39.179Z",
   "categories": [
     {
       "id": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
@@ -2514,6 +2514,29 @@
       "surface": null,
       "gpxFile": "2026-09-30-gravelova-sroda-124-forrest-gump.gpx",
       "gpxOriginalName": "2026/09/30 - GraveLova Środa #124 - Forrest Gump.gpx"
+    },
+    {
+      "id": "2026-10-07-gravelova-sroda-125-pokot",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #125 - Pokot",
+      "date": "2026-10-07",
+      "distanceKm": 45.4,
+      "ascentM": 139,
+      "descentM": 140,
+      "durationMin": 178.76403333333334,
+      "start": [
+        17.865358,
+        50.648544
+      ],
+      "bbox": [
+        17.681718,
+        50.537371,
+        17.867884,
+        50.648544
+      ],
+      "surface": null,
+      "gpxFile": "2026-10-07-gravelova-sroda-125-pokot.gpx",
+      "gpxOriginalName": "2026/10/07 - GraveLova Środa #125 - Pokot.gpx"
     },
     {
       "id": "2106-06-17-gravelova-sroda-109-wzgorza-maja-oczy",
