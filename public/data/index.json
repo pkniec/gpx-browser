@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T19:11:39.179Z",
+  "generatedAt": "2026-10-08T17:42:53.276Z",
   "categories": [
     {
       "id": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
@@ -3950,6 +3950,29 @@
       "surface": null,
       "gpxFile": "ustawka-28-objazd-trasy-60-km-gravelove-bory-2026.gpx",
       "gpxOriginalName": "Ustawka #28 - Objazd trasy 60 km - GraveLove Bory 2026.gpx"
+    },
+    {
+      "id": "ustawka-30-jesienna-rozgrzewka",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #30 - Jesienna Rozgrzewka",
+      "date": null,
+      "distanceKm": 75.8,
+      "ascentM": 229,
+      "descentM": 230,
+      "durationMin": 291.2235,
+      "start": [
+        18.522279,
+        50.586196
+      ],
+      "bbox": [
+        18.343388,
+        50.545392,
+        18.584168,
+        50.661179
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-30-jesienna-rozgrzewka.gpx",
+      "gpxOriginalName": "Ustawka #30 - Jesienna Rozgrzewka.gpx"
     },
     {
       "id": "ustawka-4-runda-spadajacych-lisci",
