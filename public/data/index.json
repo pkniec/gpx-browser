@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T17:42:53.276Z",
+  "generatedAt": "2026-10-13T07:22:08.837Z",
   "categories": [
     {
       "id": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
@@ -2537,6 +2537,29 @@
       "surface": null,
       "gpxFile": "2026-10-07-gravelova-sroda-125-pokot.gpx",
       "gpxOriginalName": "2026/10/07 - GraveLova Środa #125 - Pokot.gpx"
+    },
+    {
+      "id": "2026-10-14-gravelova-sroda-126-w-lesie-dzis-nie-zasnie-nikt",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #126 - W lesie dziś nie zaśnie nikt",
+      "date": "2026-10-14",
+      "distanceKm": 43.4,
+      "ascentM": 82,
+      "descentM": 82,
+      "durationMin": 163.25923333333333,
+      "start": [
+        18.00319,
+        50.71929
+      ],
+      "bbox": [
+        17.891853,
+        50.716841,
+        18.011226,
+        50.816357
+      ],
+      "surface": null,
+      "gpxFile": "2026-10-14-gravelova-sroda-126-w-lesie-dzis-nie-zasnie-nikt.gpx",
+      "gpxOriginalName": "2026/10/14 - GraveLova Środa #126 - W lesie dziś nie zaśnie nikt.gpx"
     },
     {
       "id": "2106-06-17-gravelova-sroda-109-wzgorza-maja-oczy",
