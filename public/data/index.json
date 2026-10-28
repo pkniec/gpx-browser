@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T19:01:01.419Z",
+  "generatedAt": "2026-10-28T10:58:05.548Z",
   "categories": [
     {
       "id": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
@@ -2583,6 +2583,29 @@
       "surface": null,
       "gpxFile": "2026-10-21-gravelova-sroda-127-incepcja.gpx",
       "gpxOriginalName": "2026/10/21 - GraveLova Środa #127 - Incepcja.gpx"
+    },
+    {
+      "id": "2026-10-28-gravelova-sroda-128-szczeki",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #128 - Szczęki",
+      "date": "2026-10-28",
+      "distanceKm": 48.7,
+      "ascentM": 148,
+      "descentM": 130,
+      "durationMin": 203.5068,
+      "start": [
+        17.993153,
+        50.680225
+      ],
+      "bbox": [
+        17.949482,
+        50.641273,
+        18.187738,
+        50.711934
+      ],
+      "surface": null,
+      "gpxFile": "2026-10-28-gravelova-sroda-128-szczeki.gpx",
+      "gpxOriginalName": "2026/10/28 - GraveLova Środa #128 - Szczęki.gpx"
     },
     {
       "id": "2106-06-17-gravelova-sroda-109-wzgorza-maja-oczy",
