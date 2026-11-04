@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T10:58:05.548Z",
+  "generatedAt": "2026-11-04T08:37:44.922Z",
   "categories": [
     {
       "id": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
@@ -2606,6 +2606,52 @@
       "surface": null,
       "gpxFile": "2026-10-28-gravelova-sroda-128-szczeki.gpx",
       "gpxOriginalName": "2026/10/28 - GraveLova Środa #128 - Szczęki.gpx"
+    },
+    {
+      "id": "2026-11-04-gravelova-sroda-129-s-odki-listopad",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #129 - Słodki listopad",
+      "date": "2026-11-04",
+      "distanceKm": 43.4,
+      "ascentM": 95,
+      "descentM": 92,
+      "durationMin": 217.16283333333334,
+      "start": [
+        17.990076,
+        50.629344
+      ],
+      "bbox": [
+        17.981137,
+        50.571882,
+        18.07882,
+        50.656549
+      ],
+      "surface": null,
+      "gpxFile": "2026-11-04-gravelova-sroda-129-s-odki-listopad.gpx",
+      "gpxOriginalName": "2026/11/04 - GraveLova Środa #129 - Słodki listopad.gpx"
+    },
+    {
+      "id": "2026-11-11-gravelova-sroda-130-dzien-niepodleg-osci",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #130 - Dzień niepodległości",
+      "date": "2026-11-11",
+      "distanceKm": 141.5,
+      "ascentM": 354,
+      "descentM": 354,
+      "durationMin": 548.55275,
+      "start": [
+        17.947441,
+        50.682369
+      ],
+      "bbox": [
+        17.761244,
+        50.626858,
+        18.200962,
+        50.894881
+      ],
+      "surface": null,
+      "gpxFile": "2026-11-11-gravelova-sroda-130-dzien-niepodleg-osci.gpx",
+      "gpxOriginalName": "2026/11/11 - GraveLova Środa #130 - Dzień niepodległości.gpx"
     },
     {
       "id": "2106-06-17-gravelova-sroda-109-wzgorza-maja-oczy",
