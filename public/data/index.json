@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T08:37:44.922Z",
+  "generatedAt": "2026-11-13T09:06:00.656Z",
   "categories": [
     {
       "id": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
@@ -4088,6 +4088,29 @@
       "surface": null,
       "gpxFile": "ustawka-30-jesienna-rozgrzewka.gpx",
       "gpxOriginalName": "Ustawka #30 - Jesienna Rozgrzewka.gpx"
+    },
+    {
+      "id": "ustawka-31-duze-petla-ma-a-czarna",
+      "categoryId": "1gwO4p44sJQfSHlCSowiaBtrkt-ulLby5",
+      "title": "Ustawka #31 - Duże pętla, mała czarna",
+      "date": null,
+      "distanceKm": 67.3,
+      "ascentM": 157,
+      "descentM": 158,
+      "durationMin": 330.43376666666666,
+      "start": [
+        17.993049,
+        50.680126
+      ],
+      "bbox": [
+        17.985429,
+        50.680126,
+        18.19199,
+        50.743718
+      ],
+      "surface": null,
+      "gpxFile": "ustawka-31-duze-petla-ma-a-czarna.gpx",
+      "gpxOriginalName": "Ustawka #31 - Duże pętla, mała czarna.gpx"
     },
     {
       "id": "ustawka-4-runda-spadajacych-lisci",
