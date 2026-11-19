@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T18:38:43.789Z",
+  "generatedAt": "2026-11-19T19:57:37.822Z",
   "categories": [
     {
       "id": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
@@ -2652,6 +2652,29 @@
       "surface": null,
       "gpxFile": "2026-11-11-gravelova-sroda-130-dzien-niepodleg-osci.gpx",
       "gpxOriginalName": "2026/11/11 - GraveLova Środa #130 - Dzień niepodległości.gpx"
+    },
+    {
+      "id": "2026-11-18-gravelova-sroda-131-slepnac-od-swiate",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #131 - Ślepnąc od świateł",
+      "date": "2026-11-18",
+      "distanceKm": 45.4,
+      "ascentM": 110,
+      "descentM": 111,
+      "durationMin": 188.27668333333332,
+      "start": [
+        17.96035,
+        50.672644
+      ],
+      "bbox": [
+        17.959343,
+        50.597858,
+        18.170711,
+        50.6812
+      ],
+      "surface": null,
+      "gpxFile": "2026-11-18-gravelova-sroda-131-slepnac-od-swiate.gpx",
+      "gpxOriginalName": "2026/11/18 - GraveLova Środa #131 - Ślepnąc od świateł.gpx"
     },
     {
       "id": "2106-06-17-gravelova-sroda-109-wzgorza-maja-oczy",
