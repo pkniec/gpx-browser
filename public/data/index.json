@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T19:57:37.822Z",
+  "generatedAt": "2026-11-25T09:33:08.927Z",
   "categories": [
     {
       "id": "1cQxgCwTrHnqfMggWvP05UccyAcXwDf-o",
@@ -2675,6 +2675,29 @@
       "surface": null,
       "gpxFile": "2026-11-18-gravelova-sroda-131-slepnac-od-swiate.gpx",
       "gpxOriginalName": "2026/11/18 - GraveLova Środa #131 - Ślepnąc od świateł.gpx"
+    },
+    {
+      "id": "2026-11-25-gravelova-sroda-132-interstellar",
+      "categoryId": "1PIjic8BxUFUnJ75fOkJiU2Okr-B8uPmd",
+      "title": "GraveLova Środa #132 - Interstellar",
+      "date": "2026-11-25",
+      "distanceKm": 39.6,
+      "ascentM": 108,
+      "descentM": 110,
+      "durationMin": 155.37476666666666,
+      "start": [
+        17.922559,
+        50.65935
+      ],
+      "bbox": [
+        17.720187,
+        50.62438,
+        17.929582,
+        50.679653
+      ],
+      "surface": null,
+      "gpxFile": "2026-11-25-gravelova-sroda-132-interstellar.gpx",
+      "gpxOriginalName": "2026/11/25 - GraveLova Środa #132 - Interstellar.gpx"
     },
     {
       "id": "2106-06-17-gravelova-sroda-109-wzgorza-maja-oczy",
